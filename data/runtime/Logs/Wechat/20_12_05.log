@@ -1,0 +1,75 @@
+[ 2020-12-05T11:05:20+08:00 ] 123.151.77.81 /index.php?g=wechat&m=conferenceroom&a=meeting&code=021mWOll2p417643pdll2zMbDl0mWOlA&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0002s ]
+
+[ 2020-12-05T11:05:29+08:00 ] 123.151.77.81 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-12-05T11:05:31+08:00 ] 123.151.77.81 /wechat/sports/sports
+SQL: SELECT ejd_dict.name,ejd_entertainment.* FROM `ejd_entertainment` left JOIN ejd_dict on ejd_dict.id = ejd_entertainment.etypeid  WHERE `isdel` = 0  [ RunTime:0.0001s ]
+
+[ 2020-12-05T12:18:40+08:00 ] 123.151.77.90 /index.php?g=wechat&m=conferenceroom&a=meeting&code=041wII000Tc0LK1Zor300XnEyt0wII0R&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:41:38+08:00 ] 123.151.77.90 /index.php?g=wechat&m=conferenceroom&a=meeting&code=091zu4ll24TM5646rWll2c0Lep3zu4lM&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:06+08:00 ] 123.151.77.90 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0008s ]
+
+[ 2020-12-05T21:42:07+08:00 ] 111.30.142.233 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0005s ]
+
+[ 2020-12-05T21:42:13+08:00 ] 123.151.77.90 /wechat/restaurant/restaurant_details/id/1
+SQL: SELECT * FROM `ejd_restaurant` WHERE ( id='1' ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2020-12-05T21:42:34+08:00 ] 123.151.77.90 /wechat/sports/sports
+SQL: SELECT ejd_dict.name,ejd_entertainment.* FROM `ejd_entertainment` left JOIN ejd_dict on ejd_dict.id = ejd_entertainment.etypeid  WHERE `isdel` = 0  [ RunTime:0.0005s ]
+
+[ 2020-12-05T21:42:40+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2020-12-05T21:42:42+08:00 ] 123.151.77.90 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2020-12-05T21:42:43+08:00 ] 123.151.77.90 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:43+08:00 ] 123.151.77.90 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:44+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:44+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:44+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:45+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:45+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:45+08:00 ] 123.151.77.90 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:46+08:00 ] 123.151.77.90 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:46+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:46+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:46+08:00 ] 111.30.142.233 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-12-05T21:42:46+08:00 ] 123.151.77.90 /wechat/room/room
+SQL: SELECT ejd_dict.name,ejd_hotel_info.* FROM `ejd_hotel_info` left JOIN ejd_dict on ejd_dict.id = ejd_hotel_info.hotel_star  LIMIT 1   [ RunTime:0.0001s ]
+

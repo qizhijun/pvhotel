@@ -1,0 +1,12 @@
+[ 2020-08-24T11:40:10+08:00 ] 154.91.35.53 /?s=admin/%5Cthink%5Capp/invokefunction
+ERR: 无法加载控制器:\think\app
+
+[ 2020-08-24T11:40:24+08:00 ] 154.91.35.53 /index.php?s=admin/%5Cthink%5Capp/invokefunction
+ERR: 无法加载控制器:\think\app
+
+[ 2020-08-24T17:12:16+08:00 ] 154.91.35.53 /?s=admin/%5Cthink%5Capp/invokefunction
+ERR: 无法加载控制器:\think\app
+
+[ 2020-08-24T17:12:19+08:00 ] 154.91.35.53 /index.php?s=admin/%5Cthink%5Capp/invokefunction
+ERR: 无法加载控制器:\think\app
+

@@ -1,0 +1,10 @@
+[2020-09-18 12:48:05][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting
+[2020-09-18 12:48:06][debug] 获取openid后的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting&code=011oZjFa1ODODz0UxkFa1iUF6Z2oZjFj&state=STATE
+[2020-09-18 12:48:06][debug] 获取openid后的url2http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting&code=011oZjFa1ODODz0UxkFa1iUF6Z2oZjFj&state=STATE
+[2020-09-18 13:01:15][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/restaurant/restaurant
+[2020-09-18 13:01:26][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/user/reg
+[2020-09-18 13:02:34][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/conferenceroom/meeting
+[2020-09-18 21:48:42][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/22964
+[2020-09-18 21:48:43][debug] 获取openid后的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/22964&code=021CNm1006E2iK1jOm300vFD9P0CNm1t&state=STATE
+[2020-09-18 21:48:43][debug] 获取openid后的url2http://diangu.yijiudian.cn//wechat/salary/index/id/22964?code=021CNm1006E2iK1jOm300vFD9P0CNm1t&state=STATE
+[2020-09-18 22:00:38][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/22964

@@ -1,0 +1,9 @@
+[ 2020-07-13T17:31:18+08:00 ] 193.38.139.125 /?s=admin/%5Cthink%5Capp/invokefunction&function=call_user_func_array&vars%5B0%5D=phpinfo&vars%5B1%5D%5B0%5D=1
+ERR: 无法加载控制器:\think\app
+
+[ 2020-07-13T17:44:28+08:00 ] 116.211.219.70 /?s=admin/%5Cthink%5Capp/invokefunction&function=call_user_func_array&vars%5B0%5D=phpinfo&vars%5B1%5D%5B0%5D=1
+ERR: 无法加载控制器:\think\app
+
+[ 2020-07-13T17:51:34+08:00 ] 193.38.139.125 /?s=admin/%5Cthink%5Capp/invokefunction&function=call_user_func_array&vars%5B0%5D=phpinfo&vars%5B1%5D%5B0%5D=1
+ERR: 无法加载控制器:\think\app
+

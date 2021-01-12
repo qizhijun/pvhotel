@@ -1,0 +1,1202 @@
+.maincontent {
+    padding-bottom: 65px
+}
+
+.hotelinfo .share:after,.hotelinfo .share:before {
+    width: 2px;
+    height: 9pt;
+    content: '';
+    background-color: #0ba6e0;
+    display: block;
+    position: absolute;
+    right: -2px;
+    top: -6px
+}
+
+.hotelinfo .share:before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+.hotelinfo .share:after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    top: 2px
+}
+
+.hotelinfo .share {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    margin-top: 1pc;
+    margin-left: 5px;
+    display: none
+}
+
+.hotelinfo .circle:after,.hotelinfo .circle:before {
+    width: 6px;
+    height: 6px;
+    content: '';
+    background-color: #0ba6e0;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    right: -9px;
+    top: -7px
+}
+
+.hotelinfo .circle:after {
+    top: 9px
+}
+
+.hotelinfo .fav {
+    width: 27px;
+    height: 36px;
+    display: block;
+    margin-left: 9pt;
+    background-position: -127px 8px;
+    display: none
+}
+
+.hotelinfo .info {
+    position: relative;
+    padding-top: 0
+}
+
+.hotelinfo .info .facilities {
+    height: auto;
+    display: block
+}
+
+.hotelinfo .info .facilities i {
+    background-position: 0 -37px;
+    width: 20px;
+    height: 14px;
+    float: left;
+    margin-top: 3px
+}
+
+.hotelinfo .info .facilities .wifi {
+    background-position-x: 0
+}
+
+.hotelinfo .info .facilities .park {
+    background-position-x: -22px
+}
+
+.hotelinfo .info .facilities .res {
+    background-position-x: -40px
+}
+
+.hotelinfo .info .facilities .air {
+    background-position-x: -61px
+}
+
+.hotelinfo .info .facilities .swim {
+    background-position-x: -83px
+}
+
+.hotelinfo .info .facilities .sport {
+    background-position-x: -106px
+}
+
+.hotelinfo .info .facilities .pickup {
+    background-position-x: -131px
+}
+
+.hotelinfo .info .jiantou {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 20px;
+    line-height: 15px
+}
+
+.hotelinfo .info .jiantou:before {
+    top: 0
+}
+
+.hotelinfo .info .jiantou:after {
+    top: 6px
+}
+
+.comment,.map {
+    line-height: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom-width: 1px
+}
+
+.comment p,.map p {
+    position: relative
+}
+
+.comment .jiantou,.map .jiantou {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 0;
+    padding-right: 20px
+}
+
+.comment .jiantou:before,.map .jiantou:before {
+    top: 2px
+}
+
+.comment .jiantou:after,.map .jiantou:after {
+    top: 8px
+}
+
+.map span {
+    display: block
+}
+
+.map span.address,.map span.regional {
+    margin-right: 5pc;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.list .roomsingle {
+    border-top-width: 10px
+}
+
+.list .roomsingle .roommain {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-width: 1px
+}
+
+.list .roomsingle .name {
+    line-height: 28px;
+    height: 28px;
+    overflow: hidden
+}
+
+.list .roommain .img {
+    width: 5pc;
+    position: absolute;
+    top: 10px;
+    left: 3%;
+    z-index: 2
+}
+
+.list .roommain .img img {
+    width: 100%;
+    display: block
+}
+
+.list .roommain .info {
+    padding-left: 90px;
+    position: relative;
+    min-height: 5pc;
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+.list .roommain .info .desc,.list .roomsingle .rateplan .info {
+    padding-right: 5pc;
+    position: relative
+}
+
+.list .roommain .info1 .desc {
+    padding-right: 70px
+}
+
+.list .roommain .info1 .singl {
+    position: absolute;
+    top: -20px;
+    right: 0
+}
+
+.list .roommain .info1 .close {
+    bottom: 5px;
+    top: auto
+}
+
+.list .priceblock {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 27px;
+    height: 100%
+}
+
+.list .roomsingle .price {
+    width: 100%;
+    text-align: center;
+    border-style: dashed;
+    border-width: 1px;
+    height: 60px;
+    box-sizing: border-box
+}
+
+.list .roomsingle .sellprice {
+    line-height: 5pc;
+    margin-right: 5px
+}
+
+.list .roomsingle .oriprice {
+    text-decoration: line-through;
+    margin-top: 5px;
+    padding: 0 2px;
+    color: #707070
+}
+
+.list .roomsingle .close {
+    border-width: 1px;
+    width: 21px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 31px
+}
+
+.list .roomsingle .close:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 13px;
+    top: 6px
+}
+
+.list .roomsingle .close:after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    right: 6px;
+    top: 6px
+}
+
+.list .roomsingle .open:before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    right: 13px;
+    top: 5px
+}
+
+.list .roomsingle .open:after {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    right: 6px;
+    top: 5px
+}
+
+.list .rateplanlist {
+    display: none;
+    border-top-width: 1px
+}
+
+.list .roomsingle .rateplan {
+    border-bottom-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 75pt
+}
+
+.list .roomsingle .rateplan .info {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 5pc
+}
+
+.list .roomsingle .rateplan .name {
+    line-height: 5pc
+}
+
+.list .roomsingle .rateplan .info1 .name {
+    line-height: 60px;
+    height: 38px;
+    display: block
+}
+
+.list .roomsingle .rateplan .tip {
+    border-width: 1px;
+    padding: 0 5px;
+    border-style: dashed
+}
+
+.list .rateplan .priceblock {
+    padding-right: 55px;
+    width: auto
+}
+
+.list .rateplan .priceblock .book {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px
+}
+
+.list .rateplan .priceblock .book span {
+    display: block;
+    text-align: center;
+    pointer-events: none
+}
+
+.list .rateplan .priceblock .book .ding {
+    width: 100%;
+    height: 40px;
+    line-height: 40px
+}
+
+.list .rateplan .priceblock .book .payment {
+    border-width: 1px;
+    height: 38px;
+    line-height: 38px;
+    border-style: dashed
+}
+
+.list .roomsingle .more {
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    display: none
+}
+
+#facilites,#map {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s
+}
+
+#facilites .maincontent {
+    padding-bottom: 20px;
+    padding-top: 0
+}
+
+#facilites_main {
+    overflow-y: scroll;
+    visibility: visible;
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+    left: 0;
+    top: 50px;
+    width: 100%
+}
+
+#facilites .hotelinfo {
+    padding-bottom: 8px
+}
+
+.facilities h3,.hotelinfo .hname,.info h3 {
+    line-height: 30px
+}
+
+.hotelinfo .hname {
+    line-height: 24px;
+    padding: 10px 0 4px
+}
+
+#facilites.is-visible,#map.is-visible {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.facilities ul {
+    overflow: hidden;
+    margin-top: 2px
+}
+
+.facilities li {
+    height: 28px;
+    float: left;
+    width: 33.333%
+}
+
+.facilities i {
+    background-position: 0 -37px;
+    width: 20px;
+    height: 14px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 7px
+}
+
+.facilities .wifi {
+    background-position-x: 0
+}
+
+.facilities .park {
+    background-position-x: -22px
+}
+
+.facilities .res {
+    background-position-x: -40px
+}
+
+.facilities .chinares {
+    background-position-x: -175px
+}
+
+.facilities .air {
+    background-position-x: -61px
+}
+
+.facilities .swim {
+    background-position-x: -83px
+}
+
+.facilities .sport {
+    background-position-x: -106px
+}
+
+.facilities .pickup {
+    background-position-x: -131px
+}
+
+.facilities .inter {
+    background-position-x: -153px
+}
+
+.facilities .nosmoking {
+    background-position-x: -200px
+}
+
+#facilites_main .facilities i {
+    background-image: url(../img/icon.png);
+    background-size: 25pc;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    float: none
+}
+
+#facilites_main .facilities li {
+    max-width: 127px
+}
+
+#facilites_main .facilities i.fac1 {
+    background-position: -9pt -28px
+}
+
+#facilites_main .facilities i.fac2 {
+    background-position: -147px -28px
+}
+
+#facilites_main .facilities i.fac3 {
+    background-position: -274px -28px
+}
+
+#facilites_main .facilities i.fac4 {
+    background-position: -9pt -60px
+}
+
+#facilites_main .facilities i.fac9 {
+    background-position: -147px -60px
+}
+
+#facilites_main .facilities i.fac30 {
+    background-position: -274px -60px
+}
+
+#facilites_main .facilities i.fac25 {
+    background-position: -9pt -90px
+}
+
+#facilites_main .facilities i.fac5 {
+    background-position: -147px -90px
+}
+
+#facilites_main .facilities i.fac12 {
+    background-position: -274px -90px
+}
+
+#facilites_main .facilities i.fac13 {
+    background-position: -9pt -121px
+}
+
+#facilites_main .facilities i.fac14 {
+    background-position: -147px -121px
+}
+
+#facilites_main .facilities i.fac6 {
+    background-position: -274px -121px
+}
+
+#facilites_main .facilities i.fac11 {
+    background-position: -9pt -152px
+}
+
+#facilites_main .facilities i.fac15 {
+    background-position: -147px -152px
+}
+
+#facilites_main .facilities i.fac21 {
+    background-position: -274px -152px
+}
+
+#facilites_main .facilities i.fac22 {
+    background-position: -9pt -184px
+}
+
+#facilites_main .facilities i.fac28 {
+    background-position: -147px -184px
+}
+
+#facilites_main .facilities i.fac27 {
+    background-position: -274px -184px
+}
+
+#facilites_main .facilities i.fac10 {
+    background-position: -9pt -215px
+}
+
+#facilites_main .facilities i.fac29 {
+    background-position: -147px -215px
+}
+
+#facilites_main .facilities i.fac33 {
+    background-position: -274px -215px
+}
+
+#facilites_main .facilities i.fac35 {
+    background-position: -9pt -247px
+}
+
+#facilites_main .facilities i.fac215 {
+    background-position: -147px -247px
+}
+
+#facilites_main .facilities i.fac216 {
+    background-position: -274px -247px
+}
+
+#facilites_main .facilities i.fac217 {
+    background-position: -9pt -277px
+}
+
+#facilites_main .facilities i.fac218 {
+    background-position: -147px -277px
+}
+
+#facilites_main .facilities i.fac16 {
+    background-position: -274px -277px
+}
+
+#facilites_main .facilities i.fac17 {
+    background-position: -9pt -309px
+}
+
+#facilites_main .facilities i.fac18 {
+    background-position: -147px -309px
+}
+
+#facilites_main .facilities i.fac19 {
+    background-position: -274px -309px
+}
+
+#facilites_main .facilities i.fac20 {
+    background-position: -9pt -340px
+}
+
+#facilites_main .facilities i.fac23 {
+    background-position: -147px -340px
+}
+
+#facilites_main .facilities i.fac24 {
+    background-position: -274px -340px
+}
+
+#facilites_main .facilities i.fac31 {
+    background-position: -9pt -372px
+}
+
+#facilites_main .facilities i.fac32 {
+    background-position: -147px -372px
+}
+
+#facilites_main .facilities i.fac34 {
+    background-position: -274px -372px
+}
+
+#facilites_main .facilities i.fac36 {
+    background-position: -9pt -409px
+}
+
+#facilites_main .facilities i.fac37 {
+    background-position: -147px -409px
+}
+
+#facilites_main .facilities i.fac46 {
+    background-position: -274px -409px
+}
+
+#facilites_main .facilities i.fac50 {
+    background-position: -9pt -440px
+}
+
+#facilites_main .facilities i.fac52 {
+    background-position: -147px -440px
+}
+
+#facilites_main .facilities i.fac38 {
+    background-position: -274px -440px
+}
+
+#facilites_main .facilities i.fac39 {
+    background-position: -9pt -471px
+}
+
+#facilites_main .facilities i.fac40 {
+    background-position: -147px -471px
+}
+
+#facilites_main .facilities i.fac41 {
+    background-position: -274px -471px
+}
+
+#facilites_main .facilities i.fac42 {
+    background-position: -9pt -502px
+}
+
+#facilites_main .facilities i.fac43 {
+    background-position: -147px -502px
+}
+
+#facilites_main .facilities i.fac44 {
+    background-position: -274px -502px
+}
+
+#facilites_main .facilities i.fac45 {
+    background-position: -9pt -534px
+}
+
+#facilites_main .facilities i.fac47 {
+    background-position: -147px -534px
+}
+
+#facilites_main .facilities i.fac48 {
+    background-position: -274px -534px
+}
+
+#facilites_main .facilities i.fac58 {
+    background-position: -9pt -565px
+}
+
+#facilites_main .facilities i.fac59 {
+    background-position: -147px -565px
+}
+
+#facilites_main .facilities i.fac60 {
+    background-position: -274px -565px
+}
+
+#facilites_main .facilities i.fac49 {
+    background-position: -9pt -596px
+}
+
+#facilites_main .facilities i.fac51 {
+    background-position: -147px -596px
+}
+
+#facilites_main .facilities i.fac53 {
+    background-position: -274px -596px
+}
+
+#facilites_main .facilities i.fac54 {
+    background-position: -9pt -628px
+}
+
+#facilites_main .facilities i.fac55 {
+    background-position: -147px -628px
+}
+
+#facilites_main .facilities i.fac56 {
+    background-position: -274px -628px
+}
+
+#facilites_main .facilities i.fac57 {
+    background-position: -9pt -659px
+}
+
+#facilites_main .facilities i.fac82 {
+    background-position: -147px -659px
+}
+
+#facilites_main .facilities i.fac63 {
+    background-position: -274px -659px
+}
+
+#facilites_main .facilities i.fac70 {
+    background-position: -9pt -697px
+}
+
+#facilites_main .facilities i.fac71 {
+    background-position: -147px -697px
+}
+
+#facilites_main .facilities i.fac76 {
+    background-position: -274px -697px
+}
+
+#facilites_main .facilities i.fac83 {
+    background-position: -9pt -727px
+}
+
+#facilites_main .facilities i.fac84 {
+    background-position: -147px -727px
+}
+
+#facilites_main .facilities i.fac88 {
+    background-position: -274px -727px
+}
+
+#facilites_main .facilities i.fac100 {
+    background-position: -9pt -759px
+}
+
+#facilites_main .facilities i.fac77 {
+    background-position: -147px -759px
+}
+
+#facilites_main .facilities i.fac78 {
+    background-position: -274px -759px
+}
+
+#facilites_main .facilities i.fac79 {
+    background-position: -9pt -791px
+}
+
+#facilites_main .facilities i.fac80 {
+    background-position: -147px -791px
+}
+
+#facilites_main .facilities i.fac81 {
+    background-position: -274px -791px
+}
+
+#facilites_main .facilities i.fac65 {
+    background-position: -9pt -821px
+}
+
+#facilites_main .facilities i.fac66 {
+    background-position: -147px -821px
+}
+
+#facilites_main .facilities i.fac67 {
+    background-position: -274px -821px
+}
+
+#facilites_main .facilities i.fac73 {
+    background-position: -9pt -851px
+}
+
+#facilites_main .facilities i.fac74 {
+    background-position: -147px -851px
+}
+
+#facilites_main .facilities i.fac75 {
+    background-position: -274px -851px
+}
+
+#facilites_main .facilities i.fac85 {
+    background-position: -9pt -884px
+}
+
+#facilites_main .facilities i.fac86 {
+    background-position: -147px -884px
+}
+
+#facilites_main .facilities i.fac89 {
+    background-position: -274px -884px
+}
+
+#facilites_main .facilities i.fac91 {
+    background-position: -9pt -915px
+}
+
+#facilites_main .facilities i.fac94 {
+    background-position: -147px -915px
+}
+
+#facilites_main .facilities i.fac97 {
+    background-position: -274px -915px
+}
+
+#facilites_main .facilities i.fac98 {
+    background-position: -9pt -946px
+}
+
+#facilites_main .facilities i.fac101 {
+    background-position: -147px -946px
+}
+
+#facilites_main .facilities i.fac104 {
+    background-position: -274px -946px
+}
+
+#facilites_main .facilities i.fac105 {
+    background-position: -9pt -977px
+}
+
+#facilites_main .facilities i.fac108 {
+    background-position: -147px -977px
+}
+
+#facilites_main .facilities i.fac7 {
+    background-position: -274px -977px
+}
+
+#facilites_main .facilities i.fac8 {
+    background-position: -9pt -1007px
+}
+
+#facilites_main .facilities i.fac26 {
+    background-position: -147px -1007px
+}
+
+#facilites_main .facilities i.fac61 {
+    background-position: -274px -1007px
+}
+
+#facilites_main .facilities i.fac62 {
+    background-position: -9pt -1038px
+}
+
+#facilites_main .facilities i.fac68 {
+    background-position: -147px -1038px
+}
+
+#facilites_main .facilities i.fac69 {
+    background-position: -274px -1038px
+}
+
+#facilites_main .facilities i.fac87 {
+    background-position: -9pt -1070px
+}
+
+#facilites_main .facilities i.fac99 {
+    background-position: -147px -1070px
+}
+
+#facilites_main .facilities i.fac64 {
+    background-position: -274px -1070px
+}
+
+#facilites_main .facilities i.fac72 {
+    background-position: -9pt -1101px
+}
+
+#facilites_main .facilities i.fac90 {
+    background-position: -147px -1101px
+}
+
+#facilites_main .facilities i.fac92 {
+    background-position: -274px -1101px
+}
+
+#facilites_main .facilities i.fac93 {
+    background-position: -9pt -1133px
+}
+
+#facilites_main .facilities i.fac95 {
+    background-position: -147px -1133px
+}
+
+#facilites_main .facilities i.fac96 {
+    background-position: -274px -1133px
+}
+
+#facilites_main .facilities i.fac99 {
+    background-position: -9pt -873pt
+}
+
+#facilites_main .facilities i.fac102 {
+    background-position: -147px -873pt
+}
+
+#facilites_main .facilities i.fac103 {
+    background-position: -274px -873pt
+}
+
+#facilites_main .facilities i.fac106 {
+    background-position: -9pt -1195px
+}
+
+#facilites_main .facilities i.fac107 {
+    background-position: -147px -1195px
+}
+
+.contact,.facilities,.info {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top-width: 1px;
+    overflow: hidden
+}
+
+.info .content {
+    line-height: 26px;
+    margin-bottom: 1px;
+    overflow: hidden
+}
+
+.info .content i {
+    background: 0 0
+}
+
+.info .content img {
+    max-width: 100%
+}
+
+.basicinfo span {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    min-width: 5pc;
+    line-height: 26px
+}
+
+.detailroom {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 96%;
+    height: 25pc;
+    box-sizing: border-box;
+    margin-top: -200px;
+    margin-left: -48%;
+    z-index: 105;
+    overflow: hidden;
+    line-height: 28px
+}
+
+.detailroom .roominfo {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch
+}
+
+.detailroom h3 {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 20px;
+    position: relative
+}
+
+.detailroom .close {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    height: 44px;
+    width: 44px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform .2s;
+    transition: transform .2s
+}
+
+.detailroom .close:after,.detailroom .close:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 24px;
+    background-color: #757575;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.detailroom .close:after {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg)
+}
+
+.detailroom .close:before {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg)
+}
+
+.detailroom .close.is-scaled-up {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+}
+
+.rooming {
+    width: 100%;
+    height: auto;
+    position: relative
+}
+
+.rooming,.rooming ul {
+    overflow: hidden
+}
+
+.rooming ul li {
+    float: left;
+    position: relative
+}
+
+.rooming ul li img {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: 100%
+}
+
+.detailroom .more {
+    position: relative;
+    padding-right: 20px
+}
+
+.detailroom .more.jiantou.fan:before {
+    -webkit-transform: rotate(45deg)
+}
+
+.detailroom .more.jiantou.fan:after {
+    -webkit-transform: rotate(-45deg)
+}
+
+.detailroom .more:after,.detailroom .more:before {
+    background-color: #0ba6e0;
+    top: 4px;
+    right: 9pt
+}
+
+.detailroom .maininfo i {
+    background-position-y: -111px;
+    width: 2pc;
+    height: 20px;
+    display: block;
+    float: left
+}
+
+.detailroom .maininfo p span {
+    margin-right: 15px
+}
+
+.detailroom .maininfo i.type {
+    background-position-x: 2px
+}
+
+.detailroom .maininfo i.meal {
+    background-position-x: -26px
+}
+
+.detailroom .maininfo i.area {
+    background-position-x: -59px
+}
+
+.detailroom .maininfo i.peop {
+    background-position-x: -91px
+}
+
+.detailroom .maininfo i.bed {
+    background-position-x: -126px
+}
+
+.detailroom .maininfo i.inter {
+    background-position-x: -10pc
+}
+
+.detailroom i.date {
+    width: 30px;
+    height: 38px;
+    background-position: -235px -106px;
+    display: block;
+    float: left
+}
+
+.detailroom .more:after {
+    right: 5px
+}
+
+.detailroom .nav {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%
+}
+
+.detailroom .nav .lt {
+    width: 75%
+}
+
+.detailroom .nav .rt {
+    width: 25%;
+    text-align: center
+}
+
+.roomfacilities {
+    overflow: hidden
+}
+
+.roomfacilities p:nth-child(2n+1) {
+    line-height: 2pc;
+    border-bottom-width: 1px
+}
+
+.roomfacilities p:nth-child(2n) {
+    margin-bottom: 10px
+}
+
+.basicinfo p {
+    height: 28px;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+#div_map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: block
+}
+.facmore:before {
+    right: 5px;
+    top: 5px;
+}
+
+.facmore:after {
+    right: -1px;
+    top: 5px;
+}
+
+.facmore.close:before {
+    right: -1px;
+    top: 5px;
+}
+
+.facmore.close:after {
+    right: 5px;
+    top: 5px;
+}
+
+@media screen and (max-width: 350px) {
+    .list .roommain .info .desc {
+        padding-right:75px
+    }
+
+    .list .roommain .info .priceblock {
+        width: 75px
+    }
+}

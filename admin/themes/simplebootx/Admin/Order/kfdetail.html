@@ -1,0 +1,43 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">客房明细</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>到店时间</th>
+					<th>离店时间</th>
+					<th>联系人</th>
+					<th>联系电话</th>
+					<th>入住几晚</th>
+					<th>电话确认</th>
+					<th>到店时段</th>
+					<th>预定间数</th>
+					<th>协议码</th>
+					<th>备注</th>
+				</tr>
+			</thead>
+			<tbody>
+				<php>$vipname = json_decode($kfdetail['vipname'],true);</php>
+				<php>$isphone = array("0" => "不用电话确认", "1"=>"请电话确认")</php>
+				<tr>
+					<td>{$kfdetail['begtime'] | date="Y-m-d",###}</td>
+					<td>{$kfdetail['endtime'] | date="Y-m-d",###}</td>
+					<td>{$vipname['name']}</td>
+					<td>{$kfdetail.vipphone}</td>
+					<td>{$kfdetail.yenum}</td>
+					<td>{$isphone[$kfdetail['isphone']]}</td>
+					<td>{$kfdetail.hdsure}点之前</td>
+					<td>{$kfdetail.room_number}</td>
+					<td>{$kfdetail.xymcode}</td>
+					<td>{$kfdetail.des}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</body>
+</html>

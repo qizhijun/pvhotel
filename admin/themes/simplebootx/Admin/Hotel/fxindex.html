@@ -1,0 +1,51 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">房型管理</a></li>
+			<li><a href="{:U('Hotel/fxadd')}">添加房型</a></li>
+			<li><a href="{:U('Hotel/rpindex')}">房型RP列表</a></li>
+			<li><a href="{:U('Hotel/fjindex')}">房价管理</a></li>
+		</ul>
+        <form class="well form-search" method="post" action="{:U('Hotel/fxindex')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						状态：
+						<select class="select_2" name="iroom_status">
+							<option value='1'>有效房型</option>
+							<option value='-1' {$iroom_status == -1 ? "selected" : ""}>无效房型</option>
+						</select>
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+            
+		<div class="common-form">
+			<form method="post" class="J_ajaxForm" action="#">
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>房型名称</th>
+							<th width="120px">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="roomArr" item="vo">
+						<tr>
+							<td>{$vo.room_name}</td>
+							<td>
+								<a href="{:U('Hotel/fxedit',array('id'=>$vo['id']))}">编辑房型</a>
+							</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

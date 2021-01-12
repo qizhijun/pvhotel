@@ -1,0 +1,79 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/nearinfo')}">周边指南</a></li>
+			<if condition="empty($circleArr['id'])">
+			<li class="active"><a href="javascript:;">添加商圈</a></li>
+			<else />
+			<li class="active"><a href="javascript:;">编辑商圈</a></li>
+			</if>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Hotel/nearadd_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">商圈名称</label>
+					<div class="controls">
+						<input type="hidden" name="id" value="{$circleArr.id}">
+						<input type="text" name="circle_name" value="{$circleArr.circle_name}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">排序</label>
+					<div class="controls">
+						<input type="text" name="sortindex" value="{$circleArr.sortindex}" style="width:80px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">商圈类型</label>
+					<div class="controls">
+						<select name="CircleType" style="width:140px;">
+						<foreach name="nearArr" item="vo">
+							<option value="{$vo.id}" {$circleArr[CircleType] == $vo['id'] ? "selected" : ""}>{$vo.name}</option>
+						</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+						<label class="control-label">商圈地址:</label>
+						<div class="controls">
+							<input type="text" class="input" id="gps_address" name="address" value="{$circleArr.address}" style="width: 500px;">
+							<button id="btnaddress" type="button" class="btn btn-primary">搜索定位</button>
+							<input type="hidden" name="lng" id="lng" value="{$circleArr.lng}"/>
+							<input type="hidden" name="lat" id="lat" value="{$circleArr.lat}"/>
+							<div id="container" style="width: 620px;height: 400px;"></div>
+						</div>
+					</div>
+			</fieldset>
+			<div class="form-actions">
+			<if condition="empty($circleArr['id'])">
+				<button type="submit" class="btn btn-primary js-ajax-submit">添加</button>
+			<else />
+				<button type="submit" class="btn btn-primary js-ajax-submit">提交</button>
+			</if>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4388bca8d4e2cd9d13b9e1e91250348c&plugin=AMap.Geocoder"></script>
+	<script src="__TMPL__assets/js/mymap.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//初始化下拉框
+			$(".theme,.acttype").chosen();
+			//初始化地址控件
+			window.mymap.init("container","gps_address","lng","lat","btnaddress");
+		});
+	</script>
+</body>
+</html>

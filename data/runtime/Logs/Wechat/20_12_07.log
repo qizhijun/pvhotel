@@ -1,0 +1,21 @@
+[ 2020-12-07T09:42:08+08:00 ] 101.91.60.110 /index.php?g=wechat&m=conferenceroom&a=meeting
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0090s ]
+
+[ 2020-12-07T19:13:09+08:00 ] 27.186.25.58 /index.php?g=wechat&m=conferenceroom&a=meeting&code=0616Bhll2u3p664OxWol2fDYtk06Bhlw&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0103s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-12-07T19:13:27+08:00 ] 27.186.25.58 /wechat/conferenceroom/meeting_detail/id/5
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='5' ) LIMIT 1   [ RunTime:0.0098s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('6','7','8','11','13','14')  [ RunTime:0.0019s ]
+
+[ 2020-12-07T19:13:34+08:00 ] 27.186.25.58 /wechat/conferenceroom/meeting_detail/id/2
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='2' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('6','7','8','11','14')  [ RunTime:0.0003s ]
+
+[ 2020-12-07T19:13:39+08:00 ] 27.186.25.58 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0145s ]
+
+[ 2020-12-07T19:13:43+08:00 ] 27.186.25.58 /wechat/sports/sports
+SQL: SELECT ejd_dict.name,ejd_entertainment.* FROM `ejd_entertainment` left JOIN ejd_dict on ejd_dict.id = ejd_entertainment.etypeid  WHERE `isdel` = 0  [ RunTime:0.0020s ]
+

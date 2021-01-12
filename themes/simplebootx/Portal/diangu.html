@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{$name} {$seo_title} {$site_name}</title>
+	<meta name="keywords" content="{$seo_keywords}" />
+	<meta name="description" content="{$seo_description}">
+    <tc_include file="Public:head" />
+
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/style.css" />
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/style_responsive.css" />
+    <link rel="shortcut icon" href="favicon.ico" />        
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/font-awesome.css" />
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/jquery.fancybox.css" />           
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/effects.css" />           
+    <link rel="stylesheet" href="__TMPL__Public/css/diangu/default.css" id="style_color" />
+<body>
+	<tc_include file="Public:nav" />
+<div class="container">	
+	<div class="pg-opt pin">
+		<div class="container" style="margin-top:80px;text-align: center;">
+			<h2>{$name}</h2>
+		</div>
+	</div>
+	<div class="container" id="masonry">	
+		<php> $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date
+				DESC;",20); </php>
+	    <ul class="thumbnails">
+	    	<volist name="lists['posts']" id="vo">
+	    		<php>$smeta=json_decode($vo['smeta'], true); </php>
+	        <li class="span3">
+	            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="{$vo.post_title}" href="http://image.yijiudian.cn{:sp_get_asset_upload_path($smeta['thumb'])}">
+	                <div class="overlay-zoom">	
+	                    <img class="lazy" src="http://image.yijiudian.cn{:sp_get_asset_upload_path($smeta['thumb'])}" alt="{$vo.post_title}"  />
+	                    <div class="zoom-icon"></div>					
+	                </div>												
+	            </a>
+	        </li>
+	    </volist>
+	    </ul>
+    </div>
+   
+</div>
+    <tc_include file="Public:footer" />
+<script type="text/javascript" src="__TMPL__Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/diangu/masonry-docs.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/diangu/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/diangu/modernizr.custom.js"></script>        
+<script type="text/javascript" src="__TMPL__Public/js/diangu/bootstrap.min.js"></script> 
+<script type="text/javascript" src="__TMPL__Public/js/diangu/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/diangu/back-to-top.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/diangu/app.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initFancybox();
+    });
+    $(function() {
+    var $container = $('#masonry');
+	    $container.imagesLoaded(function() {
+	        $container.masonry({
+                itemSelector: '.span3',
+                //gutter: 20,
+                isAnimated: true,
+            });
+	     });
+	});
+	
+</script>
+</body>
+</html>

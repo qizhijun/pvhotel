@@ -1,0 +1,10 @@
+.warp-body{background-color: #f7f7f7;padding-top: 15px;}
+.form-layout{height: auto;width: 100%;border-bottom: 1px solid #e2e2e2;border-top: 1px solid #e2e2e2;background-color: #fff;margin-top: 15px;overflow: hidden;}
+.bor-bom{border-bottom: 1px solid #e2e2e2;}
+.form-layout label{height: 20px;margin-left: 15px;margin-right: 15px;display:block;padding: 15px 0px;font-size: 14px;}
+.form-layout label input.text{width: 100%;height: 20px;border: none;background-image: url(../images/icon-tel2.png);background-position: left center;background-repeat: no-repeat;background-size: 16px 17px;padding-left: 20px;color: #666;}
+.form-layout label input.text-1{width: 100%;height: 20px;border: none;background-image: url(../images/icon-dl.png);background-position: left center;background-repeat: no-repeat;background-size: 16px 17px;padding-left: 20px;color: #666;}
+.form-layout label input.text-2{width: 60%;height: 20px;border: none;background-image: url(../images/icon-mm.png);background-position: left center;background-repeat: no-repeat;background-size: 19px 15px;padding-left: 20px;color: #666;}
+.form-layout label span.yzm{width: 38%;text-align: center;line-height: 20px;border-left: 1px solid #e2e2e2;display: inline-block;color: #de523d;}
+.warp-body a.btn{width: 90%;height: 45px;border-radius: 5px;background-color: #de523d;font-size: 15px;color: #fff;text-align:  center;line-height: 45px;display: inline-block;margin-left: 5%;margin-top: 15px;margin-bottom: 10px;}
+.warp-body p.text{margin-right: 10%;text-align: right;color: #ccc;}

@@ -1,0 +1,6 @@
+[ 2020-11-18T04:19:31+08:00 ] 154.83.102.50 /api/oauth/login/type/sina
+ERR: 请配置您申请的APP_KEY和APP_SECRET
+
+[ 2020-11-18T04:19:33+08:00 ] 154.83.102.50 /api/oauth/login/type/qq
+ERR: 请配置您申请的APP_KEY和APP_SECRET
+

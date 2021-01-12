@@ -1,0 +1,6 @@
+[ 2020-11-21T12:18:20+08:00 ] 51.222.43.123 /api/oauth/login/type/sina
+ERR: 请配置您申请的APP_KEY和APP_SECRET
+
+[ 2020-11-21T12:18:21+08:00 ] 51.222.43.123 /api/oauth/login/type/qq
+ERR: 请配置您申请的APP_KEY和APP_SECRET
+

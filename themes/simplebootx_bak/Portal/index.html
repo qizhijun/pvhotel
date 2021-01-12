@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>{$site_seo_title} {$site_name}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="keywords" content="{$site_seo_keywords}" />
+		<meta name="description" content="{$site_seo_description}">
+		<tc_include file="Public:head" />
+	</head>
+
+	<body>
+		<!-- start header -->
+		<div class="header_bg">
+			<div class="wrap">
+				<div class="header">
+					<div class="logo">
+						<a href="index.html"><img src="__TMPL__Public/images/logo.png" alt=""></a>
+					</div>
+					<div class="h_right">
+						<!--start menu -->
+						<ul class="menu">
+							<li class="active"><a href="index.html">hotel</a></li> |
+							<li><a href="rooms.html">rooms & suits</a></li> |
+							<li><a href="reservation.html">reservation</a></li> |
+							<li><a href="activities.html">activities</a></li> |
+							<li><a href="contact.html">contact</a></li>
+							<div class="clear"></div>
+						</ul>
+						<!-- start profile_details -->
+						<form class="style-1 drp_dwn">
+							<div class="row">
+								<div class="grid_3 columns">
+									<select class="custom-select" id="select-1">
+									<option selected="selected">EN</option>
+									<option>USA</option>
+									<option>AUS</option>
+									<option>UK</option>
+									<option>IND</option>
+								</select>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="clear"></div>
+					<div class="top-nav">
+						<nav class="clearfix">
+							<ul>
+								<li class="active"><a href="index.html">hotel</a></li>
+								<li><a href="rooms.html">rooms & suits</a></li>
+								<li><a href="reservation.html">reservation</a></li>
+								<li><a href="activities.html">activities</a></li>
+								<li><a href="contact.html">contact</a></li>
+							</ul>
+							<a href="#" id="pull">Menu</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!----start-images-slider---->
+		<div class="images-slider">
+			<!-- start slider -->
+			<div id="fwslider">
+				<div class="slider_container">
+					<php>
+						$home_slides=sp_getslide("portal_index");
+						$home_slides=empty($home_slides)?$default_home_slides:$home_slides;
+					</php>
+					<foreach name="home_slides" item="vo">
+					<div class="slide">
+						<img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="" />
+						<div class="slide_content">
+							<div class="slide_content_wrap">
+								<!-- Text title 
+								<h4 class="title"><i class="bg"></i>{$vo.slide_name}</h4>
+								 -->
+							</div>
+						</div>
+					</div>
+					</foreach>
+				</div>
+				<div class="timers"> </div>
+				<div class="slidePrev"><span> </span></div>
+				<div class="slideNext"><span> </span></div>
+			</div>
+			<!--/slider -->
+		</div>
+		<!--start main -->
+		<div class="main_bg">
+			<div class="wrap">
+				<div class="online_reservation">
+					<div class="b_room">
+						<div class="booking_room">
+							<h4>在线预定</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+						</div>
+						<div class="reservation">
+							<ul>
+								<li class="span1_of_1">
+									<h5>选择房型:</h5>
+									<!----------start section_room----------->
+									<div class="section_room">
+										<select id="country" onchange="change_country(this.value)" class="frm-field required">
+											<option value="null">选择房型</option>
+								            <option value="null">Suite room</option>         
+								            <option value="AX">Single room</option>
+											<option value="AX">Double room</option>
+						        		</select>
+									</div>
+								</li>
+								<li class="span1_of_1 left">
+									<h5>入住时间:</h5>
+									<div class="book_date">
+										<form>
+											<input class="date" id="datepicker" type="text" value="日/月/年" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
+										</form>
+
+									</div>
+								</li>
+								<li class="span1_of_1 left">
+									<h5>离店时间:</h5>
+									<div class="book_date">
+										<form>
+											<input class="date" id="datepicker1" type="text" value="日/月/年" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
+										</form>
+									</div>
+								</li>
+								<li class="span1_of_2 left">
+									<h5>入住人数:</h5>
+									<!----------start section_room----------->
+									<div class="section_room">
+										<select id="country" onchange="change_country(this.value)" class="frm-field required">
+											<option value="null">1</option>
+								            <option value="null">2</option>         
+								            <option value="AX">3</option>
+											<option value="AX">4</option>
+						        		</select>
+									</div>
+								</li>
+								<li class="span1_of_3">
+									<div class="date_btn">
+										<form>
+											<input type="submit" value="立即预定" />
+										</form>
+									</div>
+								</li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<!--start grids_of_3 -->
+				<div class="grids_of_3">
+					<div class="grid1_of_3">
+						<div class="grid1_of_3_img">
+							<a href="details.html">
+								<img src="__TMPL__Public/images/pic2.jpg" alt="" />
+								<span class="next"> </span>
+							</a>
+						</div>
+						<h4><a href="#">single room<span>120$</span></a></h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+					<div class="grid1_of_3">
+						<div class="grid1_of_3_img">
+							<a href="details.html">
+								<img src="__TMPL__Public/images/pic1.jpg" alt="" />
+								<span class="next"> </span>
+							</a>
+						</div>
+						<h4><a href="#">double room<span>180$</span></a></h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+					<div class="grid1_of_3">
+						<div class="grid1_of_3_img">
+							<a href="details.html">
+								<img src="__TMPL__Public/images/pic3.jpg" alt="" />
+								<span class="next"> </span>
+							</a>
+						</div>
+						<h4><a href="#">suite room<span>210$</span></a></h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<!--start main -->
+		<div class="footer_bg">
+			<div class="wrap">
+				<div class="footer">
+					<div class="copy">
+						<p class="link"><span>© All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></span></p>
+					</div>
+					<div class="f_nav">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li><a href="rooms.html">rooms & suits</a></li>
+							<li><a href="reservation.html">reservation</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="soc_icons">
+						<ul>
+							<li>
+								<a class="icon1" href="#"></a>
+							</li>
+							<li>
+								<a class="icon2" href="#"></a>
+							</li>
+							<li>
+								<a class="icon3" href="#"></a>
+							</li>
+							<li>
+								<a class="icon4" href="#"></a>
+							</li>
+							<li>
+								<a class="icon5" href="#"></a>
+							</li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

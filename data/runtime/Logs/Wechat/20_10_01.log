@@ -1,0 +1,8 @@
+[ 2020-10-01T00:09:41+08:00 ] 123.151.77.74 /index.php?g=wechat&m=conferenceroom&a=meeting&code=041vHy0w33bA3V2f4XZv350mXB1vHy0t&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-10-01T21:30:17+08:00 ] 27.186.226.166 /index.php?g=wechat&m=conferenceroom&a=meeting&code=001OAe000PkKnK1KjA100YD9Va4OAe0t&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+

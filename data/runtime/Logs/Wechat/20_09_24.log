@@ -1,0 +1,11 @@
+[ 2020-09-24T07:56:46+08:00 ] 123.151.76.158 //wechat/salary/index/id/22867?code=071rcb0w3Yjj0V2HCX1w3y4zd32rcb0j&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-24T07:56:49+08:00 ] 123.151.76.158 /wechat/salary/reg
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-24T13:34:36+08:00 ] 221.222.252.134 /index.php?g=wechat&m=conferenceroom&a=meeting&code=031WQi000DhBlK1DuA100j1UPW2WQi0a&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+

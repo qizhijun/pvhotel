@@ -1,0 +1,261 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/cpindex')}">菜品管理</a></li>
+			<li class="active"><a href="javascript:;">修改菜品</a></li>
+		</ul>
+		<form action="{:U('Hotel/cpedit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{$foodArr.id}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">选择餐厅</label>
+					<div class="controls">
+						<select name="resid">
+							<option value="">--请选择--</option>
+							<foreach name="restaurantArr" item="vo">
+							<option value="{$vo.id}" {$foodArr['resid'] == $vo['id'] ? "selected" : ""}>{$vo.resname}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">选择类别</label>
+					<div class="controls">
+						<select name="menutype" style="width:130px;">
+							<option value="">--请选择-</option>
+							<foreach name="dicArr" item="vo">
+								<option value="{$vo.id}" {$foodArr['menutype'] == $vo['id'] ? "selected" : ""}>{$vo.name}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">菜品名称</label>
+					<div class="controls">
+						<input type="text" name="foodname" value="{$foodArr.foodname}" style="width:300px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">选择餐段</label>
+					<div class="controls">
+						<foreach name="dicArr1" item="vo">
+							<label style="display:initial;" for="fminfo[{$vo.val}]">{$vo.name}</label><input type="checkbox" id="fminfo[{$vo.val}]" name="fminfo[]" <if condition="$fminfo[$vo['val']]">checked</if> value="{$vo.val}">&nbsp;&nbsp;&nbsp;&nbsp;
+						</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">可售数量</label>
+					<div class="controls">
+						<input type="text" name="maxnum" value="{$foodArr.maxnum}" style="width:130px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">售价</label>
+					<div class="controls">
+						<input type="text" name="price" value="{$foodArr.price}" style="width:130px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">菜品头图</label>
+					<div class="controls">
+						<input type="hidden" name="picurl" id="thumb" value="{$foodArr.picurl}">
+							<a href="javascript:void(0);" onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','','','');return false;">
+							<if condition="empty($foodArr['picurl'])">
+								<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb_preview" width="135" style="cursor: hand" />
+							<else />
+								<img src="{$foodArr.picurl}" id="thumb_preview" width="135" style="cursor: hand" />
+							</if>
+							</a>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">菜品介绍</label>
+					<div class="controls">
+						<script type="text/plain" id="content" name="des" style="width:650px;height:400px;">{$foodArr.des}</script>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">更新</button>
+				<a class="btn" href="{:U('Hotel/cpindex')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//初始化下拉框
+			$(".acttype").chosen();
+		});
+	</script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.DIMAUB;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//setInterval(function(){public_lock_renewal();}, 10000);
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					;
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+					//验证规则
+					rules : {
+						'post[post_title]' : {
+							required : 1
+						},
+						'post[post_content]' : {
+							editorcontent : true
+						}
+					},
+					//验证未通过提示消息
+					messages : {
+						'post[post_title]' : {
+							required : '请输入标题'
+						},
+						'post[post_content]' : {
+							editorcontent : '内容不能为空'
+						}
+					},
+					//给未通过验证的元素加效果,闪烁等
+					highlight : false,
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//验证通过，提交表单
+					submitHandler : function(forms) {
+						$(forms).ajaxSubmit({
+							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+							dataType : 'json',
+							beforeSubmit : function(arr, $form, options) {
+
+							},
+							success : function(data, statusText, xhr, $form) {
+								if (data.status) {
+									setCookie("refersh_time", 1);
+									//添加成功
+									Wind.use("artDialog", function() {
+										art.dialog({
+											id : "succeed",
+											icon : "succeed",
+											fixed : true,
+											lock : true,
+											background : "#CCCCCC",
+											opacity : 0,
+											content : data.info,
+											button : [ {
+												name : '继续编辑？',
+												callback : function() {
+													//reloadPage(window);
+													return true;
+												},
+												focus : true
+											}, {
+												name : '返回列表页',
+												callback : function() {
+													location = "{:U('Hotel/cpindex')}";
+													return true;
+												}
+											} ]
+										});
+									});
+								} else {
+									isalert(data.info);
+								}
+							}
+						});
+					}
+				});
+			});
+			////-------------------------
+		});
+	</script>
+</body>
+</html>

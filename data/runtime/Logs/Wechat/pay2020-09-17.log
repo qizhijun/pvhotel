@@ -1,0 +1,4 @@
+[2020-09-17 11:29:48][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/13855
+[2020-09-17 11:29:49][debug] 获取openid后的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/13855&code=071eRiGa1Jq0Dz0houFa1crb4m1eRiGF&state=STATE
+[2020-09-17 11:29:49][debug] 获取openid后的url2http://diangu.yijiudian.cn//wechat/salary/index/id/13855?code=071eRiGa1Jq0Dz0houFa1crb4m1eRiGF&state=STATE
+[2020-09-17 11:42:08][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/13855

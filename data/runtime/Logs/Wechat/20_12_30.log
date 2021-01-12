@@ -1,0 +1,6 @@
+[ 2020-12-30T10:24:46+08:00 ] 106.118.99.227 //wechat/salary/index/id/12922?code=0014QoGa1VI4eA0zlzHa1tyU4224QoGf&state=STATE
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-30T21:32:13+08:00 ] 27.186.104.84 /index.php?g=wechat&m=conferenceroom&a=meeting&code=0813iGFa168FfA0Ax4Ga11ZMyZ33iGFy&state=STATE
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+

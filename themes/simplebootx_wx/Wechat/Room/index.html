@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="HotelmApp" class="ng-scope">
+
+	<head>
+		<style type="text/css">
+			@charset "UTF-8";
+			[ng\:cloak],
+			[ng-cloak],
+			[data-ng-cloak],
+			[x-ng-cloak],
+			.ng-cloak,
+			.x-ng-cloak,
+			.ng-hide:not(.ng-hide-animate) {
+				display: none !important;
+			}
+			
+			ng\:form {
+				display: block;
+			}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, initial-scale=1">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<title ng-bind="hotel_basic_info.hname" class="ng-binding">电谷国际酒店</title>
+		<link href="__TMPL__Public/css/all.css?v=4.77" rel="stylesheet">
+		<link href="__TMPL__Public/css/gong.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<div style="text-align:center;"><button id="order">去支付</button></div>
+		<script src="__TMPL__Public/js/zepto.1.1.6.min.js?v=1.111"></script>
+		<script src="__TMPL__Public/js/fastclick.1.0.6.min.js"></script>
+		<script src="__TMPL__Public/js/calenda.js?v=4.1"></script>
+		<script src="__TMPL__Public/js/jQuery.js"></script>
+		<!--<script src="__TMPL__Public/js/gong.js" type="text/javascript" charset="utf-8"></script>-->
+		<script>
+			$("#order").on("click",function(){
+				var paymenttype = 1;
+				var jian = 1;
+				var Zprice = 0.1;
+				$.post("__ROOT__orderPay",{Zprice:Zprice,jian:jian},function(data){
+          			if(data.success){
+			          	var jsonparam=JSON.parse(data.payparam);
+						WeixinJSBridge.invoke(
+							'getBrandWCPayRequest',
+							jsonparam,
+							function(res){
+								WeixinJSBridge.log(res.err_msg);
+								if(res.err_msg == "get_brand_wcpay_request:ok"){
+									alert("支付成功");
+									setTimeout(function(){
+										window.location.href = "";
+									}, 200);
+								}else{
+									//支付失败或者取消支付
+									alert(res.err_msg);
+								}
+							}
+						);
+          			}else{
+          				alert(data.msg);
+          			}
+          		},"json");
+			})
+		</script>
+	</body>
+
+</html>

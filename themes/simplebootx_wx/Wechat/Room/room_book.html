@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html ng-app="HotelmApp" class="ng-scope">
+
+	<head>
+		<style type="text/css">
+			@charset "UTF-8";
+			[ng\:cloak],
+			[ng-cloak],
+			[data-ng-cloak],
+			[x-ng-cloak],
+			.ng-cloak,
+			.x-ng-cloak,
+			.ng-hide:not(.ng-hide-animate) {
+				display: none !important;
+			}
+			
+			ng\:form {
+				display: block;
+			}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, initial-scale=1">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<title ng-bind="hotel_basic_info.hname" class="ng-binding">电谷国际酒店</title>
+		<link href="__TMPL__Public/css/all.css?v=4.77" rel="stylesheet">
+		<link href="__TMPL__Public/css/gong.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<div id="style_val_h">
+			<link href="__TMPL__Public/css/style.css" rel="stylesheet">
+		</div>
+
+		<div class="header bg_color_blue1 " style="width: 100%; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);" id="div_top_bar">
+			<i class="back lt " id="back"></i>
+			<i class="menu rt"></i>
+			<div class="title color_white1 f22 lt">订单填写</div>
+		</div>
+
+		<include file="./themes/simplebootx_wx/Wechat/link.html" />
+		<div id="main_main" ng-view="" class="ng-scope">
+			<style class="ng-scope">
+				.header .menu {
+					display: none;
+				}
+				
+				.hotelinfo {
+					padding-top: 8px;
+					padding-bottom: 8px;
+					text-align: center;
+				}
+				
+				.hotelinfo h3 {
+					line-height: 32px;
+				}
+				
+				.hotelinfo span {
+					line-height: 26px;
+				}
+				
+				.dateselect {
+					border-top-width: 10px;
+					border-bottom-width: 10px;
+				}
+				
+				.dateselect> .lt {
+					width: 42%;
+				}
+				
+				.dateselect> .rt {
+					width: 58%;
+					position: relative;
+				}
+				
+				.dateselect> .rt .day {
+					line-height: 62px;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+				/*.dateselect > .lt:focus, .dateselect > .rt:focus { background-color:rgba(0,0,0,0.2) }*/
+				
+				.orderinfo {
+					overflow: hidden;
+				}
+				
+				.orderinfo li {
+					line-height: 42px;
+					overflow: hidden;
+					border-bottom-width: 1px;
+				}
+				
+				.orderinfo li> .lt,
+				.orderfooter> .rt {
+					width: 28%;
+					position: relative;
+				}
+				
+				.orderinfo .lt .live {
+					position: absolute;
+					top: 50%;
+					margin-top: -21px;
+				}
+				
+				.orderinfo li> .rt,
+				.orderfooter> .lt {
+					width: 72%;
+					position: relative;
+				}
+				
+				.orderinfo li> .rt.anniu {
+					width: 50px;
+					margin-top: 11px;
+				}
+				
+				.orderinfo .rt.jiantou:before {
+					top: 13px;
+				}
+				
+				.orderinfo .rt.jiantou:after {
+					top: 20px;
+				}
+				
+				.orderinfo .rt .input {
+					border-top: 1px solid #dfdfdd;
+					height: 42px;
+					line-height: 42px;
+					width: 100%;
+				}
+				
+				.orderinfo .rt input:first-child {
+					border: 0;
+				}
+				
+				.orderfooter {
+					overflow: hidden;
+					height: 50px;
+					padding-right: 0;
+					position: fixed;
+					bottom: 0;
+				}
+				
+				.orderfooter .lt,
+				.orderfooter .rt {
+					height: 50px;
+					line-height: 50px;
+				}
+				
+				.orderfooter .rt {
+					text-align: center;
+				}
+				
+				.maincontent {
+					padding-bottom: 50px;
+				}
+				
+				.Bombbox {
+					text-align: center;
+					position: fixed;
+					top: 50%;
+					margin-top: -1000px;
+					width: 94%;
+					margin-left: 3%;
+					z-index: 101;
+					border-radius: 5px;
+				}
+				
+				.Bombbox h3 {
+					line-height: 48px;
+				}
+				
+				.Bombbox ul {
+					overflow-y: scroll;
+				}
+				
+				.Bombbox li {
+					line-height: 36px;
+					position: relative;
+				}
+				
+				#reqList .input {
+					width: 100%;
+					height: 100px;
+					border-width: 1px;
+					padding: 0;
+					line-height: 24px;
+					box-sizing: border-box;
+					display: block;
+				}
+				
+				.btnsure {
+					margin-top: 8px;
+					text-align: center;
+					height: 40px;
+					line-height: 40px;
+					border-radius: 5px;
+					margin-bottom: 12px;
+					border-radius: 5px;
+					padding: 5px 20px;
+				}
+				
+				.requireTip {
+					text-align: center;
+					line-height: 28px;
+				}
+				
+				.requireTip .tel {
+					width: 100px;
+					height: 34px;
+					line-height: 34px;
+					display: block;
+					margin: 10px auto 0;
+					border-radius: 5px;
+				}
+				
+				#requirement .ellipse {
+					width: 42px;
+					height: 5px;
+					border-radius: 21px/2px;
+					display: block;
+					margin: 69px auto 8px;
+					position: relative;
+				}
+				
+				#requirement .ellipse:before {
+					content: '';
+					display: block;
+					width: 50px;
+					height: 50px;
+					border-radius: 25px;
+					position: absolute;
+					top: -49px;
+					left: -4px;
+					background-color: #eb4f38;
+				}
+				
+				#requirement .warm {
+					margin-top: 20px;
+					height: 22px;
+					width: 6px;
+					border-radius: 2px;
+					display: BLOCK;
+					POSITION: ABSOLUTE;
+					top: -49px;
+					left: 50%;
+					margin-left: -3px;
+				}
+				
+				#requirement .warm:before {
+					width: 6px;
+					height: 6px;
+					border-radius: 3px;
+					content: '';
+					margin-top: -10px;
+					background-color: #fff;
+					display: block;
+				}
+				
+				#reqList {
+					overflow: hidden;
+				}
+				
+				#reqList li {
+					border-bottom-width: 1px;
+					width: 100%;
+					height: 46px;
+					line-height: 46px;
+				}
+				
+				#mx {
+					padding-right: 20px;
+					margin-right: 9px;
+					position: relative;
+				}
+				
+				#mx:before {
+					top: 16px;
+					background-color: #fff;
+				}
+				
+				#mx:after {
+					top: 23px;
+					background-color: #fff;
+				}
+				
+				#detail {
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					width: 96%;
+					height: 400px;
+					box-sizing: border-box;
+					margin-top: -200px;
+					margin-left: -48%;
+					z-index: 105;
+					overflow: hidden;
+					line-height: 28px;
+				}
+				
+				#detail .priceinfo {
+					overflow-y: scroll;
+					overflow-x: hidden;
+				}
+				
+				#detail h3 {
+					height: 42px;
+					line-height: 42px;
+					padding-left: 20px;
+					position: relative;
+				}
+				
+				#detail .close {
+					/* 'X' icon to close the content block -  mobile only */
+					position: absolute;
+					top: 0px;
+					right: 7px;
+					height: 44px;
+					width: 44px;
+					/* image replacement */
+					overflow: hidden;
+					text-indent: 100%;
+					white-space: nowrap;
+					color: transparent;
+					-webkit-transform: scale(0);
+					-moz-transform: scale(0);
+					-ms-transform: scale(0);
+					-o-transform: scale(0);
+					transform: scale(0);
+					-webkit-transition: -webkit-transform 0.2s;
+					-moz-transition: -moz-transform 0.2s;
+					transition: transform 0.2s;
+				}
+				
+				#detail .close:after,
+				#detail .close:before {
+					/* these are the 2 lines of the 'X' icon */
+					content: '';
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 2px;
+					height: 24px;
+					background-color: #fff;
+					/* Force Hardware Acceleration */
+					-webkit-backface-visibility: hidden;
+					backface-visibility: hidden;
+					-webkit-transform: translateZ(0);
+					-moz-transform: translateZ(0);
+					-ms-transform: translateZ(0);
+					-o-transform: translateZ(0);
+					transform: translateZ(0);
+				}
+				
+				#detail .close:after {
+					-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+					-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+					-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+					-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+					transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				}
+				
+				#detail .close:before {
+					-webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+					-moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+					-ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+					-o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+					transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+				}
+				
+				#detail .close.is-scaled-up {
+					-webkit-transform: scale(1);
+					-moz-transform: scale(1);
+					-ms-transform: scale(1);
+					-o-transform: scale(1);
+					transform: scale(1);
+				}
+				
+				#detail .nav {
+					position: absolute;
+					bottom: 0;
+					height: 50px;
+					line-height: 50px;
+					width: 100%;
+				}
+				
+				#detail .nav .lt {
+					width: 75%;
+				}
+				
+				#detail .nav .rt {
+					width: 25%;
+					text-align: center;
+				}
+				
+				.priceinfo .rname {
+					height: 38px;
+					line-height: 38px;
+				}
+				
+				.priceinfo ul {
+					overflow: hidden;
+				}
+				
+				.priceinfo ul li {
+					height: 38px;
+					line-height: 38px;
+					width: 100%;
+				}
+				
+				.yzm {
+					position: absolute;
+					right: 0px;
+					height: 24px;
+					line-height: 24px;
+					display: block;
+					padding: 5px;
+					top: 4px;
+					border-radius: 5px;
+				}
+				
+				.jf,
+				.balance {
+					line-height: 42px;
+				}
+				
+				.jf> .border_color_gray1 {
+					padding-right: 52px;
+					position: relative;
+				}
+				
+				.jf .border_color_gray1> .rt {
+					position: absolute;
+					right: 0px;
+					top: -2px;
+					width: 50px;
+				}
+				
+				.jf .border_color_gray1> .lt,
+				.balance .border_color_gray1> .lt {
+					white-space: nowrap;
+				}
+				
+				.jf .input {
+					border-width: 1px;
+					width: 70px;
+					margin-top: 8px;
+					height: 24px;
+					line-height: 24px;
+					margin-right: 5px;
+				}
+				
+				.couponlist li {
+					height: 36px;
+					line-height: 36px;
+				}
+				
+				.couponlist li input {
+					float: left;
+					margin-top: 11px;
+				}
+				
+				.couponlist li label {
+					margin-left: 5px;
+					float: left;
+				}
+			</style>
+
+			<div class="maincontent ng-scope">
+				<div class="hotelinfo w98">
+					<h3 class="f20 color_black2 ng-binding">电谷国际酒店</h3>
+					<span class="roomname color_gray1 ng-binding">{$RoomRp.room_name}({$RoomRp.rateplanname})</span>
+					<input type="hidden" name="" id="room_id" value="{$RoomRp.roomid}" />
+					<input type="hidden" name="" id="rp_id" value="{$RoomRp.rpid}" />
+				</div>
+				<div class="dateselect border_color_gray1 w98">
+					<div class="lt border_color_gray1">
+						<p class="f16 color_black2">入住</p>
+						<p class="date">
+							<span class="f16 color_blue1">
+		                    <em id="sdate">{$time}</em>
+		                    <em id="sdateW">{$week}</em></span>
+							<input type="hidden" value="{$sdate}" id="HDSDate">
+							<input type="hidden" value="{$id}" id="rid">
+							<input type="hidden" value="{$paymenttype}" id="paymenttype">
+
+						</p>
+					</div>
+					<div class="rt">
+						<p class="f16 color_black2">离店</p>
+						<p class="date">
+							<span class="f16 color_blue1">
+                    <em id="edate">{$time1}</em>
+                    <em id="edateW">{$week1}</em>
+                </span>
+							<input type="hidden" value="{$edate}" id="HDEDate">
+							<input type="hidden" value="{$time2}" id="HDTIme">
+							<input type="hidden" value="{$order_tel['order_tel']}" id="order_tel">
+						</p>
+						<span class="day rt color_blue1 f16 ng-binding">共<label id="numDayNew">{$time3}</label>晚</span>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+				<ul class="orderinfo">
+					<li class="w98 border_color_gray1 f16" onclick="showNum()"><span class="lt color_black2">房间数</span><span class="rt jiantou ng-binding"><em id="jian">1</em>间</span></li>
+					<li class="w98 border_color_gray1 f16">
+						<span class="lt color_black2" id="weight1" style="height: 43px;">
+							<span class="live">入住人</span>
+						</span>
+						<span class="rt" id="links">
+			                <input type="text" name="name[1]" id="input" class="input f16 color_gray1" placeholder="每间只需填写一人姓名" value="{$truename['name']}">
+			                <input style="display:none" type="text" name="name[2]" id="txtUserName1" class="input f16 color_gray1" placeholder="每间只需填写一人姓名" value="">
+			            </span>
+					</li>
+					<li class="w98 border_color_gray1 f16"><span class="lt color_black2">联系电话</span><span class="rt"><input type="tel" name="name" id="txtUserTel" maxlength="11" class="input f16 color_gray1 ng-pristine ng-untouched ng-valid ng-valid-maxlength" placeholder="用于接收通知" value="{$phone}"></span></li>
+					<li class="w98 border_color_gray1 f16"><span class="lt color_black2">协议码</span><span class="rt"><input type="tel" name="xymcode" id="xymcode" value="{$ordercode['xymcode']}" maxlength="11" class="input f16 color_gray1 ng-pristine ng-untouched ng-valid ng-valid-maxlength" placeholder="员工手机号"></span></li>
+					<li class="w98 border_color_gray1 f16" onclick="showTime()"><span class="lt color_black2">到店时间</span><span class="rt jiantou"><em id="eta" class="ng-binding">18</em>:00之前<span class="ng-hide">(预付)</span></span>
+					</li>
+					<li class="w98 border_color_gray1 f14" style="height: auto; line-height: 18px; padding-top: 10px; padding-bottom: 10px;">
+						<span class="lt color_black1 ">温馨提示：</span><span class="rt color_red1 ng-binding"> 如果您要取消订单，提前12小时取消，将返订单金额全额，否则订单不退款</span>
+					</li>
+					<li class="w98 border_color_gray1 f16" onclick="requireShow()"><span class="lt color_black2">特殊需求</span><span class="rt" style="height: 42px; white-space: normal">
+            <span id="bz" style="white-space: nowrap; overflow: hidden; display: block; margin-right: 20px;">无</span>
+						<span class=" jiantou" style="display: block; right: 0; top: 8px; position: absolute; width: 20px; height: 42px;"></span>
+						</span>
+					</li>
+					<li class="w98 border_color_gray1 f16 ng-hide" ng-click="showPoint()"><span class="lt color_black2">积分</span>
+						<span class="rt jiantou">
+                <span id="point" style="white-space: nowrap; overflow: hidden; display: block; margin-right: 20px;"></span>
+						</span>
+					</li>
+					<li class="w98 border_color_gray1 f16 ng-hide" ng-click="showCoupon()">
+						<span class="lt color_black2">优惠券</span><span class="rt jiantou">
+                <em id="coupon" style="line-height:20px; display:block"></em>
+
+            </span>
+
+					</li>
+					<li class="w98 border_color_gray1 f16"><span class="lt color_black2">电话确认</span>
+						<div class="rt anniu border_color_gray1 ">
+							<div class="hasanniu">
+								<div class="animate off">
+									<input name="hdsure" id="hdsure" type="hidden" value="0">
+									<span class="switch-left bg_color_gray1"></span>
+									<label class="bg_color_white1">&nbsp;</label><span class="switch-right bg_color_blue1"></span>
+								</div>
+							</div>
+
+						</div>
+					</li>
+					<!--<li class="w98 border_color_gray1 f16">
+						<span class="lt color_black2">发票</span>
+						<div class="rt jiantou " onclick="showInv()">
+							<input type="text" id="invtitle" readonly="readonly" class="input  f16 color_gray1" placeholder="" value="">
+						</div>
+					</li>-->
+
+				</ul>
+				<div class="orderfooter color_white1 bg_color_yellow1 w98 f20">
+					<div class="lt  ng-binding">
+						总额：￥<span id="Zprice">{$Zprice}</span>
+						<input type="hidden" id="price" value="{$Zprice}">
+
+						<span class="rt jiantou" id="mx">明细</span>
+					</div>
+					<if condition="$phone">
+					<if condition="$paymenttype eq -1">
+						<div class="rt bg_color_red1 " id="order">去确认 </div>
+					<else />
+						<div class="rt bg_color_red1 " id="order">去支付 </div>
+					</if>
+					<else />
+					<a href="{:U('User/reg')}" style="color: #fff;"><div class="rt bg_color_red1 " id="order">去确认 </div></a>
+					</if>
+				</div>
+			</div>
+			<div class="roomnum bg_color_white1 Bombbox ng-scope" style="display: none;">
+				<h3 class="f20">选择房间数量</h3>
+				<ul style="max-height: 409.6px;">
+					<foreach name="numTe1" item="vo">
+					<li data="{$vo}" class="ng-scope">{$vo}</li>
+					</foreach>
+				</ul>
+			</div>
+
+			<div class="timeblock bg_color_white1 Bombbox ng-scope" style="display: none;">
+				<h3 class="f20">选择到店时间</h3>
+				<ul style="max-height: 409.6px;">
+					<li class="selected color_blue1 ng-scope" data="16" ng-if="(isToday&amp;&amp;hour<16)||!isToday">16点之前
+					</li>
+					<li data="17" class="ng-scope">17点之前
+					</li>
+					<li data="18" class="ng-scope">18点之前
+					</li>
+					<li data="19" class="ng-scope">19点之前
+					</li>
+					<li data="20" class="ng-scope">20点之前
+					</li>
+					<li data="21" class="ng-scope">21点之前
+					</li>
+					<li data="22" class="ng-scope">22点之前
+					</li>
+					<li data="23" class="ng-scope">23点之前
+					</li>
+					<li data="24" class="ng-scope">24点之前
+					</li>
+				</ul>
+			</div>
+
+			<div id="requirement" class="bg_color_white1 Bombbox  ng-scope" style="display: none;">
+				<ul class="w98" style="max-height: 501.6px;">
+					<span class="ellipse bg_color_gray3">
+            <span class="warm bg_color_white1"></span>
+					</span>
+					<p class="requireTip f16">
+						如有特殊需求欢迎拨打电话咨询
+
+						<span class="tel bg_color_blue1 color_white1 f18" id="tel"><a href="tel:{$infoArr.hotel_tel}" style="color: #fff;">拨打电话</a></span>
+					</p>
+					<ul id="reqList">
+
+						<li style="height: auto">
+							<div class="border_color_gray1" style="border-bottom-width: 1px">
+								<div class="lt f16">其他需求</div>
+								<div class="rt anniu border_color_gray1" data="next">
+									<div class="hasanniu">
+										<div class="animate off">
+											<input name="bzelse" type="hidden" value="1">
+											<span class="switch-left bg_color_gray1"></span>
+											<label class="bg_color_white1">&nbsp;</label><span class="switch-right bg_color_blue1"></span>
+										</div>
+									</div>
+
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div style="-webkit-transform-origin: 0px 0px 0px; opacity: 1; -webkit-transform: scale(1, 1); display: none; margin-top: 10px;">
+								<textarea name="i" cols="30" rows="4" placeholder="备注" class="input border_color_gray1 color_gray1 f16" id="bzL"></textarea>
+							</div>
+						</li>
+					</ul>
+					<div style="margin: 5px auto">
+						<span class="btnsure bg_color_blue1 color_white1" onclick="requireOk(1)">确认</span>
+						<span style="margin-left: 20px;" class="color_blue1" onclick="requireOk(0)">取消</span>
+					</div>
+				</ul>
+			</div>
+
+			<div id="yd_date" class="yd_date">
+				<div class="time">
+					<div class="xgtimebox">
+						<div class="title">
+							<div class="bon  calender_return_btn">取消</div>
+							<div class="center ">
+								<i class="yd zjt" id="jian"></i>
+								<span>
+			                        请选择日期 </span>
+								<i class="yd yjt" id="jia"></i>
+							</div>
+							<div class="bon calender_ok_btn" id="wc">完成</div>
+						</div>
+						<div class="xgtime_nr" id="date_list">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="detail" class="ng-scope" style="height: 501.6px; margin-top: -250.8px; top: -251.8px;">
+				<h3 class="f22 color_white1 bg_color_blue1  ng-binding">{$RoomRp.room_name} <span class="close " onclick="price_pop_func()"></span></h3>
+				<div class="priceinfo bg_color_white1 w98" style="height: 409.6px;">
+					<p class="f20 rname border_color_gray1" style="border-bottom-width: 1px;">客房价格明细</p>
+					<ul>
+						<foreach name="RoomP" item="vo">
+							<li ng-repeat="item in RoomBook.roompricelist" class="ng-scope">
+								<span class="lt ng-binding">{$key|date="Y-m-d",###}</span>
+								<span class="rt ng-binding">￥{$vo}x<span class="PPPPPPP">1</span></span>
+							</li>
+						</foreach>
+						<!-- end ngRepeat: item in RoomBook.roompricelist -->
+					</ul>
+					<div style="text-align: right" class="ng-binding">
+						{$begintime}入住<br> {$endtime}退房
+					</div>
+				</div>
+
+				<div class="color_white1 nav bg_color_yellow1">
+					<span class="lt w98 ng-binding">总额￥<span id="ZZZ">{$Zprice}</span></span>
+					<span class="rt bg_color_red1" style="display: none" ng-click="order()" id="order">去确认</span>
+
+				</div>
+			</div>
+
+			<div id="pointblock" class="bg_color_white1 Bombbox  ng-scope" style="display: none;">
+				<ul class="jf w98 color_gray2" style="max-height: 409.6px;">
+					<div class="border_color_gray1">
+						<span class="lt  ng-binding"><span class="color_black1">积分：</span>可用0积分，抵0.00元</span>
+
+						<div class="clear"></div>
+					</div>
+					<div class="border_color_gray1" style="overflow: hidden">
+						<div class="lt">
+							<span class="color_black1 lt">使用：</span>
+							<input type="tel" id="jfNum" class="border_color_gray1 lt color_black1 input  f16 ng-pristine ng-untouched ng-valid" style="padding-left: 2px;" placeholder="0" ng-model="point">
+							<span class="lt">积分,抵<em class="ng-binding">0.00</em>元</span>
+						</div>
+					</div>
+					<div style="text-align: left">
+						<span class="btnsure bg_color_blue1 color_white1" ng-click="pointOk(1)">确认</span>
+						<span style="margin-left: 20px;" class="color_blue1" ng-click="pointOk(0)">取消</span>
+					</div>
+				</ul>
+			</div>
+
+			<div id="couponblock" class="bg_color_white1 Bombbox  ng-scope" style="display: none;">
+				<ul class="coupon w98 color_gray2" style="max-height: 409.6px;">
+					<div class="border_color_gray1" style="border-bottom-width: 1px; line-height: 42px;">
+						<span class="lt  ng-binding"><span class="color_black1">优惠券：</span>可用0张</span>
+						<div class="rt  anniu border_color_gray1" data="next">
+							<div class="hasanniu">
+								<div class="animate off">
+									<input name="hdcoupon" id="hdcoupon" type="hidden" value="0">
+									<span class="switch-left bg_color_gray1"></span>
+									<label class="bg_color_white1">&nbsp;</label><span class="switch-right bg_color_blue1"></span>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<ul class="couponlist" style="display: none">
+
+					</ul>
+					<div style="text-align: left">
+						<span class="btnsure bg_color_blue1 color_white1" ng-click="couponOk(1)">确认</span>
+						<span style="margin-left: 20px;" class="color_blue1" ng-click="couponOk(0)">取消</span>
+					</div>
+				</ul>
+			</div>
+			<div id="invblock" class="bg_color_white1 Bombbox  ng-scope" style="display: none;">
+				<ul class="jf w98 color_gray2" style="max-height: 409.6px;">
+					<div class="border_color_gray1" style="border-bottom-width: 1px; padding-right: 0; position: relative; padding-left: 78px;">
+						<label class="color_black1 lt" for="invti" style="position: absolute; left: 0; top: 0;">发票抬头：</label>
+
+						<input type="text" id="invti" class="lt" placeholder="请输入个人/单位名称" style="height: 42px; line-height: 42px; width: 100%">
+
+					</div>
+
+					<div style="margin: 15px auto 10px;">
+						<span class="btnsure bg_color_blue1 color_white1" onclick="invOk(1)">确认</span>
+						<span style="margin-left: 20px;" class="color_blue1" onclick="invOk(0)">取消</span>
+					</div>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="mask" style="opacity: 0; display: none;"></div>
+		<div id="div_ajax_start" style="position: fixed; z-index: 999999; text-align: center; width: 100%; height: 100%; top: 0px; left: 0px; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1); display: none; background-color: rgba(0, 0, 0, 0.6);" stat="stop">
+			<div style="background-color: #f5f1ee; padding: 20px 60px; top: 50%; border-radius: 15px; left: 50%; margin-left: -110px; margin-top: -70px; width: 220px; height: 140px; position: absolute; box-sizing: border-box;">
+
+				<img src="__TMPL__Public/img/loading.gif" style="width: 80%; display: block; margin-left: 10%;">
+				<span class="f18" style="margin-top: -10px; color: #454545">努力加载中...</span>
+			</div>
+		</div>
+
+		<div id="div_ajax_start1" style="position: fixed; z-index: 999999; text-align: center; width: 100%; height: 100%; top: 0px; left: 0px; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1); display: none; background-color: rgb(245, 241, 238);">
+			<div style="padding: 20px 60px; top: 50%; border-radius: 15px; left: 50%; width: 320px; margin-left: -160px; height: 150px; margin-top: -75px; position: absolute; box-sizing: border-box;">
+
+				<img src="__TMPL__Public/img/loading.gif" style="width: 78px; display: block; margin: 0 auto;">
+				<span class="f18" style="margin-top: 5px; color: #454545">努力加载中...</span>
+			</div>
+		</div>
+		<div id="resu" style="position: fixed; display: none; border-radius: 5px; background-color: rgba(0,0,0,0.8); height: 36px; line-height: 36px; top: 70%; margin-top: -18px; width: 70%; margin-left: 15%; text-align: center; color: #fff">
+			支付失败
+		</div>
+
+		<script src="__TMPL__Public/js/zepto.1.1.6.min.js?v=1.111"></script>
+		<script src="__TMPL__Public/js/fastclick.1.0.6.min.js"></script>
+		<script src="__TMPL__Public/js/calenda.js?v=4.1"></script>
+		<script src="__TMPL__Public/js/jQuery.js"></script>
+		<!--<script src="__TMPL__Public/js/gong.js" type="text/javascript" charset="utf-8"></script>-->
+		<script>
+			var roomnumBlock, h, w, mask, requireblock, timeblock, currblock, pointblock, couponblock, invblock;
+			var inde = -1;
+
+			var c = new Calendar(function(day1, day2) {
+				window.Sdate = day1;
+				window.Edate = day2;
+				window.GetPrice();
+				//zhiding_getDays(d_date, window.TempSdate)
+			}, null);
+
+			window.GetPrice = function() {
+				$("#sdate").html(window.Sdate.dateStr);
+				$("#sdateW").html(window.Sdate.week);
+				$("#HDSDate").val(window.Sdate.date);
+
+				$("#edate").html(window.Edate.dateStr);
+				$("#edateW").html(window.Edate.week);
+				$("#HDEDate").val(window.Edate.date);
+			}
+
+			//选择房间数
+			window.showNum = function() {
+				currblock = roomnumBlock;
+				blockShow(function() {
+					roomnumBlock.find("[data='" + $("#jian").text() + "']").addClass("selected color_blue1").siblings().removeClass("selected color_blue1");
+				});
+			}
+			$(".roomnum").on("tap", "li", function() {
+				var ele = $(this);
+				var etah = ele.attr("data");
+				$("#jian").text(etah);
+				ele.addClass("selected color_blue1").siblings().removeClass("selected color_blue1");
+				blockHide();
+				var num = $("#jian").html();
+				//var aaa = '<input type="text" name="name" id="txtUserName1" class="input f16 color_gray1" placeholder="每间只需填写一人姓名" value="">';
+				if(num == "2") {
+					$("#weight1").css({
+						height: "86px"
+					});
+					$("#txtUserName1").css({
+						display: "block"
+					});
+					var bb = $("#ZZZ").html();
+					$("#Zprice").html(bb * 2);
+					$(".PPPPPPP").html(2);
+					$("#ZZZ").html(bb * 2);
+				}
+				if(num == "1") {
+					$("#weight1").css({
+						height: "43px"
+					});
+					$("#txtUserName1").css({
+						display: "none"
+					});
+					var cc = $("#ZZZ").html();
+					$("#Zprice").html(cc / 2);
+					$(".PPPPPPP").html(1);
+					$("#ZZZ").html(cc / 2);
+				}
+			});
+			window.showTime = function() {
+				currblock = timeblock;
+				blockShow(function() {
+					timeblock.find("[data='" + $("#eta").text() + "']").addClass("selected color_blue1").siblings().removeClass("selected color_blue1");
+				});
+			}
+
+			window.showInv = function() {
+				currblock = invblock;
+				blockShow();
+			}
+			window.requireShow = function() {
+				currblock = requireblock;
+				blockShow();
+			}
+			window.invOk = function(val) {
+					if(val == 1) {
+						$("#invtitle").val($("#invti").val());
+					}
+					blockHide();
+				}
+				//特殊要求
+			window.requireOk = function(val) {
+				if(val == 1) {
+					$("#bz").html($("#bzL").val());
+				}
+				blockHide();
+			}
+
+			$(".timeblock").on("click", "li", function() {
+				var ele = $(this);
+				var etah = ele.attr("data");
+				$("#eta").text(etah);
+				ele.addClass("selected color_blue1").siblings().removeClass("selected color_blue1");
+				blockHide();
+			});
+
+			window.price_pop_func = function() {
+				var th = h * 0.8;
+				$("#detail").animate({
+					top: -(th / 2) - 1
+				}, 100, function() {
+					$("body").removeAttr("style");
+					$("#detail").find(".close").removeClass("is-scaled-up");
+					$(".mask").fadeOut(200);
+				})
+			}
+			var blockShow = function(fn) {
+				mask.fadeIn(100, function() {
+					$("body").css("overflow", "hidden");
+					currblock.fadeIn(100, function() {
+						currblock.animate({
+							"margin-top": -currblock.height() / 2
+						}, 200, function() {
+							mask.on("click", blockHide);
+						})
+					});
+					if(fn)
+						fn();
+				});
+			}
+			var blockHide = function() {
+				currblock.animate({
+					"margin-top": -1000
+				}, 200, function() {
+					currblock.fadeOut();
+					mask.fadeOut(800, function() {
+						$("body").removeAttr("style");
+						mask.off("click", blockHide);
+					});
+				});
+			}
+
+			$(function() {
+				roomnumBlock = $(".roomnum");
+				timeblock = $(".timeblock");
+				requireblock = $("#requirement");
+				couponblock = $("#couponblock");
+				invblock = $("#invblock");
+				pointblock = $("#pointblock");
+				h = $(window).height();
+				w = $(window).width();
+				mask = $(".mask");
+
+				FastClick.attach(document.body);
+
+				//点击日期区块显示日期选择
+				$(".dateselect").on("click", function(e) {
+					var begintime = $("#HDSDate").val();
+					var endtime = $("#HDEDate").val();
+					var time2 = $("#HDTIme").val();
+					c.init(begintime, endtime, time2);
+					c.fDrawCal.showDialog();
+				});
+				//电话确认
+				$(".maincontent,.Bombbox").on("click swipe", ".anniu", function() {
+					var ele = $(this);
+					var divE = $(this).children().children();
+					if(divE.hasClass("on")) {
+						divE.removeClass("on").addClass("off");
+						if(ele.parents(".coupon").length > 0) {
+							inde = -1;
+							$(".couponlist").find("input").removeAttr("checked");
+						}
+					} else {
+						divE.removeClass("off").addClass("on");
+					}
+
+					if(ele.attr("data") == "next") {
+
+						if(parseInt(divE.children().eq(0).val()) >= 0) {
+							if(ele.parent().next().css("display") == "none") {
+								divE.children().eq(0).val(1);
+								ele.parent().next().show();
+							} else {
+								divE.children().eq(0).val(0);
+								ele.parent().next().hide();
+							}
+						}
+
+					} else {
+						if(ele.parents("#reqList").length == 0) {
+							{
+								if(parseInt(divE.children().eq(0).val()) >= 0) {
+									if(divE.children().eq(0).val() == 0) {
+										divE.children().eq(0).val(1);
+									} else {
+										divE.children().eq(0).val(0);
+									}
+								}
+							}
+						}
+
+					}
+				});
+
+				//明细
+				$("#mx").on("click", function() {
+					$(".mask").fadeIn(200, function() {
+						$("#detail .priceinfo").scrollTop(0);
+
+						$("#detail").animate({
+							top: "50%"
+						}, 100, function() {
+							$("body").css("overflow", "hidden");
+							$("#detail").find(".close").addClass("is-scaled-up");
+						});
+						$(document).on("click", ".mask", function() {
+							window.price_pop_func();
+						});
+					});
+				});
+			});
+			/*********ajax等待相关开始*********/
+			$(document).on("ajaxStart", function(e, xhr, options) {
+				$("#div_ajax_start").attr('stat', 'starting');
+				setTimeout(function() {
+					if($("#div_ajax_start").attr('stat') == 'starting') {
+						$("#div_ajax_start").show();
+					}
+				}, 10);
+			})
+			$(document).on("ajaxStop", function(e, xhr, options) {
+					setTimeout(function() {
+						$("#div_ajax_start").attr('stat', 'stop').hide();
+					}, 1000)
+				})
+				/*********ajax等待相关开始*********/
+			$(document).on("ajaxStart1", function() {
+				setTimeout(function() {
+					$("#div_ajax_start1").show();
+				}, 10);
+			})
+			$(document).on("ajaxStop1", function() {
+				setTimeout(function() {
+					$("#div_ajax_start1").hide();
+				}, 1000)
+			})
+			var window_width = $(window).width();
+			var window_height = $(window).height();
+			/*********ajax等待相关结束*********/
+		</script>
+		<script>
+			$(function(){
+				var xymcode = $("#xymcode").val();
+				if(xymcode.length == 11 && xymcode > 13000000000 && xymcode < 19000000000){
+					var HDSDate = $("#HDSDate").val();
+					var HDEDate = $("#HDEDate").val();
+					var rid = $("#rid").val();
+					var Zprice = $("#price").val();
+					var jian = $("#jian").html();
+					$.post("{:U('Room/rpajax')}",{xymcode:xymcode,HDSDate: HDSDate,HDEDate: HDEDate,rid: rid,Zprice: Zprice,jian:jian},function(data){
+						$("#detail").html(data);
+						var zzz = $("#ZZZ").html();
+						console.log(zzz);
+						$("#Zprice").html(zzz);
+					})
+				}
+			})
+		</script>
+		<script>
+			$(function() {
+				
+				$("#back").on("click",function(){
+					if(confirm("您的订单未填写完成，是否确定要离开当前页面？")){
+						window.location.href="room";
+					}else{
+						return false;
+					}
+				})
+				
+				$("#wc").on("click", function() {
+					setTimeout(function() {
+						var HDSDate = $("#HDSDate").val();
+						var HDEDate = $("#HDEDate").val();
+						var rid = $("#rid").val();
+						var Zprice = $("#price").val();
+						var jian = $("#jian").html();
+						var xymcode = $("#xymcode").val();
+//						if(xymcode.length == 11 && xymcode > 13000000000 && xymcode < 19000000000){
+						$.post("{:U('Room/rpajax')}", {
+						HDSDate: HDSDate,
+						HDEDate: HDEDate,
+						rid: rid,
+						Zprice: Zprice,
+						jian:jian,
+						xymcode:xymcode
+						}, function(data) {
+							$("#detail").html(data);
+							var zzz = $("#ZZZ").html();
+							$("#Zprice").html(zzz);
+						})
+//						}
+					}, 200);
+
+				})
+				$("#xymcode").keyup(function(){
+					var xymcode = $("#xymcode").val();
+					if((xymcode.length == 11 && xymcode > 13000000000 && xymcode < 19000000000) || xymcode.length == 0){
+						var HDSDate = $("#HDSDate").val();
+						var HDEDate = $("#HDEDate").val();
+						var rid = $("#rid").val();
+						var Zprice = $("#price").val();
+						var jian = $("#jian").html();
+						$.post("{:U('Room/rpajax')}",{xymcode:xymcode,HDSDate: HDSDate,HDEDate: HDEDate,rid: rid,Zprice: Zprice,jian:jian},function(data){
+							$("#detail").html(data);
+							var zzz = $("#ZZZ").html();
+							console.log(zzz);
+							$("#Zprice").html(zzz);
+						})
+					}
+				})
+				$("#order").on("click",function(){
+					var paymenttype = $("#paymenttype").val();
+					var HDSDate = $("#HDSDate").val();
+					var HDEDate = $("#HDEDate").val();
+					var jian = $("#jian").html();
+					var numDayNew = $("#numDayNew").html();
+					var txtUserTel = $("#txtUserTel").val();
+					var eta = $("#eta").html();
+					var bz = $("#bz").html();
+					var hdsure = $("#hdsure").val();
+					var room_id = $("#room_id").val();
+					var rp_id = $("#rp_id").val();
+					var Zprice = $("#price").val();
+					var name = $("#input").val();
+					var vname = $("#txtUserName1").val();
+					var rid = $("#rid").val();
+					var xymcode = $("#xymcode").val();
+					
+					if(txtUserTel == ""){
+						alert("电话号码不能为空!");
+						return;
+					}
+					
+					if(name == ""){
+						alert("名称不能为空！");
+						return;
+					}
+					
+					if(paymenttype == '-1'){
+						$.post("{:U('Room/order_post')}",{xymcode:xymcode,rid:rid,name:name,vname:vname,Zprice:Zprice,HDSDate:HDSDate,HDEDate:HDEDate,jian:jian,numDayNew:numDayNew,txtUserTel:txtUserTel,eta:eta,bz:bz,hdsure:hdsure,room_id:room_id,rp_id:rp_id},function(data){
+							if(data.code == "0"){
+								$.post("{:U('Room/sendVcode1')}",{txtUserTel:txtUserTel,room_id:room_id},function(data){
+									if(data.success){
+										var order_tel = $("#order_tel").val();
+										if(order_tel){
+											$.post("{:U('Room/sendVcode')}",{order_tel:order_tel},function(res){
+												window.location.href="http://diangu.yijiudian.cn/Wechat/Room/orderlist";
+											},"json")
+										}else{
+											window.location.href="http://diangu.yijiudian.cn/Wechat/Room/orderlist";
+										}
+									}else{
+										var order_tel = $("#order_tel").val();
+										if(order_tel){
+											$.post("{:U('Room/sendVcode')}",{order_tel:order_tel},function(res){
+												window.location.href="http://diangu.yijiudian.cn/Wechat/Room/orderlist";
+											},"json")
+										}else{
+											window.location.href="http://diangu.yijiudian.cn/Wechat/Room/orderlist";
+										}
+									}
+								},"json")
+							}
+							if(data.code == "-2"){
+								alert(data.data);
+								location.reload();
+							}
+							if(data.code == "-3"){
+								alert(data.data);
+								location.reload();
+							}
+						},"json")
+					}else{
+						$.post("__ROOT__orderPay",{xymcode:xymcode,rid:rid,name:name,vname:vname,Zprice:Zprice,HDSDate:HDSDate,HDEDate:HDEDate,jian:jian,numDayNew:numDayNew,txtUserTel:txtUserTel,eta:eta,bz:bz,hdsure:hdsure,room_id:room_id,rp_id:rp_id},function(data){
+			      			if(data.success){
+					          	var jsonparam=JSON.parse(data.payparam);
+								WeixinJSBridge.invoke(
+									'getBrandWCPayRequest',
+									jsonparam,
+									function(res){
+										WeixinJSBridge.log(res.err_msg);
+										if(res.err_msg == "get_brand_wcpay_request:ok"){
+											var order_tel = $("#order_tel").val();
+											if(order_tel){
+												$.post("{:U('Room/sendVcode')}",{order_tel:order_tel},function(res){
+													setTimeout(function(){
+														window.location.href = "http://diangu.yijiudian.cn/Wechat/User/roomorderlist?id="+data.id;
+													}, 200);
+												})
+											}else{
+												setTimeout(function(){
+													window.location.href = "http://diangu.yijiudian.cn/Wechat/User/roomorderlist?id="+data.id;
+												}, 200);
+											}
+											
+											
+										}else{
+											//支付失败或者取消支付
+											alert(res.err_msg);
+										}
+									}
+								);
+			      			}else{
+			      				alert(data.msg);
+			      			}
+			      		},"json");
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

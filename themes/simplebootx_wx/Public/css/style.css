@@ -1,0 +1,53 @@
+.bottom_nav p.curr span,
+.color_blue1,
+.link,
+.ui-btn-wrap a,
+.ui-tab-nav li.current,
+.tab li.curr,
+.newstype li.curr {
+	color: #d38202 !important;
+}
+
+.bg_color_blue1,
+.btn-login,
+.jiantou1:after,
+.jiantou1:before,
+.selected:after,
+.selected:before,
+.yd_date .time .xgtimebox .xgtime_nr table td.bg,
+.detailroom .more:before,
+.detailroom .more:after,
+.bg_color_blue2,
+.er_conter_cents ul li .er_bji > li.currentss {
+	background-color: #ff9c00 !important;
+}
+
+.er_conter_cents ul li .er_Tim::before,
+i,
+.dateselect .date::before,
+.er_conter_cents ul li .er_Tim::before {
+	background: url(bg_huang.png) no-repeat;
+	background-size: 300px;
+}
+
+.dateselect .date::before {
+	background-position: -52px -4px;
+}
+
+.border_color_blue2,
+.comment li.commentSelectTab,
+.coupontype_detial_blue,
+.er_conter_cents ul li .er_bji > li.currentss {
+	border-color: #d38202!important;
+}
+
+.border_color_blue1,
+.mbsc-mobiscroll .dwwol,
+.tab li.curr,
+.newstype li.curr {
+	border-color: #d38202 !important;
+}
+
+.ui-tab-nav li.current {
+	border-bottom: 2px #d38202 solid!important;
+}

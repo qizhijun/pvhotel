@@ -1,0 +1,43 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/photoindex')}">相册分类</a></li>
+			<if condition="empty($phototype['id'])">
+				<li  class="active"><a href="javascript:;">添加相册分类</a></li>
+			<else />
+				<li  class="active"><a href="javascript:;">编辑相册分类</a></li>
+			</if>
+		</ul>
+		<form action="{:U('Hotel/photo_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">相册分类名称</label>
+					<div class="controls">
+						<input type="hidden" name="id" value="{$phototype.id}">
+						<input type="text" name="name" value="{$phototype.name}">
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+			<if condition="empty($phototype['id'])">
+				<button type="submit" class="btn btn-primary js-ajax-submit">添加</button>
+			<else />
+				<button type="submit" class="btn btn-primary js-ajax-submit">提交</button>
+			</if>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

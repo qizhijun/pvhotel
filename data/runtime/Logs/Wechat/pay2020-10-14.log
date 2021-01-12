@@ -1,0 +1,5 @@
+[2020-10-14 16:09:48][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting
+[2020-10-14 16:09:52][debug] 获取openid后的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting&code=021ejd1w3aPE6V2lGS1w3OcF4G0ejd16&state=STATE
+[2020-10-14 16:09:52][debug] 获取openid后的url2http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting&code=021ejd1w3aPE6V2lGS1w3OcF4G0ejd16&state=STATE
+[2020-10-14 16:22:25][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting
+[2020-10-14 16:22:58][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting

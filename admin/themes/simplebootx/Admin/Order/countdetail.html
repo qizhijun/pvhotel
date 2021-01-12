@@ -1,0 +1,70 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li  class="active"><a href="javascript:;">员工推荐订单详情</a></li>
+			<li  class=""><a href="{:U('Order/countOrder')}">返回</a></li>
+		</ul>
+            <form class="well form-search" method="post" action="{:U('Order/countdetail',array('xymcode'=>$xymcode))}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						<input type="text" name="keyname" style="width: 200px;" value="{$keyname}" placeholder="订单号、用户手机号">
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+            
+		<div class="common-form">
+			<form method="post" class="J_ajaxForm" action="#">
+				
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>订单编号</th>
+							<th>用户姓名</th>
+							<th>用户手机号</th>
+							<th>客房名称</th>
+							<th>房型名称</th>
+							<th>到店时间</th>
+							<th>订单总金额</th>
+							<th>支付金额</th>
+							<th>下单时间</th>
+							<th>订单分类</th>
+							<th>状态</th>
+							<th width="180px">操作</th>
+						</tr>
+					</thead>
+					<php>$status = array("1"=>"刚下单","2"=>"已支付","3"=>"已确认订单","-1"=>"已取消订单");</php>
+					<php>$type = array("1"=>"微信订单","2"=>"网站订单");</php>
+					<tbody>
+						<foreach name="kforderArr" item="vo">
+							<php>$vipname = json_decode($vo['vipname'],true);</php>
+						<tr>
+							<td>{$vo.id}</td>
+							<td>{$vipname['name']}</td>
+							<td>{$vo.vipphone}</td>
+							<td>{$vo.rateplanname}</td>
+							<td>{$vo.room_name}</td>
+							<td>{$vo[begtime] | date="Y-m-d",###}</td>
+							<td>{$vo.amount}</td>
+							<td>{$vo.paycost}</td>
+							<td>{$vo[created] | date="Y-m-d H:i:s",###}</td>
+							<td>{$type[$vo['type']]}</td>
+							<td>{$status[$vo[status]]}</td>
+							<td>
+								<a href="javascript:open_iframe_dialog('{:U('order/kfdetail',array('openid'=>$vo['id']))}','客房详情')">客房详情</a>
+							</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}<a href="#">一共{$count}个订单</a></div>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="__ROOT__/public/js/common.js"></script>
+</html>

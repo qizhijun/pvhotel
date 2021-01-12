@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html ng-app="HotelmApp" class="ng-scope">
+
+	<head>
+		<style type="text/css">
+			@charset "UTF-8";
+			[ng\:cloak],
+			[ng-cloak],
+			[data-ng-cloak],
+			[x-ng-cloak],
+			.ng-cloak,
+			.x-ng-cloak,
+			.ng-hide:not(.ng-hide-animate) {
+				display: none !important;
+			}
+			
+			ng\:form {
+				display: block;
+			}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, initial-scale=1">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<title ng-bind="hotel_basic_info.hname" class="ng-binding">电谷国际酒店</title>
+		<link href="__TMPL__Public/css/all.css?v=4.77" rel="stylesheet">
+		<link href="__TMPL__Public/css/gong.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<div id="style_val_h">
+			<link href="__TMPL__Public/css/style.css" rel="stylesheet">
+		</div>
+		<div class="header bg_color_blue1 " style="width: 100%; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);" id="div_top_bar">
+			<i class="back lt "></i>
+			<i class="menu rt"></i>
+			<div class="title color_white1 f22 lt">手机快速注册</div>
+		</div>
+
+		<include file="./themes/simplebootx_wx/Wechat/link.html" />
+		<!-- ngView:  -->
+		<div id="main_main" ng-view="" class="ng-scope">
+			<link href="__TMPL__Public/css/frozen.css?v=0.0.1" rel="stylesheet" class="ng-scope">
+			<style class="ng-scope">
+				body {
+					color: #757575;
+					background-color: #fff
+				}
+				
+				.ui-form-item input {
+					padding-left: 0;
+					height: 24px;
+					line-height: 24px;
+				}
+				
+				.ui-form .ui-form-item:nth-child(2n+1) {
+					padding: 0 10px;
+					/* margin: 0 10px; */
+					background-color: #f5f5f5;
+					height: 38px;
+					line-height: 38px;
+				}
+				
+				.ui-tab-nav li.current {
+					color: #0ba6e0;
+					border-bottom: 2px #0ba6e0 solid;
+				}
+				
+				.btn-login {
+					background-color: #22bcf0;
+					color: #fff;
+					background-image: none;
+				}
+				/*.ui-btn-wrap { padding: 0; }*/
+				
+				#div_get_yzm {
+					position: absolute;
+					right: 10px;
+					top: 6px;
+					height: 32px;
+					line-height: 32px;
+					border-radius: 5px;
+					padding: 0 8px;
+					background-color: #22bcf0
+				}
+				
+				.ui-tab-content li {
+					padding: 0 10px;
+					box-sizing: border-box;
+				}
+				
+				.ui-btn-wrap {
+					padding: 15px;
+				}
+			</style>
+
+			<div class="maincontent ng-scope">
+				<div class="ui-whitespace" style="margin: 10px auto 15px;">
+					<div class="ui-form ui-border">
+						<div class="ui-form-item ui-border-b">
+							<label for="txt_tel">
+                    手机
+                </label>
+						</div>
+						<div class="ui-form-item">
+							<input id="txt_tel" type="tel" ng-model="mobile" placeholder="请输入手机号" maxlength="11" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength">
+						</div>
+						<div class="ui-form-item ui-border-b">
+							<label for="txt_yzm">
+                    验证码
+                </label>
+						</div>
+						<div class="ui-form-item">
+							<input type="text" id="txt_yzm" ng-model="vcode" placeholder="请输入验证码" maxlength="4" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength">
+							<span id="div_get_yzm" class="color_white1 bg_color_blue1">获取验证码</span>
+						</div>
+
+					</div>
+
+					<div class="ui-form ui-border" style="display:none">
+						<div class="ui-form-item ui-border-b">
+							<label for="txt_pwd">
+                    设置密码
+                </label>
+						</div>
+						<div class="ui-form-item">
+							<input id="txt_pwd" type="password" placeholder="请输入6-16位的密码，不区分大小写" maxlength="16">
+						</div>
+						<div class="ui-form-item ui-border-b">
+							<label for="txt_confpwd">
+                    确认密码
+                </label>
+						</div>
+						<div class="ui-form-item">
+							<input type="password" id="txt_confpwd" placeholder="请确认密码和密码一致" maxlength="16">
+						</div>
+					</div>
+
+				</div>
+				<div style="padding:0 15px;">
+					<input type="checkbox" class="ui-checkbox" id="cbread"><label for="cbread">请先阅读《<a class="color_blue1" href="javascript:void(0)">注册协议</a>》</label>
+				</div>
+				<div class="ui-btn-wrap">
+
+					<button class="ui-btn ui-btn-lg  btn-login" id="nextstep">
+            完成
+        </button>
+					<button class="ui-btn ui-btn-lg  btn-login" id="btnreg" style="background-color:#22bcf0; background-image:none;display:none">
+            完成注册
+        </button>
+					<!--<div style="overflow: hidden; margin-top: 18px">
+						<a href="javascript:void(0)" ng-click="go_url('/login/')" class="lt">登录</a>
+						<a href="javascript:void(0)" ng-click="go_url('/login/findpwd')" class="rt">忘记密码？</a>
+					</div>-->
+				</div>
+
+			</div>
+		</div>
+		<div class="mask"></div>
+		<div id="div_ajax_start" style="position: fixed; z-index: 999999; text-align: center; width: 100%; height: 100%; top: 0; left: 0; -webkit-transform-origin: 0px 0px 0px; opacity: 1; -webkit-transform: scale(1, 1); background-color: rgba(0,0,0,0.6); display: none">
+			<div style="background-color: #f5f1ee; padding: 20px 60px; top: 50%; border-radius: 15px; left: 50%; margin-left: -110px; margin-top: -70px; width: 220px; height: 140px; position: absolute; box-sizing: border-box;">
+
+				<img src="__TMPL__Public/img/loading.gif" style="width: 80%; display: block; margin-left: 10%;">
+				<span class="f18" style="margin-top: -10px; color: #454545">努力加载中...</span>
+			</div>
+		</div>
+
+		<div id="div_ajax_start1" style="position: fixed; z-index: 999999; text-align: center; width: 100%; height: 100%; top: 0px; left: 0px; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1); display: none; background-color: rgb(245, 241, 238);">
+			<div style="padding: 20px 60px; top: 50%; border-radius: 15px; left: 50%; width: 320px; margin-left: -160px; height: 150px; margin-top: -75px; position: absolute; box-sizing: border-box;">
+
+				<img src="__TMPL__Public/img/loading.gif" style="width: 78px; display: block; margin: 0 auto;">
+				<span class="f18" style="margin-top: 5px; color: #454545">努力加载中...</span>
+			</div>
+		</div>
+		<div id="resu" style="position: fixed; display: none; border-radius: 5px; background-color: rgba(0,0,0,0.8); height: 36px; line-height: 36px; top: 70%; margin-top: -18px; width: 70%; margin-left: 15%; text-align: center; color: #fff">
+			支付失败
+		</div>
+		<script src="__TMPL__Public/js/zepto.1.1.6.min.js?v=1.111"></script>
+		<script src="__TMPL__Public/js/fastclick.1.0.6.min.js"></script>
+		<script src="__TMPL__Public/js/calenda.js?v=4.1"></script>
+		<script src="__TMPL__Public/js/gong.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__TMPL__Public/js/jQuery.js"></script>
+		
+		<script>
+			function check_mobile(val) {
+			    var reg = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
+			    if (!reg.test(val)) {
+			        return false;
+			    } else {
+			        return true;
+			    }
+			}
+			$(function(){
+				$("#nextstep").on("click",function(){
+					var txt_tel = $.trim($("#txt_tel").val());
+		            if (!txt_tel) {
+						alert("手机号码不能为空");
+						return;
+		            } else if (!check_mobile(txt_tel)) {
+						alert("请输入正确格式的手机号");
+						return;
+		            }
+		            var txt_yzm = $.trim($("#txt_yzm").val());
+		            if (!txt_yzm) {
+						alert("验证码不能为空")
+						return;
+		            }
+		            if (!$("#cbread").is(":checked")) {
+						alert("请先阅读注册协议")
+						return;
+		            }
+		            $.post("http://diangu.yijiudian.cn/Wechat/User/regSave",{txt_tel:txt_tel,txt_yzm:txt_yzm},function(data){
+		            	if(data.success == false){
+		            		alert(data.message);
+		            	}else{
+		            		window.location.href="http://diangu.yijiudian.cn/Wechat/User/user_center"; 
+		            	}
+		            },"json")
+				})
+				$("#div_get_yzm").on("click",function(){
+					var txt_tel = $.trim($("#txt_tel").val());
+		            if (!txt_tel) {
+						alert("手机号码不能为空");
+						return;
+		            } else if (!check_mobile(txt_tel)) {
+						alert("请输入正确格式的手机号");
+						return;
+		            }
+		            $.post("{:U('User/sendVcode')}",{txt_tel:txt_tel},function(data){
+		            	if(data.success == false){
+		            		alert(data.message);
+		            		return false;
+		            	}else{
+		            		var _time = 59;
+	                        var _timefunc = function () {
+	                            $("#div_get_yzm").html(_time + "秒可重新获取");
+	                            _time--;
+	                            if (_time > 0) {
+	                                setTimeout(_timefunc, 1000);
+	                            } else {
+	                                $("#div_get_yzm").html("获取验证码");
+	                            }
+	                        }
+	                        setTimeout(_timefunc, 1000);
+			            }
+		            },"json")
+				})
+			})
+		</script>
+		<script>
+			$(function() {
+				FastClick.attach(document.body);
+			});
+
+			/*********ajax等待相关开始*********/
+			$(document).on("ajaxStart", function(e, xhr, options) {
+				$("#div_ajax_start").attr('stat', 'starting');
+				setTimeout(function() {
+					if($("#div_ajax_start").attr('stat') == 'starting') {
+
+						$("#div_ajax_start").show();
+					}
+				}, 10);
+			})
+			$(document).on("ajaxStop", function(e, xhr, options) {
+				setTimeout(function() {
+					$("#div_ajax_start").attr('stat', 'stop').hide();
+
+				}, 1000)
+			})
+			/*********ajax等待相关开始*********/
+			$(document).on("ajaxStart1", function() {
+				setTimeout(function() {
+					$("#div_ajax_start1").show();
+				}, 10);
+			})
+			$(document).on("ajaxStop1", function() {
+				setTimeout(function() {
+					$("#div_ajax_start1").hide();
+				}, 1000)
+			})
+			var window_width = $(window).width();
+			var window_height = $(window).height();
+			/*********ajax等待相关结束*********/
+		</script>
+	</body>
+</html>

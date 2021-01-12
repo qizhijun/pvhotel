@@ -1,0 +1,1 @@
+a:9:{i:0;s:2:"id";i:1;s:9:"id_parent";i:2;s:4:"name";i:3;s:7:"area_no";i:4;s:7:"city_id";i:5;s:10:"provice_id";i:6;s:7:"is_open";s:3:"_pk";s:2:"id";s:5:"_type";a:7:{s:2:"id";s:7:"int(11)";s:9:"id_parent";s:7:"int(11)";s:4:"name";s:11:"varchar(64)";s:7:"area_no";s:7:"char(4)";s:7:"city_id";s:7:"int(11)";s:10:"provice_id";s:7:"int(11)";s:7:"is_open";s:11:"smallint(6)";}}

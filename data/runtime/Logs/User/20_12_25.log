@@ -1,0 +1,21 @@
+[ 2020-12-25T13:13:26+08:00 ] 54.36.149.80 /user/login/index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-25T19:18:18+08:00 ] 122.112.164.23 /index.php?g=user&m=register&a=index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-25T19:18:19+08:00 ] 122.112.164.23 /index.php?g=user&m=register&a=index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-25T21:23:23+08:00 ] 122.112.164.23 /index.php?g=user&m=register&a=index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-25T21:23:25+08:00 ] 122.112.164.23 /index.php?g=user&m=register&a=index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-25T21:24:12+08:00 ] 122.112.164.23 /index.php?g=user&m=register&a=index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-25T21:24:13+08:00 ] 122.112.164.23 /index.php?g=user&m=register&a=index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+

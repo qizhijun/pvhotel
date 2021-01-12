@@ -1,0 +1,6 @@
+[ 2020-12-28T10:31:11+08:00 ] 222.222.158.49 /admin/public/dologin
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-28T16:30:46+08:00 ] 222.222.158.49 /admin/public/dologin
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+

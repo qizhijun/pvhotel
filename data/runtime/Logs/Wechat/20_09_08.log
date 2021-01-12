@@ -1,0 +1,13 @@
+[ 2020-09-08T06:58:36+08:00 ] 123.151.77.81 //wechat/salary/index/id/13295?code=041VzHkl2Qk6A54fiMnl2kwHC11VzHkP&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0094s ]
+
+[ 2020-09-08T06:58:39+08:00 ] 123.151.77.81 /wechat/salary/reg
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-08T07:00:03+08:00 ] 123.151.77.81 //wechat/salary/index/id/12724
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-08T07:00:06+08:00 ] 123.151.77.81 /wechat/salary/reg
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+

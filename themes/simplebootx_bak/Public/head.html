@@ -1,0 +1,64 @@
+	<tc_include file=":function"/>
+	<tc_include file=":config"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+   	<!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="__TMPL__Public/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css">
+	<![endif]-->
+	<link href="__TMPL__Public/css/style.css" rel="stylesheet">
+	<script src="__TMPL__Public/js/jquery.min.js"></script>
+		<!--start slider -->
+		<link rel="stylesheet" href="__TMPL__Public/css/fwslider.css" media="all">
+		<script src="__TMPL__Public/js/jquery-ui.min.js"></script>
+		<script src="__TMPL__Public/js/css3-mediaqueries.js"></script>
+		<script src="__TMPL__Public/js/fwslider.js"></script>
+		<!--end slider -->
+		<!---strat-date-piker---->
+		<link rel="stylesheet" href="__TMPL__Public/css/jquery-ui.css" />
+		<script src="__TMPL__Public/js/jquery-ui.js"></script>
+		<script>
+			$(function() {
+				$("#datepicker,#datepicker1").datepicker();
+			});
+		</script>
+		<!---/End-date-piker---->
+		<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/JFFormStyle-1.css" />
+		<script type="text/javascript" src="__TMPL__Public/js/JFCore.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/JFForms.js"></script>
+		<!-- Set here the key for your domain in order to hide the watermark on the web server -->
+		<script type="text/javascript">
+			(function() {
+				JC.init({
+					domainKey: ''
+				});
+			})();
+		</script>
+		<!--nav-->
+		<script>
+			$(function() {
+				var pull = $('#pull');
+				menu = $('nav ul');
+				menuHeight = menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function() {
+					var w = $(window).width();
+					if (w > 320 && menu.is(':hidden')) {
+						menu.removeAttr('style');
+					}
+				});
+			});
+		</script>
+	

@@ -1,0 +1,19 @@
+[ 2020-08-19T10:35:07+08:00 ] 123.151.77.123 /index.php?g=wechat&m=conferenceroom&a=meeting&code=091jex300PnR4K18y1400ANOC33jex3w&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-08-19T10:35:41+08:00 ] 123.151.77.123 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-08-19T10:35:42+08:00 ] 123.151.77.123 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-08-19T10:35:42+08:00 ] 123.151.77.123 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-08-19T10:35:42+08:00 ] 123.151.77.123 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-08-19T10:35:48+08:00 ] 123.151.77.123 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+

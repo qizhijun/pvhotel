@@ -1,0 +1,73 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">列表</a></li>
+			<li><a href="{:U('WxContent/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">新增</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('WxContent/index')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						标题： 
+						<input type="text" name="title" style="width: 200px;" value="{$formget.title}" placeholder="请输入标题">
+						关键字： 
+						<input type="text" name="keyword" style="width: 200px;" value="{$formget.keyword}" placeholder="请输入关键字">
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+		<form class="J_ajaxForm" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<!--<th width="15"><label><input type="checkbox" class="J_check_all" data-direction="x" data-checklist="J_check_x"></label></th>-->
+						<th>标题</th>
+						<th>关键字</th>
+						<th>URL</th>
+						<th width="500">描述</th>
+						<th width="50">缩略图</th>
+						<th width="80">发布人</th>
+						<th width="70">发布时间</th>
+						<th width="50">状态</th>
+						<th width="60">操作</th>
+					</tr>
+				</thead>
+				<php>
+				$status=array("1"=>"<span style='color: red;'>作废</span>","0"=>"正常");
+				</php>
+				<foreach name="List" item="vo">
+				<tr>
+					<!--<td><input type="checkbox" class="J_check" data-yid="J_check_y" data-xid="J_check_x" name="ids[]" value="{$vo.id}" title="ID:{$vo.id}"></td>-->
+					<td><a href="{:U('portal/article/index',array('id'=>$vo['id']))}" target="_blank"> <span>{$vo.title}</span></a></td>
+					<td>{$vo.keyword}</td>
+					<td>{$vo.url}</td>
+					<td>{$vo['description']}</td>
+					<td>
+						<if condition="!empty($vo['pic_url'])">
+							<a href="{:sp_get_asset_upload_path($vo['pic_url'])}" target='_blank'>查看</a>
+						</if>
+					</td>
+					<td>{$vo.user_nicename}</td>
+					<td>{$vo.created|date='Y-m-d',###}</td>
+					<td>{$status[$vo['isview']]}</td>
+					<td>
+						<a href="{:U('WxContent/edit',array('term'=>empty($term['term_id'])?'':$term['term_id'],'id'=>$vo['id']))}">修改</a> | 
+						<a href="{:U('WxContent/delete',array('term'=>empty($term['term_id'])?'':$term['term_id'],'id'=>$vo['id']))}" class="J_ajax_del">删除</a></td>
+				</tr>
+				</foreach>
+				<tfoot>
+				</tfoot>
+			</table>
+			<div class="pagination">{$Page}</div>
+
+		</form>
+	</div>
+	<script src="__ROOT__/statics/js/common.js"></script>
+	<script>
+
+	</script>
+</body>
+</html>

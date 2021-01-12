@@ -1,0 +1,94 @@
+<php> $category_type = array("1"=>"单人床","2"=>"双床","3"=>"大床");</php>
+<foreach name="RoomArr" item="vo">
+	<input type="hidden" name="id" id="id" value="{$vo['id']}" />
+	<php>$p = json_decode($vo['pics'],true);</php>
+	<div class="roomsingle border_color_gray1  ng-scope" data-index="0">
+		<div class="roommain  w98">
+			<div class="img">
+				<img id="img{$vo.id}" roomid="{$vo.id}" onclick="imgAjax({$vo.id})" src="http://image.yijiudian.cn{:sp_get_asset_upload_path($p['photo'][0]['url'])}">
+			</div>
+			<div class="info info1">
+				<div class="desc color_black2">
+					<h3 class="color_black1 name f18 ng-binding">{$vo.room_name}</h3>
+					<p class="f16 ng-binding ng-scope">
+
+						<em ng-if="room.room_area>0" class="ng-binding ng-scope">{$vo.room_area}㎡/</em> 可住{$vo.imax_guestnum}人 {$category_type[$vo[category_type]]}
+					</p>
+
+					<p class="f14 ng-binding" style="line-height: 20px;">{$vo.descp}</p>
+				</div>
+				
+				<php>$roomprice = $room_price[$vo['id']] ? $room_price[$vo['id']] : $vo['clevel_price0']; $Zprice = $RoomRpArr1[$vo[id]][0]['Zprice'] ? $RoomRpArr1[$vo[id]][0]['Zprice'] : $roomprice;</php>
+				<div class="priceblock rplist">
+					<span class="singl"><span class="sellprice color_red1 f20 ng-binding" id="price{$vo['id']}">￥{$Zprice}</span><em>起</em></span>
+					<span class="jiantou border_color_gray1 close "></span>
+				</div>
+
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="rateplanlist border_color_gray1" id="prices">
+			<foreach name="RoomRpArr1[$vo[id]]" item="v">
+
+				<div class="rateplan border_color_gray1 w98 ng-scope">
+					<div class="info">
+						<span class="name ng-binding" onclick="tcAjax({$vo.id},{$v.id})">{$v['rateplanname']}</span>
+						<span <if condition="$v['paymenttype'] eq -1">style="display:none;"</if> class="tip f12  ng-binding ng-hide color_blue1 border_color_blue1">提前12小时可取消</span>
+						<p class="priceblock">
+							<span class="sellprice color_red1 f20 ng-binding" id="prices{$v['id']}" data-num="{$room_N[$vo['id']][$newdate[0]]}" data-rnum="{$NumArr[$vo['id']][$newdate[0]]}"><span id="price{$v['id']}">￥{$v['Zprice']}</span></span>
+							<span class="book" data-dateplan="73808" data-num="2">
+					<!--<if condition="$room_N[$vo['id']][$newdate[0]] lt $NumArr[$vo['id']][$newdate[0]]">
+	            		<if condition="$phone">
+	        				<a href="http://diangu.yijiudian.cn/Wechat/Room/room_book?id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}"><span class="bg_color_red1 color_white1 ding" >订</span></a>
+	        			<else />
+	        				<a href="{:U('User/reg')}"><span class="bg_color_red1 color_white1 ding" >订</span></a>
+	            		</if>
+					<else />
+
+						<span class="bg_color_gray1 color_white1 ding ng-hide">满</span>	
+					</if>
+							<if condition="$v['paymenttype'] eq -1">
+								<span class="border_color_red1 payment ng-binding">到付</span>
+								<else/>
+								<span class="border_color_gray1 payment ng-binding ng-hide">预付</span>
+             		</if>-->
+             		<if condition="$v['paymenttype'] eq -1">
+						<if condition="$room_N[$vo['id']][$newdate[0]] lt $NumArr[$vo['id']][$newdate[0]]">
+							<if condition="$phone">
+								<a href="http://diangu.yijiudian.cn/Wechat/Room/room_book?id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}"><span class="bg_color_red1 color_white1 ding" >订</span></a>
+								<a href="http://diangu.yijiudian.cn/Wechat/Room/room_book?id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}" style="color:#757575;"><span class="border_color_red1 payment ng-binding">到付</span></a>
+								<!--<a href="index.php?g=Wechat&m=Room&a=room_book&id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}"><span class="bg_color_red1 color_white1 ding" >订</span></a>-->
+								<!--<a href="index.php?g=Wechat&m=Room&a=room_book&id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}" style="color:#757575;"><span class="border_color_red1 payment ng-binding">到付</span></a>-->
+					
+							<else />
+								<a href="{:U('User/reg')}"><span class="bg_color_red1 color_white1 ding" >订</span></a>
+								<a href="{:U('User/reg')}"><span class="border_color_red1 payment ng-binding">到付</span></a>
+							</if>
+						<else />
+							<span class="bg_color_gray1 color_white1 ding ng-hide">满</span>	
+							<span class="border_color_red1 payment ng-binding">到付</span>
+						</if>
+					<else />
+						<if condition="$room_N[$vo['id']][$newdate[0]] lt $NumArr[$vo['id']][$newdate[0]]">
+							<if condition="$phone">
+								<a href="http://diangu.yijiudian.cn/Wechat/Room/room_book?id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}"><span class="bg_color_red1 color_white1 ding" >订</span></a>
+								<a href="http://diangu.yijiudian.cn/Wechat/Room/room_book?id={$v['id']}&begintime={$sdate}&endtime={$edate}&Zprice={$v['Zprice']}&paymenttype={$v['paymenttype']}" style="color:#757575;"><span class="border_color_gray1 payment ng-binding ng-hide">预付</span></a>
+							<else />
+								<a href="{:U('User/reg')}"><span class="bg_color_red1 color_white1 ding" >订</span></a>
+								<a href="{:U('User/reg')}"><span class="border_color_red1 payment ng-binding">预付</span></a>
+							</if>
+						<else />
+							<span class="bg_color_gray1 color_white1 ding ng-hide">满</span>	
+							<span class="border_color_red1 payment ng-binding">预付</span>
+						</if>
+					</if>
+            
+								</span>
+						</p>
+					</div>
+				</div>
+			</foreach>
+			<div class="more color_blue1 border_color_gray1 ng-hide">点击查看更多</div>
+		</div>
+	</div>
+</foreach>

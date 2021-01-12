@@ -1,0 +1,67 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Wechat/index')}">微信菜单</a></li>
+			<li class="active"><a href="{:U('Wechat/add')}">添加菜单</a></li>
+			<li><a href="{:U('Wechat/getWechat')}">查看菜单</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal J_ajaxForm" action="{:U('Wechat/add_post')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">上级:</label>
+						<div class="controls">
+							<select name="parentid" class="normal_select">
+								{$select_categorys}
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">名称:</label>
+						<div class="controls">
+							<input type="text" class="input" name="name" value="">
+							<span class="must_red">*</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">菜单URL:</label>
+						<div class="controls">
+							<input type="text" class="input" name="url" id="url" value="">
+							<span class="must_red"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">关键字:</label>
+						<div class="controls">
+							<input type="text" class="input" name="keyword" id="keyword" value="">
+							<span class="must_red">*</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">备注:</label>
+						<div class="controls">
+							<textarea name="remark" rows="5" cols="57"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">状态:</label>
+						<div class="controls">
+							<select name="status" class="normal_select">
+								<option value="1">显示</option>
+								<option value="0">隐藏</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary btn_submit  J_ajax_submit_btn">添加</button>
+					<a class="btn" href="__URL__">返回</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__ROOT__/statics/js/common.js"></script>
+</body>
+</html>

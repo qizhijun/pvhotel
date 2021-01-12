@@ -1,0 +1,10 @@
+[ 2020-12-12T17:17:00+08:00 ] 221.192.178.153 /index.php?g=wechat&m=conferenceroom&a=meeting&code=0915rcml2LWI7648brml2Tnj6I25rcmf&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-12-12T17:17:07+08:00 ] 221.192.178.153 /wechat/index/photo
+SQL: SELECT ejd_pic.*,ejd_dict.name FROM `ejd_pic` left JOIN ejd_dict on ejd_dict.id = ejd_pic.aid  WHERE ( ejd_pic.isdel = 0 )  [ RunTime:0.0111s ]
+
+[ 2020-12-12T17:28:22+08:00 ] 61.129.6.151 /wechat/index/photo
+SQL: SELECT ejd_pic.*,ejd_dict.name FROM `ejd_pic` left JOIN ejd_dict on ejd_dict.id = ejd_pic.aid  WHERE ( ejd_pic.isdel = 0 )  [ RunTime:0.0001s ]
+

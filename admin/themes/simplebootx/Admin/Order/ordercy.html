@@ -1,0 +1,41 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">订单详情</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>就餐位置</th>
+					<th>就餐人数</th>
+					<th>特殊要求</th>
+					<th>时间段</th>
+					<th>送餐地址</th>
+					<th>电话确认</th>
+					<th>下单时间</th>
+				</tr>
+			</thead>
+			<php>$weizhi = array("1"=>"大厅","2"=>"包间","3"=>"送餐")</php>
+			<php>$tel = array("1"=>"电话确认","0"=>"不需要电话确认");</php>
+			<tbody>
+				<tr>
+					<td>{$weizhi[$orderCY['jcaddress']]}</td>
+					<td>{$orderCY.jcnum}</td>
+					<td>{$orderCY.special}</td>
+					<if condition="$orderCY['stime'] eq '00:00'">
+					<td></td>
+					<else />
+					<td>{$orderCY.stime}</td>
+					</if>
+					<td>{$orderCY.address}</td>
+					<td>{$tel[$orderCY["tel"]]}</td>
+					<td>{$orderCY[created] | date="Y-m-d H:i:s",###}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</body>
+</html>

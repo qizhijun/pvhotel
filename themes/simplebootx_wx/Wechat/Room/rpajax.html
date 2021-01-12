@@ -1,0 +1,23 @@
+<h3 class="f22 color_white1 bg_color_blue1  ng-binding">{$RoomRp.room_name} <span class="close " onclick="price_pop_func()"></span></h3>
+<div class="priceinfo bg_color_white1 w98" style="height: 409.6px;">
+	<p class="f20 rname border_color_gray1" style="border-bottom-width: 1px;">客房价格明细</p>
+	<ul>
+		<!-- ngRepeat: item in RoomBook.roompricelist -->
+		<foreach name="RoomP" item="vo">
+			<li ng-repeat="item in RoomBook.roompricelist" class="ng-scope">
+				<span class="lt ng-binding">{$key|date="Y-m-d",###}</span>
+				<span class="rt ng-binding">￥{$vo}x<span class="PPPPPPP">1</span></span>
+			</li>
+		</foreach>
+		<!-- end ngRepeat: item in RoomBook.roompricelist -->
+	</ul>
+	<div style="text-align: right" class="ng-binding">
+		{$sdate}入住<br> {$edate}退房
+	</div>
+</div>
+
+<div class="color_white1 nav bg_color_yellow1">
+	<span class="lt w98 ng-binding">总额￥<span id="ZZZ">{$Zprice}</span></span>
+	<span class="rt bg_color_red1" style="display: none" ng-click="order()" id="order">去确认</span>
+
+</div>

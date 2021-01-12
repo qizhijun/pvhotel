@@ -1,0 +1,6 @@
+[ 2020-12-23T18:43:01+08:00 ] 183.197.2.56 /index.php?g=wechat&m=conferenceroom&a=meeting&code=061m2i1009nhTK1Dqc100BeyMN2m2i1K&state=STATE
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2020-12-23T18:43:05+08:00 ] 183.197.2.56 /index.php?g=wechat&m=conferenceroom&a=meeting&code=001Y8vFa1gSRcA0gQ8Ia1BPT373Y8vFm&state=STATE
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+

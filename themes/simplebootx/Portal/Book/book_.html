@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>在线预订</title>
+		<meta name="keywords" content="{$seo_keywords}" />
+		<meta name="description" content="{$seo_description}">
+		<tc_include file="Public:head" />
+		
+		<link href="__TMPL__Public/css/yd/layout_normal.css" rel="stylesheet" />
+		<link href="__TMPL__Public/css/yd/style.css?v=002" rel="stylesheet" />
+		<link href="__TMPL__Public/css/yd/layer.css" rel="stylesheet" />
+		<link href="__TMPL__Public/js/yd/laydate/need/laydate.css" rel="stylesheet" />
+		<link href="__TMPL__Public/js/yd/laydate/skins/molv/laydate.css" rel="stylesheet" />
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.pagination.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.lazy.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/layer/layer.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/base.space.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/base.js?v001"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/base.extend.js?v001"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/mesignout.js"></script>
+
+		<script src="__TMPL__Public/js/yd/laydate/laydate.js"></script>
+		<script src="__TMPL__Public/js/yd/webscript/hotel/hotelcalendar.js?v=006"></script>
+		
+		<style type="text/css">
+			select,input[type="text"]{
+				padding: 0px;
+			    padding-left: 5px;
+			    height: 33px;
+			    line-height: 33px;
+			    margin: 0px;
+			    border: 1px solid #d4d4d4;
+			    background: #fff;
+			    color: #333;
+			    font-size: 100%;
+			    -moz-border-radius: 3px;
+			    -webkit-border-radius: 3px;
+			    border-radius: 3px;
+			}
+		</style>
+	</head>
+
+	<body style="background: url(__TMPL__Public/images/sec_bg.jpg) no-repeat center top fixed; background-size: cover;">
+		<tc_include file="Public:nav" />
+		
+		<div class="container" style="width: 1170px;">
+			<!-- 酒店预订日历 开始-->
+			<div class="hotel_calendar">
+				<div class="hotel_calendar_box">
+					<div class="left m_calendar">
+						<div class="m_citem">
+							<b class="title" id="bTitle"></b>
+							<table border="0" cellspacing="5" cellpadding="0" class="tblcalendar">
+								<thead>
+									<tr>
+										<th class="lftselect"><</th>
+										<th colspan="5">
+											<foreach name="MonthArr" item="vo">
+												<b class="tmonth">{$vo}</b>
+											</foreach>
+										</th>
+											
+										<th class="rghselect">></th>
+									</tr>
+									<tr>
+										<th>日</th>
+										<th>一</th>
+										<th>二</th>
+										<th>三</th>
+										<th>四</th>
+										<th>五</th>
+										<th>六</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td colspan="7" style="font-weight: initial;">
+											房态查询中... 请稍后!
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+					<div class="left m_bookuser m_bookuser_login hide">
+						<b class="log_title">会员登录</b>
+						<span>
+				            <b class="left wth60">会员号</b><b class="left"><input type="text" class="input" placeholder="输入手机/邮箱/证件号码" id="tbCode" value="" /></b>
+				            <b class="left clear wth60">密码</b><b class="left">
+				                <input type="password" class="input" id="tbPwd" value="" />
+				            </b>
+				        </span>
+						<span class="right mrgt10">
+				            <input id="btn_login" type="button" class="btn normal left" value="登录" />
+				            <input id="btn_return" type="button" class="btn orange left mrgl0" value="返回" />
+				        </span>
+					</div>
+					<div class="left m_bookuser m_bookuser_book">
+						<b class="title">预订信息</b>
+						<span class="roomtype" id="tbRoomTypeName" ref="{$roomList.id}">{$roomList.room_name}</span>
+						<span style="padding: 5px 0px;font-weight: initial;">
+							入住日期：<input class="input" id="CheckInDate" placeholder="请输入入住日期" value="{$CheckInDate}" readonly="true" style="width: 200px;width: 190px;" />
+            				<span class="" style="width: 80px;text-align: right;display: inline;font-size: 18px;position: absolute;padding-top:25px;">共<span id="tbTotalDays" style="color:#f75b08;margin :0 7px;display: inline;font-size: 18px;">{$time}</span>天</span>
+						</span>
+						<span style="padding: 5px 0px 10px;font-weight: initial;">
+							离店日期：<input class="input" id="CheckOutDate" placeholder="请输入离店日期" value="{$CheckOutDate}" readonly="true" style="width: 200px;width: 190px;" />
+						</span>
+						<span>
+				            <!--b class="pdl90 pdb20" id="tbTips"></b-->
+				        </span>
+						<span>
+			            <b class="left wth60">房间数</b><b class="left">
+			            	<php>
+			            		$selected1 = $num == 1 ? "selected" : "";
+			            		$selected2 = $num == 2 ? "selected" : "";
+			            		$selected3 = $num == 3 ? "selected" : "";
+			            		$selected4 = $num == 4 ? "selected" : "";
+			            		$selected5 = $num == 5 ? "selected" : "";
+			            	</php>
+			                <select id="selRooms" style="width: 280px;" class="input">
+			                    <option value="1" {$selected1}>1</option>
+			                    <option value="2" {$selected2}>2</option>
+			                    <option value="3" {$selected3}>3</option>
+			                    <option value="4" {$selected4}>4</option>
+			                    <option value="5" {$selected5}>5</option>
+			                </select>
+			            </b>
+			            <b class="left clear wth60">预订手机</b><b class="left">
+			                <input type="text" id="tbTel" class="input" value="" style="width: 273px;" />
+			                <a href="javascript:void(0);" style="display:none;" class="m_help">会员登录</a>
+			            </b>
+			            <b class="left clear wth60">预订人</b><b class="left"><input type="text" id="tbName" class="input" value="" style="width: 273px;" /></b>
+			            <b class="left clear wth60">备&nbsp;&nbsp;&nbsp;注</b><b class="left"><input type="text" id="tbRemark" class="input" style="width: 273px;" maxlength="50" /></b>
+			            <b class="left clear wth60">选择套餐</b>
+			           		<select id="selRoom" style="width: 280px;" class="input">
+			           			<option value="-1">请选择套餐</option>
+			           		<foreach name="TaoCan" item="vo">
+			           			<php>$selected = $rmid == $vo['id'] ? "selected" : "";</php>
+			                    <option value="{$vo.id}" {$selected}>{$vo['rateplanname']}</option>
+			                </foreach>
+			                </select>
+						<span class="clear"></span>
+						<span class="clear point" style="color:#ec6923;padding-top:5px;display:none;">您当前可用的积分：<span style="display:inline;color:#ec6923;" id="keyon">0</span></span>
+						<span class="clear point" style="color:#ec6923;padding-top:5px;display:none;">所需积分：<span style="display:inline;color:#ec6923;" id="suoxu">0</span></span>
+						<!--<b class="left clear wth60">发票信息</b>
+						<span style="line-height:45px;">
+			                <b class="coupon" id="OpenInvoice" onclick="QueryInvoice()" style="border:1px solid #FF0000;color:#f75b08;cursor: pointer; width: 80px;height:13px;display:inline-block;text-align:center;line-height:13px;margin-top:5px;">
+			                    开发票
+			                </b>
+			            </span>-->
+						</span>
+						<span class="clear" id="tbMebDesc" style="margin-top:5px;"></span>
+						<span>
+				            <b class="left lineh22" id="tbShowRate">门市：￥0</b>
+				            <b class="left fthrough pdr20 lineh22" style="min-width: 10px;"></b><b class="left pdr20 lineh22" id="tbCardMeb">官网预订：￥0</b><b class="left lineh22">会员享更多优惠</b>
+				        </span>
+						<span class="clear left">
+				            <b class="left lineh22">订单总额：</b><b class="left font18 c_orange pdr20 lineh22" id="tbPay">￥0元</b><b class="left c_orange lineh22" style="display: none" id="tbJie">已节省0元</b><br />
+				        </span>
+						<span class="right mrgt10 mrgb10">
+				            <input type="button" class="btn orange" id="btBook"  value="提交订单" />
+				        </span>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<!--传过来的参数
+			<input type="hidden" id="id" value="{$id}" />
+			<input type="hidden" id="CheckIn" value="{$CheckInDate}" />
+			<input type="hidden" id="CheckOut" value="{$CheckOutDate}" />
+			<input type="hidden" id="num" value="{$num}" />-->
+			<!-- 酒店预订日历 结束-->
+			
+			<input type="hidden" id="hidCurrSelect" value="{$BeginDate}" />
+			<input type="hidden" id="hidChainID" value="1" />
+			<input type="hidden" id="hidRoomType" value="{$id}" />
+			<input type="hidden" id="hidMebType" value="0" />
+			<input type="hidden" id="hidStart" value="{$CheckInDate}" />
+			<input type="hidden" id="hidDays" value="{$date}" />
+			<input type="hidden" id="hidMebID" value="0" />
+			<input type="hidden" id="hidChainName" value="E酒店" />
+			<input type="hidden" id="hidMebTypeName" value="" />
+			<input type="hidden" id="hidServDate" value="" />
+			<input type="hidden" id="hidRooms" value="" />
+			<input type="hidden" id="hidDisID" value="0" />
+			<input type="hidden" id="hidDisType" value="0" />
+			<input type="hidden" id="hidDisValue" value="0" />
+			<input type="hidden" id="hidDisCount" value="0" />
+			<input type="hidden" id="hidCode" value="" />
+
+			<form id="fsub" action="" method="post">
+				<input type="hidden" name="type" value="1" />
+				<input type="hidden" name="pid" id="pid" value="610114" />
+				<input type="hidden" name="folioid" id="folioid" value="0" />
+				<input type="hidden" name="posttime" id="posttime" value="2016/7/12 15:18:10" />
+			</form>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div style="background-color: #fff;padding: 0 150px;">
+			<tc_include file="Public:footer" />
+		</div>
+		
+		<script>
+			$(function(){
+				
+				$("#selRoom").change(function(){
+					var start = $("#CheckInDate").val();
+					var dt_start = new Date().StringToDate(start.substring(0, 8) + "01");
+					var e=dt_start.Format("yyyy-MM-dd");
+					//console.log(e);
+					var printDate = new Date(e.replace(/-/g, "/"))
+				    printDate = new Date(printDate.getFullYear(), printDate.getMonth(), 1);
+				    var id = printDate.Format("yyyyMM");
+				    //$("#tbody_0" + id).remove();
+				    $("tbody[id*='tbody_0']").remove();
+					InitCander(dt_start);
+					$(".tmonth").css({ "color": "#000" });
+    				$("#"+id).css({ "color": "red" });
+				});
+				
+				$("#btBook").on("click",function(){
+					var id = $("#tbRoomTypeName").attr("ref");
+					var CheckInDate = $("#CheckInDate").val();
+					var CheckOutDate = $("#CheckOutDate").val();
+					var selRooms = $("#selRooms").val();
+					var tbTel = $("#tbTel").val();
+					var tbName = $("#tbName").val();
+					var tbRemark = $("#tbRemark").val();
+					var sel = $("#selRoom").val();
+					var tbPay = $("#tbPay").html();
+					var pay = tbPay.replace("元","");
+					var tbTotalDays = $("#tbTotalDays").html();
+					
+					if(tbName == ""){
+						Atour.Ui.Alert("请填写联系人名称");
+						$("#tbName").focus();
+        				return false;
+					}
+					
+					if(tbTel == ""){
+						Atour.Ui.Alert("联系人手机未填写");
+				        $("#tbTel").focus();
+				        return false;
+					}
+					$.post("{:U('Book/book_order')}",{id:id,CheckInDate:CheckInDate,CheckOutDate:CheckOutDate,selRooms:selRooms,tbTel:tbTel,tbName:tbName,tbRemark:tbRemark,sel:sel,pay:pay,tbTotalDays:tbTotalDays},function(data){
+						if(data.code == 0){
+							alert("下单成功");
+							location.reload();
+						}
+						if(data.code == "-2"){
+							alert(data.data);
+							location.reload();
+						}
+						if(data.code == "-3"){
+							alert(data.data);
+							location.reload();
+						}
+					},"json")
+				})
+			})
+		</script>
+	</body>
+
+</html>

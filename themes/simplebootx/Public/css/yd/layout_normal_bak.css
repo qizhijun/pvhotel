@@ -1,0 +1,19 @@
+
+.footer { color: #5d5d5d; border-top: 1px #e7e7e7 solid; background: #fff; }
+.footer .footer-group { width: 1000px; margin: 15px auto 15px; border-bottom: 1px solid #dbdbdb; }
+.footer .footer-group:after { visibility: hidden; display: block; font-size: 0; content: ""; clear: both; height: 0; }
+.footer .footer-group .footer-logo { margin-top: 5px; }
+.footer .footer-group .footer-links { }
+
+
+.footer .footer-group .footer-links ul { float: left; width: 140px; margin-bottom: 15px; }
+.footer .footer-group .footer-links ul:first-child { margin-left: 35px; }
+.footer .footer-group .footer-links ul li { display: block; line-height: 26px; text-align: left; }
+.footer .footer-group .footer-links ul li:first-child { font-size: 15px; font-weight: bold; border-bottom: 1px solid #dbdbdb; width: 70px; margin-bottom: 5px; }
+.footer .footer-group .footer-links ul li a { color: #5d5d5d; text-decoration: none; }
+.footer .footer-group .footer-links ul li a:hover { text-decoration: underline; }
+.footer .footer-group .footer-wx { width: 240px; float: right; border-left: 1px solid #ccc; }
+.footer .footer-group .footer-wx span { display: block; padding-left: 35px; line-height: 26px; }
+
+.footer .footer-rigts { width: 1000px; margin: 15px auto 0px; }
+.footer .footer-rigts span { display: block; font-size: 13px; text-align: left; line-height: 33px; }

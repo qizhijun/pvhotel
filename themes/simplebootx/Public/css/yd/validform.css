@@ -1,0 +1,7 @@
+/*=====================Validform开始====================*/
+.validform_checktip{padding-left:10px;overflow:hidden;color:#999;font-size:12px;display:block;line-height:36px;height:35px}
+.validform_right{color:#71b83d;padding-left:25px;background:url(../images/icon_right.png) no-repeat left 5px top 50%}
+.validform_wrong{color:red;padding-left:25px;white-space:nowrap;background:url(../images/icon_error.png) no-repeat left 5px top 50%}
+.validform_loading{padding-left:25px;background:url(../images/icon_onload.gif) no-repeat left 5px center}
+.validform_info{padding-left:25px;white-space:nowrap;background:url(../images/icon_info.png) no-repeat left 5px top 50%}
+/*=====================Validform结束====================*/

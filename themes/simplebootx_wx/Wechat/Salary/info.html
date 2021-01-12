@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>工资明细</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="__TMPL__Public/css/mui.min.css">
+		<style type="text/css">
+			#list {
+				/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+				margin-top: -1px;
+			}
+			.mui-table-view span.mui-pull-right {
+				color: #999;
+			}
+			body{
+				font-family: "微软雅黑";
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="mui-table-view">
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                姓名：
+	                <span class="mui-pull-right">{$salaryone.name}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                部门：
+	                <span class="mui-pull-right">{$salaryone.postname}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                月份：
+	                <span class="mui-pull-right"><php>echo date("Y",$salaryone["gettime"]);</php>年{$salaryone.mon}月</span>
+	            </a>
+	        </li>
+	    </ul>
+	    <ul class="mui-table-view" style="margin-top: 10px;">
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                工资标准：
+	                <span class="mui-pull-right">{$salaryone.biaozhun}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                岗位工资：
+	                <span class="mui-pull-right">{$salaryone.jineng}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                加班费：
+	                <span class="mui-pull-right">{$salaryone.jiabanfei}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                考核工资：
+	                <span class="mui-pull-right">{$salaryone.kaohe}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                独子费：
+	                <span class="mui-pull-right">{$salaryone.duzifei}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                固定津贴：
+	                <span class="mui-pull-right">{$salaryone.gudingjintie}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                店龄费：
+	                <span class="mui-pull-right">{$salaryone.bancibuzhu}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                其他收入：
+	                <span class="mui-pull-right">{$salaryone.shijia}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                病事假：
+	                <span class="mui-pull-right">{$salaryone.bingshijia}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                其他扣款：
+	                <span class="mui-pull-right">{$salaryone.qita}</span>
+	            </a>
+	        </li>
+	    </ul>
+	    <ul class="mui-table-view" style="margin-top: 10px;">
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                应发工资：
+	                <span class="mui-pull-right">{$salaryone.yingfa}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                养老：
+	                <span class="mui-pull-right">{$salaryone.yanglao}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                失业：
+	                <span class="mui-pull-right">{$salaryone.shiye}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                医疗：
+	                <span class="mui-pull-right">{$salaryone.yiliao}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                住房公积金：
+	                <span class="mui-pull-right">{$salaryone.gongjijin}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                应交个税额：
+	                <span class="mui-pull-right">{$salaryone.geshui}</span>
+	            </a>
+	        </li>
+	        <li class="mui-table-view-cell">
+	            <a>
+	                                其他扣款：
+	                <span class="mui-pull-right">{$salaryone.qitakoukuan}</span>
+	            </a>
+	        </li>
+	    </ul>
+	    <div style="height: 50px;"></div>
+	    <nav class="mui-bar mui-bar-tab" style="height: 43px;">
+		    <ul class="mui-table-view" style="font-weight: bold;">
+		    	<li class="mui-table-view-cell">
+		            <a>
+		                                实发工资：
+		                <span class="mui-pull-right">{$salaryone.shifa}元</span>
+		            </a>
+		        </li>
+		    </ul>
+	    </nav>
+	</body>
+
+</html>

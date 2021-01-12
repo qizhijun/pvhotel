@@ -1,0 +1,27 @@
+[ 2020-10-20T11:28:58+08:00 ] 222.222.157.44 /index.php?g=wechat&m=conferenceroom&a=meeting&code=0916Fw100Hl1uK1a891006xwAe26Fw12&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:29:16+08:00 ] 222.222.157.44 /wechat/conferenceroom/meeting_detail/id/4
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='4' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('6','7','8','9','11')  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:29:35+08:00 ] 36.98.132.29 /wechat/sports/sports
+SQL: SELECT ejd_dict.name,ejd_entertainment.* FROM `ejd_entertainment` left JOIN ejd_dict on ejd_dict.id = ejd_entertainment.etypeid  WHERE `isdel` = 0  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:29:37+08:00 ] 36.98.132.29 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:29:38+08:00 ] 36.98.132.29 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:29:38+08:00 ] 36.98.132.29 /wechat/restaurant/restaurant
+SQL: SELECT ejd_dict.val,ejd_dict.name,ejd_dict.id,ejd_restaurant.* FROM `ejd_restaurant` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant.restype  WHERE `isdel` = '-1' ORDER BY ejd_restaurant.sortindex ASC  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:29:42+08:00 ] 36.98.132.29 /wechat/conferenceroom/meeting
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-10-20T11:43:23+08:00 ] 101.89.29.92 /wechat/conferenceroom/meeting_detail/id/4
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='4' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('6','7','8','9','11')  [ RunTime:0.0001s ]
+

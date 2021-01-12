@@ -1,0 +1,98 @@
+<br>
+<br>
+<br>
+
+<link href="__TMPL__Public/css/yd/layout_normal_bak.css" rel="stylesheet" />
+{:hook('footer')}
+<div class="footer">
+	<php>$footer = sp_footer();</php>
+    <div class="footer-group" style="width:1100px;">
+        <div class="footer-logo left" style="float:left;">
+            <img src="__TMPL__Public/images/code.jpg">
+        </div>
+        <div class="footer-links left">
+            <ul>
+                <a href="index.php?m=list&a=index&id=1" style="color: #000000;"><li>酒店新闻
+                </li></a>
+                <li><a href="index.php?m=list&a=index&id=1">酒店新闻</a></li>
+                <!--<li>
+                    <a href="#">产品介绍</a>
+                </li>
+                <li>
+                    <a href="#">特许合作条件</a>
+                </li>
+                <li>
+                    <a href="#">特许合作流程</a>
+                </li>
+                <li>
+                    <a href="#">收费标准</a>
+                </li>
+                <li>
+                    <a href="#">特许服务支持</a>
+                </li>
+                <li>
+                    <a href="#">加盟申请</a>
+                </li>-->
+            </ul>
+            <ul>
+                <a href="http://company.zhaopin.com/CC397771624.htm" style="color: #000000;" target="_blank"><li>电谷招聘
+                </li></a>
+                <li>
+                    <a href="http://www.ganji.com/gongsi/15509665/" target="_blank">酒店经理</a>
+                </li>
+                
+            </ul>
+            <ul>
+                <a href="{:U('Index/contact')}" style="color: #000000;"><li>电谷why
+                </li></a>
+                <li>
+                    <a href="http://www.pvhotel.cn/portal/page/index/id/29">电谷简介</a>
+                </li>
+                <li>
+                    <a href="{:U('Index/contact')}">联系我们</a>
+                </li>
+            </ul>
+            <ul>
+                <a href="http://company.zhaopin.com/CC397771624.htm" style="color: #000000;"><li>人才招聘
+                </li></a>
+                <li><a href="http://company.zhaopin.com/CC397771624.htm">人才招聘</a></li>
+                <!--<li>
+                    <a href="#">会员权益</a>
+                </li>
+                <li>
+                    <a href="#">入会须知</a>
+                </li>
+                <li>
+                    <a href="#">加入及升级</a>
+                </li>
+                <li>
+                    <a href="#">会员储值说明</a>
+                </li>
+                <li>
+                    <a href="#">优惠券使用说明</a>
+                </li>
+                <li>
+                    <a href="#">会员卡挂失与补办</a>
+                </li>-->
+            </ul>
+            <div class="footer-wx">
+                <a href="{:U('Index/contact')}" style="color: #000000;"><span style="font-size: 15px; font-weight: bold; margin-bottom: 5px;">联系我们</span></a>
+                <span>客服热线：<b style="font-size: 15px;color:red;">{$footer.hotel_tel}</b></span>
+                <span>总部咨询：{$footer.hotel_tel}</span>
+                <span>{$footer.gps_address}</span>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+    <div class="footer-rigts">
+	<script type="text/javascript" src="http://www.hbwj.gov.cn:80/hbwjww/VieidServlet?webId=bd6adfcf36c22c8359947d79d3d0e551&width=50&heigth=65"></script>
+        <span>Copyright 2016-2020 电谷国际酒店 备案号：冀ICP备19030742号 <a href="http://www.beian.miit.gov.cn">工信部</a></span>
+	<!--<span style="float:left;">沪ICP备13021769</span>
+        <span>
+            <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=1u2xwmwzpxrk6u2rvor2928au92degmyr8rxc2y7jpk9gk7" target="_blank">
+                <img src="__TMPL__Public/images/none.png" class="pdl10">
+            </a>
+        </span>-->
+    </div>
+</div>
+{$site_tongji}

@@ -1,0 +1,10 @@
+[ 2020-07-15T20:24:00+08:00 ] 223.104.103.124 /index.php?g=wechat&m=conferenceroom&a=meeting&code=081xtZqk0kGfDr1Irknk0LkNqk0xtZqL&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-07-15T20:24:27+08:00 ] 223.104.103.124 /wechat/sports/sports
+SQL: SELECT ejd_dict.name,ejd_entertainment.* FROM `ejd_entertainment` left JOIN ejd_dict on ejd_dict.id = ejd_entertainment.etypeid  WHERE `isdel` = 0  [ RunTime:0.0009s ]
+
+[ 2020-07-15T20:24:29+08:00 ] 223.104.103.124 /wechat/sports/sports
+SQL: SELECT ejd_dict.name,ejd_entertainment.* FROM `ejd_entertainment` left JOIN ejd_dict on ejd_dict.id = ejd_entertainment.etypeid  WHERE `isdel` = 0  [ RunTime:0.0001s ]
+

@@ -1,0 +1,44 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">摇奖列表</a></li>
+		</ul>
+            
+		<div class="common-form">
+			<form method="post" class="J_ajaxForm" action="#">
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>openid</th>
+							<th>名称</th>
+							<th>头像</th>
+							<th>时间</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						
+						<foreach name="shake_list" item="vo">
+						<tr>
+							<td style="height:50px;">{$vo.openid}</td>
+							<td>{$vo['nickname'] | urldecode=###}</td>
+							<if condition="$vo['headimgurl']">
+								<td><img src="{$vo.headimgurl}" style="height:50px;"></td>
+							<else />
+								<td></td>
+							</if>
+							<td>{$vo['created'] | date="Y-m-d H:i:s",###}</td>
+							
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/common.js"></script>
+</html>

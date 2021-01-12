@@ -1,0 +1,15 @@
+[ 2021-01-01T00:24:39+08:00 ] 66.249.79.125 /user/login/index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2021-01-01T01:15:06+08:00 ] 66.249.79.25 /user/login/index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2021-01-01T01:24:10+08:00 ] 116.211.219.81 /user/login/index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2021-01-01T03:32:34+08:00 ] 216.244.66.250 /user/login/index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+
+[ 2021-01-01T13:18:52+08:00 ] 54.223.85.254 /user/register/index
+ERR: SQLSTATE[HY000] [2002] No such file or directory
+

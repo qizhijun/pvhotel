@@ -1,0 +1,6 @@
+[ 2020-07-02T12:13:50+08:00 ] 123.151.77.71 /index.php?g=Wechat&m=index&a=pictorial&from=timeline&code=001TfWVQ0EYjB32a51TQ037GVQ0TfWVA&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-07-02T13:16:43+08:00 ] 123.151.77.70 /index.php?g=Wechat&m=index&a=pictorial&from=timeline&code=001iQ55O1Yebs61meJ3O1q585O1iQ55c&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+

@@ -1,0 +1,28 @@
+<ul id="topnav" class="bg_color_blue1 color_white1 w98 f20" style="display: none;">
+	<a href="{:U('Index/index')}">
+		<li style="color:#FFFFFF;" class="border_color_blue2 ng-binding ng-scope" ng-if="hotel_basic_info.realhid!=100289" ng-click="jump('/'+hotel_basic_info.realhid)">首页</li>
+	</a>
+	<a href="{:U('Contact/info')}" >
+		<li style="color:#FFFFFF;" class="border_color_blue2 ng-binding" ng-click="jump('/'+hotel_basic_info.realhid+'/hotelintroduce/index')">酒店介绍</li>
+	</a>
+	<a href="{:U('Index/xinwen')}" >
+		<li style="color:#FFFFFF;" class="border_color_blue2 ng-binding" ng-click="jump('/'+hotel_basic_info.realhid+'/news/list')">酒店新闻</li>
+	</a>
+	<a href="{:U('Index/photo')}">
+		<li style="color:#FFFFFF;" class="border_color_blue2 ng-binding" ng-click="jump('/'+hotel_basic_info.realhid+'/hotelintro/index')">酒店相册</li>
+	</a>
+	<!--<li class="border_color_blue2 ng-binding" ng-click="jump('/'+hotel_basic_info.realhid+'/hotelintro/pictorialindex')">酒店画报</li>-->
+	<!--<li class="border_color_blue2 ng-scope" ng-if="hotel_basic_info.realhid!=100289" ng-click="go_game()">互动游戏</li>-->
+	<php>$phone = $_SESSION['fans']['phone']; </php>
+	<if condition="$phone">
+	<a href="{:U('User/user_center')}" style="color: #fff;">
+	<li class="border_color_blue2" ng-click="jump('/'+hotel_basic_info.realhid+'/member/index')">会员中心</li>
+	</a>
+	<else />
+	<a href="{:U('User/reg')}" style="color: #fff;">
+	<li class="border_color_blue2" ng-click="jump('/'+hotel_basic_info.realhid+'/member/index')">会员中心</li>
+	</a>
+	</if>
+	<li>
+	</li>
+</ul>

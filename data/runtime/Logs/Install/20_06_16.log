@@ -1,0 +1,6 @@
+[ 2020-06-16T13:38:41+08:00 ] 114.233.70.35 /install/index.php.bak?step=11&insLockfile=x&s_lang=x&install_demo_name=../data/admin/config_update.php
+ERR: 无法加载控制器:Index.php
+
+[ 2020-06-16T13:38:44+08:00 ] 114.233.70.35 /install/index.php.bak?step=11&insLockfile=x&s_lang=x&install_demo_name=../data/admin/config_update.php
+ERR: 无法加载控制器:Index.php
+

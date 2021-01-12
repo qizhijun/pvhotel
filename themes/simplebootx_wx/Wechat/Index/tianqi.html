@@ -1,0 +1,232 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<title>天气查询</title>
+		<link href="__TMPL__Public/css/main.css?v=9.5.5" rel="stylesheet">
+
+		<style>
+			.bottom_nav p.curr span,
+			.color_blue1,
+			.link,
+			.ui-btn-wrap a,
+			.ui-tab-nav li.current,
+			.tab li.curr,
+			.newstype li.curr {
+				color: #d38202 !important;
+			}
+			
+			.bg_color_blue1,
+			.btn-login,
+			.jiantou1:after,
+			.jiantou1:before,
+			.selected:after,
+			.selected:before,
+			.yd_date .time .xgtimebox .xgtime_nr table td.bg,
+			.detailroom .more:before,
+			.detailroom .more:after,
+			.bg_color_blue2,
+			.er_conter_cents ul li .er_bji> li.currentss {
+				background-color: #ff9c00 !important;
+			}
+			
+			.er_conter_cents ul li .er_Tim::before,
+			i,
+			.dateselect .date::before,
+			.er_conter_cents ul li .er_Tim::before {
+				background: url(__TMPL__Public/img/bg_huang.png) no-repeat;
+				background-size: 300px;
+			}
+			
+			.dateselect .date::before {
+				background-position: -52px -4px;
+			}
+			
+			.border_color_blue2,
+			.comment li.commentSelectTab,
+			.coupontype_detial_blue,
+			.er_conter_cents ul li .er_bji> li.currentss {
+				border-color: #d38202!important;
+			}
+			
+			.border_color_blue1,
+			.mbsc-mobiscroll .dwwol,
+			.tab li.curr,
+			.newstype li.curr {
+				border-color: #d38202 !important;
+			}
+			
+			.ui-tab-nav li.current {
+				border-bottom: 2px #d38202 solid!important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="max-width:640px;">
+			<div class="top" id="index_header">
+				<div class="top_left" id="index_header_left" onclick="history.go(-1);"></div>
+				<div class="top_center" id="index_header_center">
+					天气查询
+				</div>
+				<div class="top_right" id="index_header_right">
+
+					<i></i>
+					<div class="header_r_muen">
+						<ul>
+							<li>
+								<a onclick="window.location.href='/164844'">回首页</a>
+							</li>
+							<li onclick="window.location.href='http://m.zhiding365.com/#/'">酒店联盟</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<div id="index_center">
+
+				<div id="Weather">
+					<div class="TQ_banner">
+						<div class="left_nav ">
+							<h2>酒店今日天气</h2>
+						</div>
+						<div class="right_nav current" style="cursor: pointer">
+
+							<a href="{:U('Index/Chinatianqi')}">
+								<h2 class="current">全国天气</h2>
+							</a>
+						</div>
+					</div>
+					<div class="TQ_Center">
+						<div class="weather_Top"></div>
+						<div class="weather_Middle">
+							<div class="weather_MiddleLeft">
+								<div class="weatherCity">保定，河北</div>
+								<div style="width: 100%; height: 65px; border-bottom: 1px solid #999;">
+									<div class="weatherTemp">
+										23<span class="weat">℃</span>
+									</div>
+									<div class="weatherDeatils">??′è???¤??o?</div>
+								</div>
+								<div class="weatherTempDetail">
+									<em>31℃~16℃</em>
+								</div>
+								<div class="weatherTempWindDetail">
+									???é￡??°??o?3?o§
+								</div>
+							</div>
+							<div class="weather_MiddleRight">
+								<img style="width: 90%;" src="__TMPL__Public/img/1.png">
+							</div>
+						</div>
+						<div class="weather_bottom">
+							<div class="weather_MiddleLeft">
+								<div class="weatherTempWestDetail">
+									湿度：30%
+								</div>
+							</div>
+							<div class="weather_MiddleRight" onclick="ForecastWeather(this);">
+								<div class="FutureForecast">
+
+								</div>
+								<div class="FutureForecastRight">
+
+								</div>
+							</div>
+						</div>
+						<div class="weather_Forecast" style="width: 96%; padding: 2%; font-size: 1em; line-height: 32px;">
+							<ul class="weather_all_area" id="proWeather" showstate="0">
+								<li class="weather_city_area" style="background-color: #F5D855; color: #fff;">
+									<ul>
+										<li class="weather_city_name" style="background-color: #D3BA49">-</li>
+										<li class="weather_value">日出：-</li>
+										<li class="weather_value">日落：-</li>
+										<li class="weather_value">-</li>
+										<li class="weather_value">-℃</li>
+										<li class="weather_value">- 转 -</li>
+										<li class="weather_value">-</li>
+
+									</ul>
+								</li>
+								<li class="weather_city_area" style="background-color: #5ad9f8; color: #fff;">
+									<ul>
+										<li class="weather_city_name" style="background-color: #24adce">-</li>
+										<li class="weather_value">日出：-</li>
+										<li class="weather_value">日落：-</li>
+										<li class="weather_value">-</li>
+										<li class="weather_value">-℃</li>
+										<li class="weather_value"></li>
+										<li class="weather_value">-</li>
+
+									</ul>
+								</li>
+								<li class="weather_city_area" style="background-color: #ffbc7a; color: #fff;">
+									<ul>
+										<li class="weather_city_name" style="background-color: #d58639;">-</li>
+										<li class="weather_value">日出：-</li>
+										<li class="weather_value">日落：-</li>
+										<li class="weather_value">-</li>
+										<li class="weather_value">-℃</li>
+										<li class="weather_value">-</li>
+										<li class="weather_value">-</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div id="tishikuang_all" style="display: none;">
+				<div class="tishikuang">
+					<div class="selt_all">
+						<dl class="selt">
+							<dt>提示信息</dt>
+							<dd>
+								<p class="con" id="tishikuang_con">允许访问您当前的位置</p>
+							</dd>
+						</dl>
+						<div class="que" id="tishikuang_ok">
+							<span>确定</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function iFrameHeight() {
+				var ifm = document.getElementById("iframeWeather");
+				var subWeb = document.frames ? document.frames["iframeWeather"].document : ifm.contentDocument;
+				if(ifm != null && subWeb != null) {
+					ifm.height = subWeb.body.scrollHeight;
+					ifm.width = subWeb.body.scrollWidth;
+				}
+			}
+
+			function ForecastWeather(el) {
+				var showstate = $("#proWeather").attr("showState");
+
+				if(showstate == "0") {
+					$("#proWeather").show();
+					$("#proWeather").attr("showState", "1");
+					$(el).find("i").attr("class", "i03");
+				} else {
+					$("#proWeather").hide();
+					$("#proWeather").attr("showstate", "0");
+					$(el).find("i").attr("class", "i02");
+				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb5fee4d10bf77796ea9b58bcd01740e3' display='none' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script src=" http://hm.baidu.com/h.js?b5fee4d10bf77796ea9b58bcd01740e3" type="text/javascript" display="none"></script>
+
+	</body>
+
+</html>

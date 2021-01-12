@@ -1,0 +1,33 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">菜品列表</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>菜品名称</th>
+					<th>菜品价格</th>
+					<th>菜品数量</th>
+					<th>下单时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<foreach name="dataList" item="vo">
+					<tr>
+						<td>{$vo.id}</td>
+						<td>{$vo.foodname}</td>
+						<td>{$vo.price}</td>
+						<td>{$vo.cp_num}</td>
+						<td>{$vo[created] | date = "Y-m-d H:i:s",###}</td>
+					</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</body>
+</html>

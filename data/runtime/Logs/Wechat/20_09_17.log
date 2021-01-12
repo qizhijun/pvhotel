@@ -1,0 +1,31 @@
+[ 2020-09-17T11:29:49+08:00 ] 123.151.77.90 //wechat/salary/index/id/13855?code=071eRiGa1Jq0Dz0houFa1crb4m1eRiGF&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:29:53+08:00 ] 123.151.77.90 /wechat/salary/reg
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:30:09+08:00 ] 36.98.62.1 /index.php?g=Wechat&m=Salary&a=sendVcode
+SQL: SELECT * FROM `ejd_member` WHERE `phone` = '18932642259' AND `isdel` = 0 LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2020-09-17T11:30:25+08:00 ] 36.98.62.1 /index.php?g=Wechat&m=Salary&a=sendVcode
+SQL: SELECT * FROM `ejd_member` WHERE `phone` = '18932642259' AND `isdel` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:30:30+08:00 ] 36.98.62.1 /index.php?g=Wechat&m=Salary&a=sendVcode
+SQL: SELECT * FROM `ejd_member` WHERE `phone` = '18932642259' AND `isdel` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:30:36+08:00 ] 36.98.62.1 /index.php?g=Wechat&m=Salary&a=sendVcode
+SQL: SELECT * FROM `ejd_member` WHERE `phone` = '18932642259' AND `isdel` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:30:40+08:00 ] 36.98.62.1 /index.php?g=Wechat&m=Salary&a=sendVcode
+SQL: SELECT * FROM `ejd_member` WHERE `phone` = '18932642259' AND `isdel` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:31:14+08:00 ] 36.98.62.1 /index.php?g=Wechat&m=Salary&a=sendVcode
+SQL: SELECT * FROM `ejd_member` WHERE `phone` = '18932642259' AND `isdel` = 0 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-09-17T11:31:27+08:00 ] 123.151.77.90 //wechat/salary/index/id/12729
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2020-09-17T11:45:12+08:00 ] 101.91.60.11 //wechat/salary/index/id/12729
+SQL: SELECT * FROM `ejd_member` WHERE ( openid='' and isdel=0 ) LIMIT 1   [ RunTime:0.0001s ]
+

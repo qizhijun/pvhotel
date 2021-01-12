@@ -1,0 +1,524 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/xyylindex')}">休闲娱乐管理</a></li>
+			<li  class="active"><a href="javascript:;">编辑娱乐场所</a></li>
+		</ul>
+		<form action="{:U('Hotel/xyyledit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{$xyylArr.id}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">名称</label>
+					<div class="controls">
+						<input type="text" name="ename" value="{$xyylArr.ename}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">排序</label>
+					<div class="controls">
+						<input type="text" name="sortindex" value="{$xyylArr.sortindex}" style="width:80px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">类别</label>
+					<div class="controls">
+						<select name="etypeid" style="width:150px;">
+						<foreach name="etypeid" item="vo">
+							<option value="{$vo.id}" {$xyylArr['etypeid'] == $vo['id'] ? "selected" : ""}>{$vo.name}</option>
+						</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">电话</label>
+					<div class="controls">
+						<input type="text" name="entel" value="{$xyylArr.entel}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">地址</label>
+					<div class="controls">
+						<input type="text" name="enaddress" value="{$xyylArr.enaddress}" style="width:400px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">休闲娱乐介绍头图</label>
+					<div class="controls">
+						<fieldset>
+							<legend>图片列表</legend>
+							<ul id="photos" class="pic-list unstyled">
+								<foreach name="picurl['photo']" item="vo">
+								<li id="savedimage{$key}">
+									<input type="text" name="photos_url[]" value="{:sp_get_asset_upload_path($vo['url'])}" title="双击查看" style="width: 310px;" ondblclick="image_priview(this.value);" class="input image-url-input"> 
+									<input type="text" name="photos_alt[]" value="{$vo.alt}" style="width: 160px;" class="input image-alt-input" onfocus="if(this.value == this.defaultValue) this.value = ''" onblur="if(this.value.replace(' ','') == '') this.value = this.defaultValue;">
+									<a href="javascript:flashupload('replace_albums_images', '图片替换','savedimage{$key}',replace_image,'10,gif|jpg|jpeg|png|bmp,0','','','')">替换</a>
+									<a href="javascript:remove_div('savedimage{$key}')">移除</a>
+								</li>
+								</foreach>
+							</ul>
+						</fieldset>
+						<a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','','','')" class="btn btn-small" style="background-color:blue;">选择图片</a>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">营业时间</label>
+					<div class="controls">
+					<php>$begtime1=$xyylArr['begtime']==1?"selected":"";</php>
+					<php>$begtime2=$xyylArr['begtime']==2?"selected":"";</php>
+					<php>$begtime3=$xyylArr['begtime']==3?"selected":"";</php>
+					<php>$begtime4=$xyylArr['begtime']==4?"selected":"";</php>
+					<php>$begtime5=$xyylArr['begtime']==5?"selected":"";</php>
+					<php>$begtime6=$xyylArr['begtime']==6?"selected":"";</php>
+					<php>$begtime7=$xyylArr['begtime']==7?"selected":"";</php>
+					<php>$begtime8=$xyylArr['begtime']==8?"selected":"";</php>
+					<php>$begtime9=$xyylArr['begtime']==9?"selected":"";</php>
+					<php>$begtime10=$xyylArr['begtime']==10?"selected":"";</php>
+					<php>$begtime11=$xyylArr['begtime']==11?"selected":"";</php>
+					<php>$begtime12=$xyylArr['begtime']==12?"selected":"";</php>
+					<php>$begtime13=$xyylArr['begtime']==13?"selected":"";</php>
+					<php>$begtime14=$xyylArr['begtime']==14?"selected":"";</php>
+					<php>$begtime15=$xyylArr['begtime']==15?"selected":"";</php>
+					<php>$begtime16=$xyylArr['begtime']==16?"selected":"";</php>
+					<php>$begtime17=$xyylArr['begtime']==17?"selected":"";</php>
+					<php>$begtime18=$xyylArr['begtime']==18?"selected":"";</php>
+					<php>$begtime19=$xyylArr['begtime']==19?"selected":"";</php>
+					<php>$begtime20=$xyylArr['begtime']==20?"selected":"";</php>
+					<php>$begtime21=$xyylArr['begtime']==21?"selected":"";</php>
+					<php>$begtime22=$xyylArr['begtime']==22?"selected":"";</php>
+					<php>$begtime23=$xyylArr['begtime']==23?"selected":"";</php>
+					<php>$begtime24=$xyylArr['begtime']==24?"selected":"";</php>
+					<php>$begtime25=$xyylArr['begtime']==25?"selected":"";</php>
+					<php>$begtime26=$xyylArr['begtime']==26?"selected":"";</php>
+					<php>$begtime27=$xyylArr['begtime']==27?"selected":"";</php>
+					<php>$begtime28=$xyylArr['begtime']==28?"selected":"";</php>
+					<php>$begtime29=$xyylArr['begtime']==29?"selected":"";</php>
+					<php>$begtime30=$xyylArr['begtime']==30?"selected":"";</php>
+					<php>$begtime31=$xyylArr['begtime']==31?"selected":"";</php>
+					<php>$begtime32=$xyylArr['begtime']==32?"selected":"";</php>
+					<php>$begtime33=$xyylArr['begtime']==33?"selected":"";</php>
+					<php>$begtime34=$xyylArr['begtime']==34?"selected":"";</php>
+					<php>$begtime35=$xyylArr['begtime']==35?"selected":"";</php>
+					<php>$begtime36=$xyylArr['begtime']==36?"selected":"";</php>
+					<php>$begtime37=$xyylArr['begtime']==37?"selected":"";</php>
+					<php>$begtime38=$xyylArr['begtime']==38?"selected":"";</php>
+					<php>$begtime39=$xyylArr['begtime']==39?"selected":"";</php>
+					<php>$begtime40=$xyylArr['begtime']==40?"selected":"";</php>
+					<php>$begtime41=$xyylArr['begtime']==41?"selected":"";</php>
+					<php>$begtime42=$xyylArr['begtime']==42?"selected":"";</php>
+					<php>$begtime43=$xyylArr['begtime']==43?"selected":"";</php>
+					<php>$begtime44=$xyylArr['begtime']==44?"selected":"";</php>
+					<php>$begtime45=$xyylArr['begtime']==45?"selected":"";</php>
+					<php>$begtime46=$xyylArr['begtime']==46?"selected":"";</php>
+					<php>$begtime47=$xyylArr['begtime']==47?"selected":"";</php>
+					<php>$begtime48=$xyylArr['begtime']==48?"selected":"";</php>
+					<php>$begtime49=$xyylArr['begtime']==49?"selected":"";</php>
+						<select name="begtime" style="width:130px;">
+							<option value="1" {$begtime1}>1点</option>
+							<option value="2" {$begtime2}>1点半</option>
+							<option value="3" {$begtime3}>2点</option>
+							<option value="4" {$begtime4}>2点半</option>
+							<option value="5" {$begtime5}>3点</option>
+							<option value="6" {$begtime6}>3点半</option>
+							<option value="7" {$begtime7}>4点</option>
+							<option value="8" {$begtime8}>4点半</option>
+							<option value="9" {$begtime9}>5点</option>
+							<option value="10" {$begtime10}>5点半</option>
+							<option value="11" {$begtime11}>6点</option>
+							<option value="12" {$begtime12}>6点半</option>
+							<option value="13" {$begtime13}>7点</option>
+							<option value="14" {$begtime14}>7点半</option>
+							<option value="15" {$begtime15}>8点</option>
+							<option value="16" {$begtime16}>8点半</option>
+							<option value="17" {$begtime17}>9点</option>
+							<option value="18" {$begtime18}>9点半</option>
+							<option value="19" {$begtime19}>10点</option>
+							<option value="20" {$begtime20}>10点半</option>
+							<option value="21" {$begtime21}>11点</option>
+							<option value="22" {$begtime22}>11点半</option>
+							<option value="23" {$begtime23}>12点</option>
+							<option value="24" {$begtime24}>12点半</option>
+							<option value="25" {$begtime25}>13点</option>
+							<option value="26" {$begtime26}>13点半</option>
+							<option value="27" {$begtime27}>14点</option>
+							<option value="28" {$begtime28}>14点半</option>
+							<option value="29" {$begtime29}>15点</option>
+							<option value="30" {$begtime30}>15点半</option>
+							<option value="31" {$begtime31}>16点</option>
+							<option value="32" {$begtime32}>16点半</option>
+							<option value="33" {$begtime33}>17点</option>
+							<option value="34" {$begtime34}>17点半</option>
+							<option value="35" {$begtime35}>18点</option>
+							<option value="36" {$begtime36}>18点半</option>
+							<option value="37" {$begtime37}>19点</option>
+							<option value="38" {$begtime38}>19点半</option>
+							<option value="39" {$begtime39}>20点</option>
+							<option value="40" {$begtime40}>20点半</option>
+							<option value="41" {$begtime41}>21点</option>
+							<option value="42" {$begtime42}>21点半</option>
+							<option value="43" {$begtime43}>22点</option>
+							<option value="44" {$begtime44}>22点半</option>
+							<option value="45" {$begtime45}>23点</option>
+							<option value="46" {$begtime46}>23点半</option>
+							<option value="47" {$begtime47}>0点</option>
+							<option value="48" {$begtime48}>0点半</option>
+						</select>
+						到
+						<php>$endtime1=$xyylArr['endtime']==1?"selected":"";</php>
+						<php>$endtime2=$xyylArr['endtime']==2?"selected":"";</php>
+						<php>$endtime3=$xyylArr['endtime']==3?"selected":"";</php>
+						<php>$endtime4=$xyylArr['endtime']==4?"selected":"";</php>
+						<php>$endtime5=$xyylArr['endtime']==5?"selected":"";</php>
+						<php>$endtime6=$xyylArr['endtime']==6?"selected":"";</php>
+						<php>$endtime7=$xyylArr['endtime']==7?"selected":"";</php>
+						<php>$endtime8=$xyylArr['endtime']==8?"selected":"";</php>
+						<php>$endtime9=$xyylArr['endtime']==9?"selected":"";</php>
+						<php>$endtime10=$xyylArr['endtime']==10?"selected":"";</php>
+						<php>$endtime11=$xyylArr['endtime']==11?"selected":"";</php>
+						<php>$endtime12=$xyylArr['endtime']==12?"selected":"";</php>
+						<php>$endtime13=$xyylArr['endtime']==13?"selected":"";</php>
+						<php>$endtime14=$xyylArr['endtime']==14?"selected":"";</php>
+						<php>$endtime15=$xyylArr['endtime']==15?"selected":"";</php>
+						<php>$endtime16=$xyylArr['endtime']==16?"selected":"";</php>
+						<php>$endtime17=$xyylArr['endtime']==17?"selected":"";</php>
+						<php>$endtime18=$xyylArr['endtime']==18?"selected":"";</php>
+						<php>$endtime19=$xyylArr['endtime']==19?"selected":"";</php>
+						<php>$endtime20=$xyylArr['endtime']==20?"selected":"";</php>
+						<php>$endtime21=$xyylArr['endtime']==21?"selected":"";</php>
+						<php>$endtime22=$xyylArr['endtime']==22?"selected":"";</php>
+						<php>$endtime23=$xyylArr['endtime']==23?"selected":"";</php>
+						<php>$endtime24=$xyylArr['endtime']==24?"selected":"";</php>
+						<php>$endtime25=$xyylArr['endtime']==25?"selected":"";</php>
+						<php>$endtime26=$xyylArr['endtime']==26?"selected":"";</php>
+						<php>$endtime27=$xyylArr['endtime']==27?"selected":"";</php>
+						<php>$endtime28=$xyylArr['endtime']==28?"selected":"";</php>
+						<php>$endtime29=$xyylArr['endtime']==29?"selected":"";</php>
+						<php>$endtime30=$xyylArr['endtime']==30?"selected":"";</php>
+						<php>$endtime31=$xyylArr['endtime']==31?"selected":"";</php>
+						<php>$endtime32=$xyylArr['endtime']==32?"selected":"";</php>
+						<php>$endtime33=$xyylArr['endtime']==33?"selected":"";</php>
+						<php>$endtime34=$xyylArr['endtime']==34?"selected":"";</php>
+						<php>$endtime35=$xyylArr['endtime']==35?"selected":"";</php>
+						<php>$endtime36=$xyylArr['endtime']==36?"selected":"";</php>
+						<php>$endtime37=$xyylArr['endtime']==37?"selected":"";</php>
+						<php>$endtime38=$xyylArr['endtime']==38?"selected":"";</php>
+						<php>$endtime39=$xyylArr['endtime']==39?"selected":"";</php>
+						<php>$endtime40=$xyylArr['endtime']==40?"selected":"";</php>
+						<php>$endtime41=$xyylArr['endtime']==41?"selected":"";</php>
+						<php>$endtime42=$xyylArr['endtime']==42?"selected":"";</php>
+						<php>$endtime43=$xyylArr['endtime']==43?"selected":"";</php>
+						<php>$endtime44=$xyylArr['endtime']==44?"selected":"";</php>
+						<php>$endtime45=$xyylArr['endtime']==45?"selected":"";</php>
+						<php>$endtime46=$xyylArr['endtime']==46?"selected":"";</php>
+						<php>$endtime47=$xyylArr['endtime']==47?"selected":"";</php>
+						<php>$endtime48=$xyylArr['endtime']==48?"selected":"";</php>
+						<select name="endtime" style="width:130px;">
+							<option value="1" {$endtime1}>1点</option>
+							<option value="2" {$endtime2}>1点半</option>
+							<option value="3" {$endtime3}>2点</option>
+							<option value="4" {$endtime4}>2点半</option>
+							<option value="5" {$endtime5}>3点</option>
+							<option value="6" {$endtime6}>3点半</option>
+							<option value="7" {$endtime7}>4点</option>
+							<option value="8" {$endtime8}>4点半</option>
+							<option value="9" {$endtime9}>5点</option>
+							<option value="10" {$endtime10}>5点半</option>
+							<option value="11" {$endtime11}>6点</option>
+							<option value="12" {$endtime12}>6点半</option>
+							<option value="13" {$endtime13}>7点</option>
+							<option value="14" {$endtime14}>7点半</option>
+							<option value="15" {$endtime15}>8点</option>
+							<option value="16" {$endtime16}>8点半</option>
+							<option value="17" {$endtime17}>9点</option>
+							<option value="18" {$endtime18}>9点半</option>
+							<option value="19" {$endtime19}>10点</option>
+							<option value="20" {$endtime20}>10点半</option>
+							<option value="21" {$endtime21}>11点</option>
+							<option value="22" {$endtime22}>11点半</option>
+							<option value="23" {$endtime23}>12点</option>
+							<option value="24" {$endtime24}>12点半</option>
+							<option value="25" {$endtime25}>13点</option>
+							<option value="26" {$endtime26}>13点半</option>
+							<option value="27" {$endtime27}>14点</option>
+							<option value="28" {$endtime28}>14点半</option>
+							<option value="29" {$endtime29}>15点</option>
+							<option value="30" {$endtime30}>15点半</option>
+							<option value="31" {$endtime31}>16点</option>
+							<option value="32" {$endtime32}>16点半</option>
+							<option value="33" {$endtime33}>17点</option>
+							<option value="34" {$endtime34}>17点半</option>
+							<option value="35" {$endtime35}>18点</option>
+							<option value="36" {$endtime36}>18点半</option>
+							<option value="37" {$endtime37}>19点</option>
+							<option value="38" {$endtime38}>19点半</option>
+							<option value="39" {$endtime39}>20点</option>
+							<option value="40" {$endtime40}>20点半</option>
+							<option value="41" {$endtime41}>21点</option>
+							<option value="42" {$endtime42}>21点半</option>
+							<option value="43" {$endtime43}>22点</option>
+							<option value="44" {$endtime44}>22点半</option>
+							<option value="45" {$endtime45}>23点</option>
+							<option value="46" {$endtime46}>23点半</option>
+							<option value="47" {$endtime47}>0点</option>
+							<option value="48" {$endtime48}>0点半</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">人均消费</label>
+					<div class="controls">
+						<input type="text" name="perperson" value="{$xyylArr.perperson}" style="width:130px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">预定方式</label>
+					<div class="controls">
+						<input type="radio" id="suppre1" name="suppretype" value="1" {$xyylArr['suppretype'] == 1 ? "checked" : ""}><label style="display:initial;" for="suppre1">电话预定</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="suppre2" name="suppretype" value="2" {$xyylArr['suppretype'] == 2 ? "checked" : ""}><label style="display:initial;" for="suppre2">在线预订</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="suppre3" name="suppretype" value="3" {$xyylArr['suppretype'] == 3 ? "checked" : ""}><label style="display:initial;" for="suppre3">全部支持</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">是否能抽烟</label>
+					<div class="controls">
+						<input type="radio" id="issmoking1" name="issmoking" value="1" {$xyylArr['issmoking'] == 1 ? "checked" : ""}><label style="display:initial;" for="issmoking1">有</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="issmoking2" name="issmoking" value="-1" {$xyylArr['issmoking'] == '-1' ? "checked" : ""}><label style="display:initial;" for="issmoking2">没有</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">360度全景</label>
+					<div class="controls">
+						<input type="text" name="tshpanoramaurl" value="{$xyylArr.tshpanoramaurl}" style="width:500px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">休闲娱乐介绍</label>
+					<div class="controls">
+						<script type="text/plain" id="content" name="des" style="width:650px;height:400px;">{$xyylArr.des}</script>
+					</div>
+				</div>
+				<hr>
+				<div class="control-group">
+					<h4>会员等级折扣注册</h4>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="checkbox" id="saled" name="saledisontime" value="1" {$xyylArr['saledisontime'] == 1 ? "checked" : ""}>
+						<label style="display:initial;" for="saled"><span class="form-required">是否支持优惠券与折扣策略同时使用</span></label><br><br>
+						<input type="checkbox" id="scored" name="scoredisontime" value="1" {$xyylArr['scoredisontime'] == 1 ? "checked" : ""}>
+						<label style="display:initial;" for="scored"><span class="form-required">是否支持积分抵扣与折扣策略同时使用</span></label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">默认折扣</label>
+					<div class="controls">
+						<input type="text" name="clevelprice" value="{$xyylArr.clevelprice}" style="width:80px;">折
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">E享会员卡</label>
+					<div class="controls">
+						<input type="text" name="leveldiscount" value="{$xyylArr.leveldiscount}" style="width:80px;">折
+					</div>
+				</div>
+				<hr>
+				<div class="control-group">
+					<h4>取消订单条款</h4>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="checkbox" id="isrefund" name="isrefund" value="1" {$xyylArr['isrefund'] == 1 ? "checked" : ""}>
+						<label style="display:initial;" for="isrefund"><span class="form-required">在线支付是否支持取消订单</span></label><br>
+				</div>
+				</div>
+				<div class="control-group">
+				<div class="controls">
+					提前<input type="text" name="beforehour" value="{$xyylArr.beforehour}" style="width:80px;">小时
+					&nbsp;退款比例<input type="text" name="refundper" value="{$xyylArr.beforehour}" style="width:80px;">%<br>
+					<span class="form-required">例如：提前12小时，100%退款，12小时内0%退款。</span>
+				</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">更新</button>
+				<a class="btn" href="{:U('Hotel/xyylindex')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//初始化下拉框
+			$(".acttype").chosen();
+		});
+	</script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.DIMAUB;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//setInterval(function(){public_lock_renewal();}, 10000);
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					;
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+					//验证规则
+					rules : {
+						'post[post_title]' : {
+							required : 1
+						},
+						'post[post_content]' : {
+							editorcontent : true
+						}
+					},
+					//验证未通过提示消息
+					messages : {
+						'post[post_title]' : {
+							required : '请输入标题'
+						},
+						'post[post_content]' : {
+							editorcontent : '内容不能为空'
+						}
+					},
+					//给未通过验证的元素加效果,闪烁等
+					highlight : false,
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//验证通过，提交表单
+					submitHandler : function(forms) {
+						$(forms).ajaxSubmit({
+							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+							dataType : 'json',
+							beforeSubmit : function(arr, $form, options) {
+
+							},
+							success : function(data, statusText, xhr, $form) {
+								if (data.status) {
+									setCookie("refersh_time", 1);
+									//添加成功
+									Wind.use("artDialog", function() {
+										art.dialog({
+											id : "succeed",
+											icon : "succeed",
+											fixed : true,
+											lock : true,
+											background : "#CCCCCC",
+											opacity : 0,
+											content : data.info,
+											button : [ {
+												name : '继续编辑？',
+												callback : function() {
+													//reloadPage(window);
+													return true;
+												},
+												focus : true
+											}, {
+												name : '返回列表页',
+												callback : function() {
+													location = "{:U('Hotel/xyylindex')}";
+													return true;
+												}
+											} ]
+										});
+									});
+								} else {
+									isalert(data.info);
+								}
+							}
+						});
+					}
+				});
+			});
+			////-------------------------
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('XymCode/index')}">协议码列表</a></li>
+			<li class="active"><a href="javascript:;">添加折扣</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('XymCode/add_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">开始时间</label>
+					<div class="controls">
+						<input type="text" name="starttime" class="js-date" value="{$time}" autocomplete="off" style="width:130px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">结束时间</label>
+					<div class="controls">
+						<input type="text" class="js-date" name="endtime" value="{$time1}" autocomplete="off" style="width:130px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">折扣类型</label>
+					<div class="controls">
+						<input type="radio" name="type" id="pay1" value="1" checked><label style="display:initial;" for="pay1">打折</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="type" id="pay2" value="2"><label style="display:initial;" for="pay2">直减</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label"></label>
+					<div class="controls">
+						<input type="text" name="disprice" placeholder="折扣/直减价格" value="" style="width:120px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<foreach name="roomArr" item="vo">
+							<input type="checkbox" id="room[{$vo.id}]" name="roomid[]" value="{$vo['id']}"><label style="display:initial;" for="room[{$vo.id}]">{$vo.room_name}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</foreach>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">添加</button>
+				<a class="btn" href="{:U('XymCode/index')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".bfservice").on("click", function (){ 
+			var bfservice1 = $(this);
+				if(bfservice1[0].checked){ 
+					bfservice1.next().attr("readonly",false);
+				}else{ 
+					bfservice1.next().attr("readonly",true);
+				}
+		});
+		$(".reserveitem").on("click",function(){ 
+			$(".reserveitem1").attr("readonly",true);
+			var reserveitem1 = $(this);
+			if(reserveitem1[0].checked){ 
+				reserveitem1.nextAll().attr("readonly",false);
+			}
+		})
+		$(".pricetype").on("click",function(){
+			var pricetype = $(this);
+			if(pricetype[0].checked){ 
+				$("#baifenbi").hide();
+				$("#jiage").show();
+			}
+		})
+		$(".pricetype1").on("click",function(){
+			var pricetype = $(this);
+			if(pricetype[0].checked){ 
+				$("#jiage").hide();
+				$("#baifenbi").show();
+			}
+		})
+	</script>
+</body>
+</html>

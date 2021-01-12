@@ -1,0 +1,60 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('WxAdmin/index')}">粉丝管理</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<php>
+				$csort = ($_GET['csort'] == 'DESC') ? 'ASC' : 'DESC';
+				$osort = ($_GET['osort'] == 'DESC') ? 'ASC' : 'DESC';
+				if($_GET['csort']){
+					$csorticon = ($_GET['csort'] == 'DESC') ? '<i class="fa fa-caret-down"></i>' : '<i class="fa fa-caret-up"></i>';
+				}
+				if($_GET['osort']){
+					$osorticon = ($_GET['osort'] == 'DESC') ? '<i class="fa fa-caret-down"></i>' : '<i class="fa fa-caret-up"></i>';
+				}
+			</php>
+  			<thead>
+				<tr>
+					<th>openid</th>
+					<th>昵称</th>
+					<th>性别</th>
+					<th>头像</th>
+					<th>城市</th>
+					<th>是否关注</th>
+					<th>关注时间</th>
+					<!--<th>积分</th>-->
+					<th><a href="{:U('WxAdmin/index',array('timeorder' => 'created', 'csort' => $csort))}" target="_self">创建时间{$csorticon}</a></th> 
+					<!--<th><a href="{:U('WxAdmin/index',array('timeorder' => 'onlinetime', 'osort' => $osort))}" target="_self">最后活跃时间{$osorticon}</a></th>-->
+                    <!--<th>所属酒店</th>-->
+					<!--<th width="120">管理操作</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<php>
+					$subscribeArr=array("0"=>"未关注","1"=>"关注");
+				</php>
+				<foreach name="WxAdmin" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.nickname|urldecode=###}</td>
+					<td>{$vo.sex}</td>
+					<td><img src="{$vo.headimgurl}" style="max-height: 40px;" /></td>
+					<td>{$vo.city}</td>
+					<td>{$subscribeArr[$vo['subscribe']]}</td>
+					<td>{$vo.subscribe_time|date='Y-m-d H:i:s',###}</td>
+					<!--<td>{$vo.point}</td>-->
+					<td>{$vo['created']|date='Y-m-d H:i:s',###}</td>
+					<!--<td>{$vo['onlinetime']|date='Y-m-d H:i:s',###}</td>-->
+                    <!--<td><center><a href ="{:U('WxAdmin/shopcoffee',array('WxAdmin_id' => $vo['id'],'nickname' => $vo['nickname']))}">查看</a></center></td>-->
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="pagination"> {$page} &nbsp;&nbsp;&nbsp; <a href="#">共{$count}个粉丝</a></div>
+	</div>
+	<script src="__ROOT__/statics/js/common.js"></script>
+</body>
+</html>

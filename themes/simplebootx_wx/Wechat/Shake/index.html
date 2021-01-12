@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>大千湖有机鱼开网节摇一摇</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+		<link rel="stylesheet" href="http://image.yijiudian.cn/themes/simplebootx_wx/Public/css/shake/swiper.min.css">
+		<link rel="stylesheet" href="http://image.yijiudian.cn/themes/simplebootx_wx/Public/css/shake/animate.min.css">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+			}
+			
+			body {
+				font-family: "microsoft yahei";
+			}
+			
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+				background: #000;
+			}
+			
+			.swiper-slide {
+				width: 100%;
+				height: 100%;
+				background-size: 100% 100%;
+			}
+			
+			img {
+				display: block;
+			}
+			
+			.swiper-pagination-bullet {
+				width: 6px;
+				height: 6px;
+				background: #fff;
+				opacity: .4;
+			}
+			
+			.swiper-pagination-bullet-active {
+				opacity: 1;
+			}
+			
+			@-webkit-keyframes start {
+				0%,
+				30% {
+					opacity: 0;
+					-webkit-transform: translate(0, 10px);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate(0, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate(0, -8px);
+				}
+			}
+			
+			@-moz-keyframes start {
+				0%,
+				30% {
+					opacity: 0;
+					-moz-transform: translate(0, 10px);
+				}
+				60% {
+					opacity: 1;
+					-moz-transform: translate(0, 0);
+				}
+				100% {
+					opacity: 0;
+					-moz-transform: translate(0, -8px);
+				}
+			}
+			
+			@keyframes start {
+				0%,
+				30% {
+					opacity: 0;
+					transform: translate(0, 10px);
+				}
+				60% {
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+				100% {
+					opacity: 0;
+					transform: translate(0, -8px);
+				}
+			}
+			
+			.ani {
+				position: absolute;
+			}
+			
+			.ani2 {
+				position: absolute;
+			}
+			
+			.txt {
+				position: absolute;
+			}
+			
+			@keyframes wave-jiu {
+			    0% {
+			        margin-top: 100%;
+			    }
+			
+			    100% {
+			        margin-top: 2%;
+			    }
+			}
+			.jiu{
+				width: 100%;
+				height: 100%;
+				background:#218bcd;
+				-webkit-animation: wave-jiu 20s ease;
+			    animation: wave-jiu 20s ease
+			}
+			
+			.swiper-slide1{
+				width: 100%;
+				height: 100%;
+				background: #e84144 no-repeat left top;
+				background-size: 100% 100%;
+			}
+			
+			@-webkit-keyframes zoomdownIn {
+			    0% {
+			    	width: 100%;
+			    	left: 0px;
+			    	top: 107px;
+			    }
+			}
+			
+			@keyframes zoomdownIn {
+			    0% {
+			    	width: 100%;
+			    	left: 0px;
+			    	top: 107px;
+			    }
+			}
+			.zoomdownIn{
+				-webkit-animation-name: zoomdownIn;
+    			animation-name: zoomdownIn
+			}
+			
+			.wei_mask{
+				display: none;
+				position: fixed;
+			    z-index: 1;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    /*background: rgba(33,139,205,.6);*/
+			    background: rgba(0,0,0,.6);
+			}
+			.wei_mask_alert{
+				display: none;
+			    position: absolute;
+			    z-index: 100;
+			    top: 40%;
+			    left: 20%;
+			    background-color: #fff;
+			    width: 60%;
+			    height: 40px;
+			    text-align: center;
+			    line-height: 40px;
+			    -moz-border-radius: 5px;
+			    -webkit-border-radius: 5px;
+			    border-radius: 5px;
+			}
+			.wei_mask_tip{
+				display: none;
+			    position: absolute;
+			    z-index: 100;
+				top: 30%;
+			    height: 40%;
+			    text-align: left;
+			    width: 80%;
+			    left: 10%;
+			    line-height: 40px;
+			    background-color: #fff;
+			    -moz-border-radius: 5px;
+			    -webkit-border-radius: 5px;
+			    border-radius: 5px;
+			}
+			.wei_mask_tip p{
+				margin-left: 20px;
+			}
+			.daojiu{
+				-webkit-animation: pulse 1.5s infinite ease-in-out;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-------------slide1----------------->
+				<section class="swiper-slide swiper-slide1">
+					<img src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/images/shake/title.png" class="ani resize" style="width:236px;left:39px;top:24px;z-index:3;">
+					<img src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/images/shake/caidai.png" class="ani resize daojiu" id="caidai" style="width:266px;left:27px;top:124px;z-index:3;" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+					<img src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/images/shake/yaoshou.png" class="ani resize" style="width:228px;left:45px;top:140px;z-index:3;" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+					<div class="ani resize" style="font-size:18px;text-align:center;font-family: '微软雅黑';color: #fff; width: 174px;left: 75px;top: 357px;z-index: 3;">
+						您还有<span style="color: #feea17;font-size: 20px;" id="shakenum"> {$shakenum} </span>次摇奖机会
+					</div>
+					<img src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/images/shake/guize.png" id="btn_shake" class="ani resize" style="width:115.5px;left:103px;top:390px;z-index:3;" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1s">
+				</section>
+			</div>
+		</div>
+		<div class="wei_mask myalert mytip"></div>
+		<div class="wei_mask_alert myalert">谢谢参与</div>
+		<div class="wei_mask_tip mytip">
+			<p><h2 style="text-align: center;">奖品设置</h2></p>
+			<p>一等奖：大千湖有机鱼一条</p>
+			<p>二等奖：电谷国际酒店手工月饼一包</p>
+			<p>三等奖：电谷低碳公园儿童乐园代金券</p>
+			<p>纪念奖：麻辣烫20元代金券</p>
+		</div>
+		<audio id="audio2" style="display:none;" preload="auto">
+		    <source src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/images/shake/kacha.wav" type="audio/mpeg">
+		</audio>
+		<script src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/js/shake/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/js/shake/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/js/shake/swiper.animate.min.js"></script>
+		<script src="http://image.yijiudian.cn/themes/simplebootx_wx/Public/js/shake/shake.js"></script>
+		<script>
+			scaleW = window.innerWidth / 320;
+			scaleH = window.innerHeight / 480;
+			var resizes = document.querySelectorAll('.resize');
+			for(var j = 0; j < resizes.length; j++) {
+				resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
+				resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
+				resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
+				resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
+			}
+			
+			document.body.addEventListener('touchmove', function (event) {
+			    event.preventDefault();
+			}, false);
+			window.addEventListener('load', function () {
+				FastClick.attach(document.body);
+			}, false);
+			
+			//显示中奖信息
+			function showLuck(item){
+				$(".wei_mask_alert").html(item);
+				$(".myalert").show();
+				$(".wei_mask").click(function(){
+					$(".myalert").hide();
+					window.myShakeEvent.start();
+				});
+				setTimeout(function(){
+					$(".myalert").hide();
+					window.myShakeEvent.start();
+				},3000);
+			}
+			
+			$(function(){
+				window.audio2=document.getElementById("audio2");
+				//摇一摇
+				window.myShakeEvent = new Shake({
+					threshold: 15
+				});
+				window.myShakeEvent.start();
+				window.addEventListener('shake', shakeEventDidOccur, false);
+				
+				function shakeEventDidOccur(){
+					/*var arr = ['jiu','', '','', '','', '','', '',''];
+					var num = Math.floor(Math.random() * 10);
+					var xian=arr[num];*/
+					
+					window.audio2.play();
+					window.myShakeEvent.stop();
+					$.post("index.php?g=Wechat&m=Shake&a=getPrize",{},function(data){
+						if(data&&data.success){
+							location.href="index.php?g=Wechat&m=Shake&a=res";
+						}else{
+							$("#shakenum").html(" "+data.shakenum+" ");
+							showLuck(data.message);
+						}
+					},'json');
+				}
+				
+				$("#btn_shake").click(function(){
+					$(".mytip").show();
+					$(".wei_mask").click(function(){
+						$(".mytip").hide();
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

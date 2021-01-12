@@ -1,0 +1,78 @@
+[ 2020-06-04T09:05:54+08:00 ] 222.222.158.49 /admin/public/dologin
+SQL: SELECT * FROM `ejd_users` WHERE `user_login` = '3909' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0011s ]
+SQL: UPDATE `ejd_users` SET `user_login`='3909',`user_pass`='###1215b17e23d045726457e2ad92a84c0b',`user_nicename`='',`user_email`='3909@3909.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='222.222.158.49',`last_login_time`='2020-06-04 09:05:54',`create_time`='2016-09-14 10:44:02',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0007s ]
+
+[ 2020-06-04T09:06:02+08:00 ] 222.222.158.49 /admin/index/index
+SQL: SELECT * FROM `ejd_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ejd_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/setting/default')  [ RunTime:0.0009s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/order/default')  [ RunTime:0.0006s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('user/indexadmin/default')  [ RunTime:0.0005s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/hotel/default')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/content/default')  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/wechat/default')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/import/default')  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ejd_menu` WHERE `parentid` = 242 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0008s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/import/index')  [ RunTime:0.0006s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/member/index')  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ejd_menu` WHERE `parentid` = 243 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ejd_menu` WHERE `parentid` = 244 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/setting/clearcache')  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/setting/site')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0002s ]
+
+[ 2020-06-04T09:06:02+08:00 ] 222.222.158.49 /admin/main/index
+SQL: SELECT * FROM `ejd_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ejd_order` WHERE ( status <3 and status > 0 and amount > 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ejd_order_cy` WHERE ( status <3 and status > 0 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ejd_order_yh` WHERE ( isdel = 0 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_fans` WHERE ( subscribe = 1 ) ORDER BY created desc LIMIT 5   [ RunTime:0.0001s ]
+
+[ 2020-06-04T09:06:07+08:00 ] 222.222.158.49 /admin/themes/simplebootx/Public/assets/fonts/fonts/fontawesome-webfont-v=4.0.3.woff
+ERR: 无法加载控制器:Themes
+
+[ 2020-06-04T09:06:12+08:00 ] 222.222.158.49 /admin/main/orderprompt
+SQL: SELECT * FROM `ejd_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/main/orderprompt')  [ RunTime:0.0005s ]
+
+[ 2020-06-04T09:06:20+08:00 ] 222.222.158.49 /admin/member/index/menuid/244
+SQL: SELECT * FROM `ejd_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/member/index')  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ejd_member` [ RunTime:0.0146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ejd_member` WHERE ( status=0 and isdel = 0 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `ejd_member` WHERE ( status=0 and isdel = 0 ) ORDER BY created DESC LIMIT 0,20   [ RunTime:0.0007s ]
+
+[ 2020-06-04T09:06:29+08:00 ] 222.222.158.49 /admin/import/index/menuid/243
+SQL: SELECT * FROM `ejd_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/import/index')  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ejd_salary_file` WHERE `isdel` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ejd_salary_file` WHERE `isdel` = 0 ORDER BY id DESC LIMIT 0,20   [ RunTime:0.0003s ]
+
+[ 2020-06-04T09:06:38+08:00 ] 222.222.158.49 /admin/member/index/menuid/244
+SQL: SELECT * FROM `ejd_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `role_id` FROM ejd_role_user a INNER JOIN ejd_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM ejd_auth_access a INNER JOIN ejd_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('admin/member/index')  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ejd_member` WHERE ( status=0 and isdel = 0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ejd_member` WHERE ( status=0 and isdel = 0 ) ORDER BY created DESC LIMIT 0,20   [ RunTime:0.0001s ]
+

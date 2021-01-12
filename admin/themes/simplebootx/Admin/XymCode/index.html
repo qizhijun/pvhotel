@@ -1,0 +1,61 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">协议码列表</a></li>
+			<li><a href="{:U('XymCode/add')}">添加折扣</a></li>
+		</ul>
+            <form class="well form-search" method="post" action="{:U('XymCode/index')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						<select class="select_2" name="roomid">
+							<option value=''>全部房型</option>
+							<foreach name="roomArr" item="vo">
+								<option value='{$vo.id}' {$roomid == $vo['id'] ? "selected" : ""}>{$vo.room_name}</option>
+							</foreach>
+						</select>
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+
+			</div>
+		</form>
+		<div class="common-form">
+			<form method="post" class="J_ajaxForm" action="#">
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<th width="300px">有效房型</th>
+							<th width="300px">无效房型</th>
+							<th>类型(1折扣,2直减)</th>
+							<th>折扣/直减</th>
+							<th width="120px">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="xymArr" item="vo">
+						<tr>
+							<td>{$vo['starttime'] | date="Y-m-d",###}</td>
+							<td>{$vo['endtime'] | date="Y-m-d",###}</td>
+							<td>{$vo.room_name}</td>
+							<td>{$vo.room}</td>
+							<td>{$vo.type}</td>
+							<td><if condition="$vo['type'] eq 1"><php>echo ceil($vo['disprice']);</php><else />{$vo.disprice}</if></td>
+							<td>
+								<a href="{:U('XymCode/delete',array('id'=>$vo['id'],'isdel'=>2))}" class="js-ajax-delete">{:L('DELETE')}</a>
+							</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/common.js"></script>
+</html>

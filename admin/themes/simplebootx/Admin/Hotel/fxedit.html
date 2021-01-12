@@ -1,0 +1,222 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/fxindex')}">房型管理</a></li>
+			<li class="active"><a href="javascript:;">修改房型</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Hotel/fxedit_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">房型名称</label>
+					<div class="controls">
+						<input type="hidden" name="id" value="{$roomArr.id}">
+						<input type="text" name="room_name" value="{$roomArr.room_name}" style="width:300px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">排序</label>
+					<div class="controls">
+						<input type="text" name="sort_index" value="{$roomArr.sort_index}" style="width:80px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">面积</label>
+					<div class="controls">
+						<input type="text" name="room_area" value="{$roomArr.room_area}" style="width:80px;">
+						<span class="form-required">平米</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">楼层</label>
+					<div class="controls">
+						<input type="text" name="floor" value="{$roomArr.floor}" style="width:120px;">
+						<span class="form-required">层</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">床型</label>
+					<div class="controls">
+						<select name="category_type" style="width:100px;">
+						<php>$category_type1=$roomArr['category_type']==1?"selected":"";</php>
+						<php>$category_type2=$roomArr['category_type']==2?"selected":"";</php>
+						<php>$category_type3=$roomArr['category_type']==3?"selected":"";</php>
+							<option value="1" {$category_type1}>单人床</option>
+							<option value="2" {$category_type2}>双床</option>
+							<option value="3" {$category_type3}>大床</option>
+						</select>
+						<input type="text" name="bed_size" style="width:100px;" value="{$roomArr.bed_size}">
+						<span class="form-required">米</span>
+						<span class="form-required">（尺寸请填写宽度，例1.8米*2米，填写1.8）</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">最多可住</label>
+					<div class="controls">
+						<select name="imax_guestnum">
+						<php>$imax_guestnum1=$roomArr['imax_guestnum']==1?"selected":"";</php>
+						<php>$imax_guestnum2=$roomArr['imax_guestnum']==2?"selected":"";</php>
+						<php>$imax_guestnum3=$roomArr['imax_guestnum']==3?"selected":"";</php>
+						<php>$imax_guestnum4=$roomArr['imax_guestnum']==4?"selected":"";</php>
+						<php>$imax_guestnum5=$roomArr['imax_guestnum']==5?"selected":"";</php>
+						<php>$imax_guestnum6=$roomArr['imax_guestnum']==6?"selected":"";</php>
+						<php>$imax_guestnum7=$roomArr['imax_guestnum']==7?"selected":"";</php>
+						<php>$imax_guestnum8=$roomArr['imax_guestnum']==8?"selected":"";</php>
+						<php>$imax_guestnum9=$roomArr['imax_guestnum']==9?"selected":"";</php>
+						<php>$imax_guestnum10=$roomArr['imax_guestnum']==10?"selected":"";</php>
+							<option value="1" {$imax_guestnum1}>1人</option>
+							<option value="2" {$imax_guestnum2}>2人</option>
+							<option value="3" {$imax_guestnum3}>3人</option>
+							<option value="4" {$imax_guestnum4}>4人</option>
+							<option value="5" {$imax_guestnum5}>5人</option>
+							<option value="6" {$imax_guestnum6}>6人</option>
+							<option value="7" {$imax_guestnum7}>7人</option>
+							<option value="8" {$imax_guestnum8}>8人</option>
+							<option value="9" {$imax_guestnum9}>9人</option>
+							<option value="10" {$imax_guestnum10}>10人</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">是否能抽烟</label>
+					<div class="controls">
+						<input type="radio" id="no_smoking1" name="no_smoking" {$roomArr[no_smoking] == 1 ? "checked" : ""} value="1"><label style="display:initial;" for="no_smoking1">是</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="no_smoking2" name="no_smoking" {$roomArr[no_smoking] == '-1' ? "checked" : ""} value="-1"><label style="display:initial;" for="no_smoking2">否</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">加床</label>
+					<div class="controls">
+						<input type="radio" id="max_addbed1" name="max_addbed" {$roomArr[max_addbed] == 1 ? "checked" : ""} value="1"><label for="max_addbed1" style="display:initial;">可以</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="max_addbed2" name="max_addbed" {$roomArr[max_addbed] == '-1' ? "checked" : ""} value="-1"><label style="display:initial;" for="max_addbed2">不可以</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房型图片</label>
+					<div class="controls">
+						<fieldset>
+							<legend>图片列表</legend>
+							<ul id="photos" class="pic-list unstyled">
+								<foreach name="pics['photo']" item="vo">
+								<li id="savedimage{$key}">
+									<input type="text" name="photos_url[]" value="{:sp_get_asset_upload_path($vo['url'])}" title="双击查看" style="width: 310px;" ondblclick="image_priview(this.value);" class="input image-url-input"> 
+									<input type="text" name="photos_alt[]" value="{$vo.alt}" style="width: 160px;" class="input image-alt-input" onfocus="if(this.value == this.defaultValue) this.value = ''" onblur="if(this.value.replace(' ','') == '') this.value = this.defaultValue;">
+									<a href="javascript:flashupload('replace_albums_images', '图片替换','savedimage{$key}',replace_image,'10,gif|jpg|jpeg|png|bmp,0','','','')">替换</a>
+									<a href="javascript:remove_div('savedimage{$key}')">移除</a>
+								</li>
+								</foreach>
+							</ul>
+						</fieldset>
+						<a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','','','')" class="btn btn-small" style="background-color:blue;">选择图片</a>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房型优惠促销信息</label>
+					<div class="controls">
+						<textarea name="descp" rows="6" cols="107" style="width:500px;">{$roomArr.descp}</textarea>
+						<span class="form-required">简短描述客房的优惠信息、优惠活动，经验证明这样可以更好的吸引客人订房。建议不要超过100字</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房型信息</label>
+					<div class="controls">
+						<input type="radio" id="iroom_status1" name="iroom_status" {$roomArr[iroom_status] == 1 ? "checked" : ""} value="1"><label for="iroom_status1" style="display:initial;">有效</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="iroom_status2" name="iroom_status" {$roomArr[iroom_status] == '-1' ? "checked" : ""} value="-1"><label for="iroom_status2" style="display:initial;">无效</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">添加客房设施</label>
+					<div class="controls">
+						<select class="acttype" name="facilities1[]" data-placeholder="添加客房设施" multiple="multiple">
+						
+							<optgroup label="便利设施">
+								<foreach name="facilities1" item="vo" key="k">
+									<option value="{$vo}" {$facilities[$vo]}>{$vo}</option>
+								</foreach>
+							</optgroup>
+							<optgroup label="媒体/科技">
+								<foreach name="facilities3" item="vo" key="k">
+							    	<option value="{$vo}" {$facilities[$vo]}>{$vo}</option>
+							    </foreach>
+							</optgroup>
+						
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房量</label>
+					<div class="controls">
+						<input type="text" name="total_number" value="{$roomArr.total_number}" style="width:120px;">
+						<span class="form-required" style="color:red;">设置该房型每天默认的可订量，如果需要调整某天的可订量请在“价格管理”中修改房量</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">会员基础价</label>
+					<div class="controls">
+						<input type="text" name="clevel_price0" value="{$roomArr.clevel_price0}" style="width:120px;">
+						<span class="form-required" style="color:red;">输入不高于OTA协议价，该价格用于普通用户的预订价格</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">价格类型</label>
+					<div class="controls">
+						<input type="radio" id="type1" name="pricetype" value="1" {$roomArr[pricetype] == 1 ? "checked" : ""} class="pricetype"><label for="type1" style="display:initial;">价格</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="type2" name="pricetype" value="2" class="pricetype1" {$roomArr[pricetype] == 2 ? "checked" : ""}><label style="display:initial;" for="type2">折扣</label>
+						<span class="form-required" style="color:red;">注：当选择折扣时，填写10 表示无折扣</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">等级名称</label>
+					<div id="jia" <if condition="$roomArr['pricetype'] eq 2">style="display:none;"</if>>
+					<div class="controls">
+						E享会员卡<input type="text" name="levellst[1]" value="{$levellst[1]}" style="width:80px;">元
+					</div>
+					</div>
+					<div id="zhe" <if condition="$roomArr['pricetype'] eq 1">style="display:none;"</if>>
+					<div class="controls">
+						E享会员卡<input type="text" name="levellst[2]" value="{$levellst[2]}" style="width:80px;">折
+					</div>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">更新</button>
+				<a class="btn" href="{:U('Hotel/fxindex')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//初始化下拉框
+			$(".acttype").chosen();
+		});
+	</script>
+	<script type="text/javascript">
+		$(".pricetype1").on("click",function(){
+			var pricetype = $(this);
+			if(pricetype[0].checked){
+				$("#jia").hide();
+				$("#zhe").show();
+			}
+		})
+		$(".pricetype").on("click",function(){
+			var pricetype = $(this);
+			if(pricetype[0].checked){ 
+				$("#zhe").hide();
+				$("#jia").show();
+			}
+		})
+	</script>
+</body>
+</html>

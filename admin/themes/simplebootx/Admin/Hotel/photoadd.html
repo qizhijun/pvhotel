@@ -1,0 +1,38 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/photo')}">返回</a></li>
+			<li  class="active"><a href="javascript:;">添加图片</a></li>
+		</ul>
+		<form action="{:U('Hotel/photoadd_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">图片</label>
+					<div class="controls">
+						<fieldset>
+							<ul id="photos" class="pic-list unstyled"></ul>
+						</fieldset>
+						<a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','','','')" class="btn btn-small">选择图片</a>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+			<input type='hidden' name='id' value='{$id}'>
+				<button type="submit" class="btn btn-primary js-ajax-submit">添加</button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

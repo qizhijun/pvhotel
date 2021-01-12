@@ -1,0 +1,16 @@
+[ 2020-08-01T11:26:33+08:00 ] 223.104.103.65 /index.php?g=wechat&m=conferenceroom&a=meeting&code=0118ovGa1wYflz0m4IHa1f5Tnq38ovGo&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-08-01T11:26:41+08:00 ] 223.104.103.65 /wechat/conferenceroom/meeting_detail/id/5
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='5' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('6','7','8','11','13','14')  [ RunTime:0.0001s ]
+
+[ 2020-08-01T11:26:55+08:00 ] 223.104.103.65 /wechat/conferenceroom/meeting_detail/id/3
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='3' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('12')  [ RunTime:0.0005s ]
+
+[ 2020-08-01T11:27:08+08:00 ] 223.104.103.65 /wechat/conferenceroom/meeting_detail/id/2
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='2' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('6','7','8','11','14')  [ RunTime:0.0001s ]
+

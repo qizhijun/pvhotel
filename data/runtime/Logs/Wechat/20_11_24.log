@@ -1,0 +1,4 @@
+[ 2020-11-24T17:47:00+08:00 ] 119.57.91.139 /index.php?g=wechat&m=conferenceroom&a=meeting&code=081un2ml2I5k164WVxol2uSJ0O0un2mj&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0065s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+

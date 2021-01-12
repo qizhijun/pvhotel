@@ -1,0 +1,113 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li  class="active"><a href="javascript:;">留言列表</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="J_ajaxForm" action="#">
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>openid</th>
+							<th>留言人</th>
+							<th>留言内容</th>
+							<th>回复内容</th>
+							<th>时间</th>
+							<th>0:正常 , 1删除</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="wechat_message" item="vo">
+						<tr>
+							<td>{$vo.id}</td>
+							<td>{$vo.openid}</td>
+							<td>{$vo['nickname'] | urldecode=###}</td>
+							<td>{$vo.content}</td>
+							<td>{$vo.message}</td>
+							<td>{$vo['created'] | date="Y-m-d H:i:s",###}</td>
+							<td>{$vo.status}</td>
+							<td>
+								<a class="huifu" data-id="{$vo['id']}" href="#">回复</a>|
+								<a href="{:U('Wechat/wx_delete',array('id'=>$vo['id'],'status'=>1))}" class="js-ajax-delete" data-msg="您确定要删除吗？">删除</a>
+							</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}</div>
+			</form>
+		</div>
+	</div>
+	<style>
+		.black_overlay {
+			display: none;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			z-index: 1001;
+			-moz-opacity: 0.8;
+			opacity: .80;
+			filter: alpha(opacity=80);
+		}
+		
+		.white_content {
+			display: none;
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			padding: 16px;
+			border: 16px solid orange;
+			background-color: white;
+			z-index: 1002;
+		}
+	</style>
+	<div id="light" class="white_content" style="display: none;text-align: center;">
+		<img id="bbb" src="/ehotel/www.yijiudian.cn/admin/themes/simplebootx/Public/assets/images/3.png" style="position: absolute;right: 0px; top: -35px;right: -25px;">
+		<form method="post" class="J_ajaxForm" action="#">
+			<textarea name="info" class="pxtextarea" style="width:80%; height:300px;" id="info1" placeholder="回复留言"></textarea>
+			<dt><a id="showcard1" class="submit" href="javascript:void(0)">回复留言</a></dt>
+			<div class="pagination"></div>
+		</form>
+	</div>
+	<div id="fade" class="black_overlay" style="display:none;">
+</body>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript" src="http://stc.weimob.com/src/message/jquery_min.js?2013-11-12-2"></script>
+<script>
+	$(".huifu").on("click",function(){
+		window.id = $(this).attr("data-id")
+		$("#light").css("display","block");
+		$("#fade").css("display","block");
+		console.log(window.id)		
+	})
+	$("#bbb").on("click",function(){
+		$("#light").css("display","none");
+		$("#fade").css("display","none");
+	})
+	$("#showcard1").on("click",function(){
+		var info = $("#info1").val();
+		if(info == '') {
+			alert("请输入内容");
+			return;
+		}
+		$.post("{:U('Wechat/message_post')}", {info:info,id:window.id},
+		function(data) {
+			if(data.success == true) {
+				$("#light").css("display","none");
+				$("#fade").css("display","none");
+				window.location.href="index.php?g=Admin&m=wechat&a=wx_message";
+			} else {}
+		},
+		"json")
+	})
+</script>
+</html>

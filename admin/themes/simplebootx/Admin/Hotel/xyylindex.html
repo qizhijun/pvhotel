@@ -1,0 +1,43 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">休闲娱乐管理</a></li>
+			<li><a href="{:U('Hotel/xyyladd')}">添加娱乐场所</a></li>
+			<li><a href="{:U('Hotel/ylxmindex')}">娱乐项目管理</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="J_ajaxForm" action="#">
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>娱乐场所名称</th>
+							<th width="200px">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="xyylArr" item="vo">
+						<tr>
+							<td>{$vo.ename}</td>
+							<td>
+								<a href="{:U('Hotel/xyyledit',array('id'=>$vo['id']))}">编辑</a>|
+								<if condition="$vo['issuppre'] eq 1">
+								<a href="{:U('Hotel/xyylissupper',array('id'=>$vo['id'],'issuppre'=>'-1'))}">不可预订</a>
+								<else />
+								<a href="{:U('Hotel/xyylissupper',array('id'=>$vo['id'],'issuppre'=>'1'))}">可预订</a>
+								</if>
+								|
+								<a href="{:U('Hotel/xyyldelete',array('id'=>$vo['id'],'isdel'=> 1))}" class="js-ajax-delete">删除</a>
+							</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/common.js"></script>
+</html>

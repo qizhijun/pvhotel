@@ -1,0 +1,60 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li  class="active"><a href="javascript:;">休闲娱乐订单</a></li>
+		</ul>
+            <!--<form class="well form-search" method="post" action="{:U('Order/cylist')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						<input type="text" name="keyname" style="width: 200px;" value="{$keyname}" placeholder="用户姓名、用户手机号">
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>-->
+            
+		<div class="common-form" style="text-align: center;">
+			<span style="font-size:20px ;">暂无订单</span>
+			<!--<form method="post" class="J_ajaxForm" action="#">
+				<table width="100%" class="table table-hover table-bordered table-list">
+					<thead>
+						<tr>
+							<th>订单编号</th>
+							<th>宴会厅名称</th>
+							<th>用户姓名</th>
+							<th>用户手机号</th>
+							<th>预约时间</th>
+							<th>会议类型</th>
+							<th>下单时间</th>
+							<th>状态</th>
+							<th width="120px">操作</th>
+						</tr>
+					</thead>
+					<php>$status = array("1"=>"作废","0"=>"正常");</php>
+					<php>$meettype = array("1"=>"会议","2"=>"宴请");</php>
+					<tbody>
+						<foreach name="hyyhorderArr" item="vo">
+						<tr>
+							<td>{$vo.id}</td>
+							<td>{$vo.crname}</td>
+							<td>{$vo.linkname}</td>
+							<td>{$vo.linkphone}</td>
+							<td>{$vo[plantime] | date="Y-m-d",###}</td>
+							<td>{$meettype[$vo[meettype]]}</td>
+							<td>{$vo[created] | date="Y-m-d H:i:s",###}</td>
+							<td>{$status[$vo[isdel]]}</td>
+							<td></td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+				<div class="pagination">{$page}<a href="#">一共{$count}个订单</a></div>
+			</form>-->
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/common.js"></script>
+</html>

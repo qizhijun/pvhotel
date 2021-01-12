@@ -1,0 +1,16 @@
+[ 2020-10-23T12:40:00+08:00 ] 111.225.60.22 /index.php?g=wechat&m=conferenceroom&a=meeting&code=071jpP0w3rTMaV2qLf0w3DRqoH3jpP0D&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-10-23T12:40:24+08:00 ] 111.225.60.22 /wechat/conferenceroom/meeting_detail/id/3
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='3' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('12')  [ RunTime:0.0001s ]
+
+[ 2020-10-23T12:40:25+08:00 ] 111.225.60.22 /wechat/conferenceroom/meeting_detail/id/3
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE ( id='3' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name` FROM `ejd_dict` WHERE `id` IN ('12')  [ RunTime:0.0001s ]
+
+[ 2020-10-23T20:32:12+08:00 ] 123.151.76.158 /index.php?g=wechat&m=conferenceroom&a=meeting&code=061g911w3NQOaV2nns1w35JMtQ3g911H&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+

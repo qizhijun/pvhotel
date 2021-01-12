@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>在线预订</title>
+		<meta name="keywords" content="{$seo_keywords}" />
+		<meta name="description" content="{$seo_description}">
+		<tc_include file="Public:head" />
+		
+		<link href="__TMPL__Public/css/yd/layout_normal.css" rel="stylesheet" />
+		<link href="__TMPL__Public/css/yd/style.css?v=002" rel="stylesheet" />
+		<link href="__TMPL__Public/css/yd/layer.css" rel="stylesheet" />
+		<link href="__TMPL__Public/js/yd/laydate/need/laydate.css" rel="stylesheet" />
+		<link href="__TMPL__Public/js/yd/laydate/skins/molv/laydate.css" rel="stylesheet" />
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.pagination.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/jquery/jquery.lazy.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/layer/layer.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/base.space.js"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/base.js?v001"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/base.extend.js?v001"></script>
+		<script type="text/javascript" src="__TMPL__Public/js/yd/common/mesignout.js"></script>
+
+		<script src="__TMPL__Public/js/yd/laydate/laydate.js"></script>
+		<script src="__TMPL__Public/js/yd/webscript/hotel/hotelcalendar.js?v=006"></script>
+		
+		<style type="text/css">
+			select,input[type="text"]{
+				padding: 0px;
+			    padding-left: 5px;
+			    height: 33px;
+			    line-height: 33px;
+			    margin: 0px;
+			    border: 1px solid #d4d4d4;
+			    background: #fff;
+			    color: #333;
+			    font-size: 100%;
+			    -moz-border-radius: 3px;
+			    -webkit-border-radius: 3px;
+			    border-radius: 3px;
+			}
+		</style>
+	</head>
+
+	<body style="background: url(__TMPL__Public/images/sec_bg.jpg) no-repeat center top fixed; background-size: cover;">
+		<tc_include file="Public:nav" />
+		
+		<div class="container">
+
+	<script src="__TMPL__Public/js/yd/common/city_data.js?v=005"></script>
+	<script src="__TMPL__Public/js/yd/common/citySelf.js"></script>
+
+	<script>
+		var params = new Common.Query.M();
+		params.setParameters("AdvertisementType", 2); //在线预订AdvertisementType为2
+		//获取广告
+		Atour.Ajax.Get({
+			Url: "/yaduo/Inn/GetAdvertisementByType",
+			DataParam: params.getString(false),
+			FuncName: "changeAdvertisement"
+		});
+		//显示广告
+		function changeAdvertisement(result) {
+			if(result.State == 1) {
+				if(result.Data.ImageUrl != null && result.Data.ImageUrl != "") { //该位置有广告上线，没有则使用默认的
+					var Advertisement = $("#Advertisement");
+					Advertisement.attr("src", result.Data.ImageUrl);
+					if(result.Data.PageUrl != null && result.Data.PageUrl != "") { //该广告有链接
+						Advertisement.attr("onclick", 'location.href =' + "'" + result.Data.PageUrl + "'" + '');
+					} else { //该广告没有链接，则不设页面跳转
+						Advertisement.removeAttr("onclick");
+						Advertisement.attr("style", "width: 100%;");
+					}
+					return;
+				} else {
+					var Advertisement = $("#Advertisement");
+					Advertisement.attr("src", "/Skin/images/banner001.jpg");
+				}
+			}
+			return;
+		}
+	</script>
+
+	<style>
+		.item_hotels {
+			margin-bottom: 30px;
+		}
+	</style>
+
+	
+	<!-- 酒店列表 开始-->
+	<div class="hotel_list">
+
+		<div class="hotel_item">
+			<div class="left item_img"><img class="lazy-load" src="http://in.yaduo.com:8500/Picture/Original/15/630101/2015092119583211_711602.JPG" id="img630101"><span class="item_img_see" onclick="LookPhoto(630101)">查看图片</span></div>
+			<div class="left item_details">
+				<div><span class="item_icon left"><img src="../Skin/images/product/LOGO1.png"></span><span class="item_title"><a href="/Hotel/HotelDetails?chainid=630101">行政大床房</a></span></div>
+				<div class="item_address"><span>28平米/可住2人 单人床</span>
+					<a href="#" onclick="goMap(630101)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="../../skin/images/map.png"></a><br><span>最晚接受预定：20:00</span></div>
+				<div class="item_hotels" id="item_hotels630101">
+					<table border="0" cellspacing="0" cellpadding="0" class="tblhotels">
+						<thead>
+							<tr>
+								<th>房型</th>
+								<th>门市价</th>
+								<th>官网预订价</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>行政标准房</td>
+								<td>852</td>
+								<td>750</td>
+								<td><input type="button" value="预订" class="btn normal" onclick="bookRoom(630101,4)"></td>
+							</tr>
+							<tr>
+								<td>行政大床房</td>
+								<td>852</td>
+								<td>750</td>
+								<td><input type="button" value="预订" class="btn normal" onclick="bookRoom(630101,3)"></td>
+							</tr>
+							<tr>
+								<td>雅致房</td>
+								<td>699</td>
+								<td>615</td>
+								<td><input type="button" value="已满房" class="btn disabled"></td>
+							</tr>
+							<tr class="hide">
+								<td>高级标准房</td>
+								<td>793</td>
+								<td>698</td>
+								<td><input type="button" value="已满房" class="btn disabled"></td>
+							</tr>
+							<tr class="hide">
+								<td>高级大床房</td>
+								<td>793</td>
+								<td>698</td>
+								<td><input type="button" value="已满房" class="btn disabled"></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="6" style="text-align:right;">
+									<a href="javascript:void(0);">查看更多</a>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div><input type="hidden" id="chainname630101" value="西宁夏都亚朵酒店"></div>
+		<div class="hotel_item">
+			<div class="left item_img"><img class="lazy-load" src="http://in.yaduo.com:8500/Picture/Original/15/610903/2015092119160769_966432.JPG" id="img610903"><span class="item_img_see" onclick="LookPhoto(610903)" style="opacity: 0.6;">查看图片</span></div>
+			<div class="left item_details">
+				<div><span class="item_icon left"><img src="../Skin/images/product/LOGO1.png"></span><span class="item_title"><a href="/Hotel/HotelDetails?chainid=610903">豪华景观套房</a></span></div>
+				<div class="item_address"><span>80平米/可住2人 大床</span>
+					<a href="#" onclick="goMap(610903)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="../../skin/images/map.png"></a><br><span>最晚接受预定：20:00</span></div>
+				<div class="item_hotels" id="item_hotels610903">
+					<table border="0" cellspacing="0" cellpadding="0" class="tblhotels">
+						<thead>
+							<tr>
+								<th>房型</th>
+								<th>门市价</th>
+								<th>官网预订价</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>雅致房</td>
+								<td>259</td>
+								<td>228</td>
+								<td><input type="button" value="预订" class="btn normal" onclick="bookRoom(610903,2)"></td>
+							</tr>
+							<tr>
+								<td>高级标准房</td>
+								<td>279</td>
+								<td>246</td>
+								<td><input type="button" value="预订" class="btn normal" onclick="bookRoom(610903,8)"></td>
+							</tr>
+							<tr>
+								<td>高级大床房</td>
+								<td>279</td>
+								<td>246</td>
+								<td><input type="button" value="预订" class="btn normal" onclick="bookRoom(610903,9)"></td>
+							</tr>
+							<tr class="hide">
+								<td>行政套房</td>
+								<td>459</td>
+								<td>404</td>
+								<td><input type="button" value="预订" class="btn normal" onclick="bookRoom(610903,5)"></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="6" style="text-align:right;">
+									<a href="javascript:void(0);">查看更多</a>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div><input type="hidden" id="chainname610903" value="安康高新睿智亚朵酒店"></div>
+		<div class="pages"><b class="disabled"><a href="javascript:void(0);">上一页</a></b><span class="active"><a href="javascript:void(0);">1</a></span><span><a href="javascript:void(0);">2</a></span><span><a href="javascript:void(0);">3</a></span><span><a href="javascript:void(0);">4</a></span><span><a href="javascript:void(0);">5</a></span><b><a href="javascript:void(0);">下一页</a></b></div>
+	</div>
+	<!-- 酒店列表 结束-->
+	<input type="hidden" id="MebTypeID" value="0">
+	<input type="hidden" id="tableHeradName" value="官网预订价">
+
+</div>
+		
+		<div style="background-color: #fff;padding: 0 150px;">
+			<tc_include file="Public:footer" />
+		</div>
+		
+	</body>
+
+</html>

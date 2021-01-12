@@ -1,0 +1,7 @@
+[ 2020-09-07T18:05:40+08:00 ] 123.150.174.182 /index.php?g=wechat&m=conferenceroom&a=meeting&code=001c9Y000xi5fK1yln100YV5Nj1c9Y01&state=STATE
+SQL: SELECT * FROM `ejd_fans` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ejd_conferenceroom` WHERE `isdel` = 0 ORDER BY sortindex desc  [ RunTime:0.0001s ]
+
+[ 2020-09-07T18:06:17+08:00 ] 123.150.174.182 /wechat/contact/info
+SQL: SELECT * FROM `ejd_hotel_info` WHERE ( isdel = 0 ) LIMIT 1   [ RunTime:0.0009s ]
+

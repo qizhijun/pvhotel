@@ -1,0 +1,12 @@
+[ 2020-06-29T16:48:36+08:00 ] 40.65.225.4 /index.php?g=Portal'[0]&m=Index&a=contact
+ERR: 无法加载模块:Portal'[0]
+
+[ 2020-06-29T16:48:45+08:00 ] 40.65.225.4 /index.php?g="><script%20>alert(String.fromCharCode(88,83,83))</script>&m=Index&a=contact
+ERR: 无法加载模块:">alert(String.fromCharCode(88,83,83))
+
+[ 2020-06-29T16:48:46+08:00 ] 40.65.225.4 /index.php?g=/etc/passwd&m=Index&a=contact
+ERR: 无法加载模块:/etc/passwd
+
+[ 2020-06-29T16:48:47+08:00 ] 40.65.225.4 /index.php?g=Http%3a%2f%2fWww.Google.Com&m=Index&a=contact
+ERR: 无法加载模块:Http://Www.Google.Com
+

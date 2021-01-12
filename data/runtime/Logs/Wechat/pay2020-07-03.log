@@ -1,0 +1,4 @@
+[2020-07-03 17:12:56][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?s=/wechat/salary/index/id/2788
+[2020-07-03 21:56:44][debug] 获取openid前的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting
+[2020-07-03 21:56:45][debug] 获取openid后的url1http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting&code=001m2Jui28PSiE0lGFxi2VuRui2m2JuS&state=STATE
+[2020-07-03 21:56:45][debug] 获取openid后的url2http://diangu.yijiudian.cn/index.php?g=wechat&m=conferenceroom&a=meeting&code=001m2Jui28PSiE0lGFxi2VuRui2m2JuS&state=STATE

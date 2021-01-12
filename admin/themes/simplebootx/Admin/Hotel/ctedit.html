@@ -1,0 +1,604 @@
+<admintpl file="header" />
+<link rel="stylesheet" type="text/css" href="__TMPL__assets/css/chosen/chosen.css"/>
+<style type="text/css">
+	.amap-layers div{
+		width: 500px;
+		height: 400px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Hotel/ctindex')}">餐厅管理</a></li>
+			<li  class="active"><a href="javascript:;">编辑餐厅</a></li>
+		</ul>
+		<form action="{:U('Hotel/ctedit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{$ctArr.id}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">餐厅名称</label>
+					<div class="controls">
+						<input type="text" name="resname" value="{$ctArr.resname}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">排序</label>
+					<div class="controls">
+						<input type="text" name="sortindex" value="{$ctArr.sortindex}" style="width:80px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">餐厅类别</label>
+					<div class="controls">
+						<select name="restype" style="width:130px;">
+						<foreach name="ctType" item="vo">
+							<option value="{$vo.id}" {$ctArr['restype'] == $vo['id'] ? "selected" : ""}>{$vo.name}</option>
+						</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">餐厅电话</label>
+					<div class="controls">
+						<input type="text" name="restel" value="{$ctArr.restel}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">餐厅地址</label>
+					<div class="controls">
+						<input type="text" name="resaddress" value="{$ctArr.resaddress}" style="width:350px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">餐厅图片</label>
+					<div class="controls">
+						<fieldset>
+							<legend>图片列表</legend>
+							<ul id="photos" class="pic-list unstyled">
+								<foreach name="picurl['photo']" item="vo">
+								<li id="savedimage{$key}">
+									<input type="text" name="photos_url[]" value="{:sp_get_asset_upload_path($vo['url'])}" title="双击查看" style="width: 310px;" ondblclick="image_priview(this.value);" class="input image-url-input"> 
+									<input type="text" name="photos_alt[]" value="{$vo.alt}" style="width: 160px;" class="input image-alt-input" onfocus="if(this.value == this.defaultValue) this.value = ''" onblur="if(this.value.replace(' ','') == '') this.value = this.defaultValue;">
+									<a href="javascript:flashupload('replace_albums_images', '图片替换','savedimage{$key}',replace_image,'10,gif|jpg|jpeg|png|bmp,0','','','')">替换</a>
+									<a href="javascript:remove_div('savedimage{$key}')">移除</a>
+								</li>
+								</foreach>
+							</ul>
+						</fieldset>
+						<a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','','','')" class="btn btn-small" style="background-color:blue;">选择图片</a>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">营业时间</label>
+					<div class="controls">
+					<php>$businessbeg1=$ctArr['businessbeg']==1?"selected":"";</php>
+					<php>$businessbeg2=$ctArr['businessbeg']==2?"selected":"";</php>
+					<php>$businessbeg3=$ctArr['businessbeg']==3?"selected":"";</php>
+					<php>$businessbeg4=$ctArr['businessbeg']==4?"selected":"";</php>
+					<php>$businessbeg5=$ctArr['businessbeg']==5?"selected":"";</php>
+					<php>$businessbeg6=$ctArr['businessbeg']==6?"selected":"";</php>
+					<php>$businessbeg7=$ctArr['businessbeg']==7?"selected":"";</php>
+					<php>$businessbeg8=$ctArr['businessbeg']==8?"selected":"";</php>
+					<php>$businessbeg9=$ctArr['businessbeg']==9?"selected":"";</php>
+					<php>$businessbeg10=$ctArr['businessbeg']==10?"selected":"";</php>
+					<php>$businessbeg11=$ctArr['businessbeg']==11?"selected":"";</php>
+					<php>$businessbeg12=$ctArr['businessbeg']==12?"selected":"";</php>
+					<php>$businessbeg13=$ctArr['businessbeg']==13?"selected":"";</php>
+					<php>$businessbeg14=$ctArr['businessbeg']==14?"selected":"";</php>
+					<php>$businessbeg15=$ctArr['businessbeg']==15?"selected":"";</php>
+					<php>$businessbeg16=$ctArr['businessbeg']==16?"selected":"";</php>
+					<php>$businessbeg17=$ctArr['businessbeg']==17?"selected":"";</php>
+					<php>$businessbeg18=$ctArr['businessbeg']==18?"selected":"";</php>
+					<php>$businessbeg19=$ctArr['businessbeg']==19?"selected":"";</php>
+					<php>$businessbeg20=$ctArr['businessbeg']==20?"selected":"";</php>
+					<php>$businessbeg21=$ctArr['businessbeg']==21?"selected":"";</php>
+					<php>$businessbeg22=$ctArr['businessbeg']==22?"selected":"";</php>
+					<php>$businessbeg23=$ctArr['businessbeg']==23?"selected":"";</php>
+					<php>$businessbeg24=$ctArr['businessbeg']==24?"selected":"";</php>
+					<php>$businessbeg25=$ctArr['businessbeg']==25?"selected":"";</php>
+					<php>$businessbeg26=$ctArr['businessbeg']==26?"selected":"";</php>
+					<php>$businessbeg27=$ctArr['businessbeg']==27?"selected":"";</php>
+					<php>$businessbeg28=$ctArr['businessbeg']==28?"selected":"";</php>
+					<php>$businessbeg29=$ctArr['businessbeg']==29?"selected":"";</php>
+					<php>$businessbeg30=$ctArr['businessbeg']==30?"selected":"";</php>
+					<php>$businessbeg31=$ctArr['businessbeg']==31?"selected":"";</php>
+					<php>$businessbeg32=$ctArr['businessbeg']==32?"selected":"";</php>
+					<php>$businessbeg33=$ctArr['businessbeg']==33?"selected":"";</php>
+					<php>$businessbeg34=$ctArr['businessbeg']==34?"selected":"";</php>
+					<php>$businessbeg35=$ctArr['businessbeg']==35?"selected":"";</php>
+					<php>$businessbeg36=$ctArr['businessbeg']==36?"selected":"";</php>
+					<php>$businessbeg37=$ctArr['businessbeg']==37?"selected":"";</php>
+					<php>$businessbeg38=$ctArr['businessbeg']==38?"selected":"";</php>
+					<php>$businessbeg39=$ctArr['businessbeg']==39?"selected":"";</php>
+					<php>$businessbeg40=$ctArr['businessbeg']==40?"selected":"";</php>
+					<php>$businessbeg41=$ctArr['businessbeg']==41?"selected":"";</php>
+					<php>$businessbeg42=$ctArr['businessbeg']==42?"selected":"";</php>
+					<php>$businessbeg43=$ctArr['businessbeg']==43?"selected":"";</php>
+					<php>$businessbeg44=$ctArr['businessbeg']==44?"selected":"";</php>
+					<php>$businessbeg45=$ctArr['businessbeg']==45?"selected":"";</php>
+					<php>$businessbeg46=$ctArr['businessbeg']==46?"selected":"";</php>
+					<php>$businessbeg47=$ctArr['businessbeg']==47?"selected":"";</php>
+					<php>$businessbeg48=$ctArr['businessbeg']==48?"selected":"";</php>
+						<select name="businessbeg" style="width:130px;">
+							<option value="1" {$businessbeg1}>1点</option>
+							<option value="2" {$businessbeg2}>1点半</option>
+							<option value="3" {$businessbeg3}>2点</option>
+							<option value="4" {$businessbeg4}>2点半</option>
+							<option value="5" {$businessbeg5}>3点</option>
+							<option value="6" {$businessbeg6}>3点半</option>
+							<option value="7" {$businessbeg7}>4点</option>
+							<option value="8" {$businessbeg8}>4点半</option>
+							<option value="9" {$businessbeg9}>5点</option>
+							<option value="10" {$businessbeg10}>5点半</option>
+							<option value="11" {$businessbeg11}>6点</option>
+							<option value="12" {$businessbeg12}>6点半</option>
+							<option value="13" {$businessbeg13}>7点</option>
+							<option value="14" {$businessbeg14}>7点半</option>
+							<option value="15" {$businessbeg15}>8点</option>
+							<option value="16" {$businessbeg16}>8点半</option>
+							<option value="17" {$businessbeg17}>9点</option>
+							<option value="18" {$businessbeg18}>9点半</option>
+							<option value="19" {$businessbeg19}>10点</option>
+							<option value="20" {$businessbeg20}>10点半</option>
+							<option value="21" {$businessbeg21}>11点</option>
+							<option value="22" {$businessbeg22}>11点半</option>
+							<option value="23" {$businessbeg23}>12点</option>
+							<option value="24" {$businessbeg24}>12点半</option>
+							<option value="25" {$businessbeg25}>13点</option>
+							<option value="26" {$businessbeg26}>13点半</option>
+							<option value="27" {$businessbeg27}>14点</option>
+							<option value="28" {$businessbeg28}>14点半</option>
+							<option value="29" {$businessbeg29}>15点</option>
+							<option value="30" {$businessbeg30}>15点半</option>
+							<option value="31" {$businessbeg31}>16点</option>
+							<option value="32" {$businessbeg32}>16点半</option>
+							<option value="33" {$businessbeg33}>17点</option>
+							<option value="34" {$businessbeg34}>17点半</option>
+							<option value="35" {$businessbeg35}>18点</option>
+							<option value="36" {$businessbeg36}>18点半</option>
+							<option value="37" {$businessbeg37}>19点</option>
+							<option value="38" {$businessbeg38}>19点半</option>
+							<option value="39" {$businessbeg39}>20点</option>
+							<option value="40" {$businessbeg40}>20点半</option>
+							<option value="41" {$businessbeg41}>21点</option>
+							<option value="42" {$businessbeg42}>21点半</option>
+							<option value="43" {$businessbeg43}>22点</option>
+							<option value="44" {$businessbeg44}>22点半</option>
+							<option value="45" {$businessbeg45}>23点</option>
+							<option value="46" {$businessbeg46}>23点半</option>
+							<option value="47" {$businessbeg47}>0点</option>
+							<option value="48" {$businessbeg48}>0点半</option>
+						</select>
+						到
+						<php>$businessend1=$ctArr['businessend']==1?"selected":"";</php>
+						<php>$businessend2=$ctArr['businessend']==2?"selected":"";</php>
+						<php>$businessend3=$ctArr['businessend']==3?"selected":"";</php>
+						<php>$businessend4=$ctArr['businessend']==4?"selected":"";</php>
+						<php>$businessend5=$ctArr['businessend']==5?"selected":"";</php>
+						<php>$businessend6=$ctArr['businessend']==6?"selected":"";</php>
+						<php>$businessend7=$ctArr['businessend']==7?"selected":"";</php>
+						<php>$businessend8=$ctArr['businessend']==8?"selected":"";</php>
+						<php>$businessend9=$ctArr['businessend']==9?"selected":"";</php>
+						<php>$businessend10=$ctArr['businessend']==10?"selected":"";</php>
+						<php>$businessend11=$ctArr['businessend']==11?"selected":"";</php>
+						<php>$businessend12=$ctArr['businessend']==12?"selected":"";</php>
+						<php>$businessend13=$ctArr['businessend']==13?"selected":"";</php>
+						<php>$businessend14=$ctArr['businessend']==14?"selected":"";</php>
+						<php>$businessend15=$ctArr['businessend']==15?"selected":"";</php>
+						<php>$businessend16=$ctArr['businessend']==16?"selected":"";</php>
+						<php>$businessend17=$ctArr['businessend']==17?"selected":"";</php>
+						<php>$businessend18=$ctArr['businessend']==18?"selected":"";</php>
+						<php>$businessend19=$ctArr['businessend']==19?"selected":"";</php>
+						<php>$businessend20=$ctArr['businessend']==20?"selected":"";</php>
+						<php>$businessend21=$ctArr['businessend']==21?"selected":"";</php>
+						<php>$businessend22=$ctArr['businessend']==22?"selected":"";</php>
+						<php>$businessend23=$ctArr['businessend']==23?"selected":"";</php>
+						<php>$businessend24=$ctArr['businessend']==24?"selected":"";</php>
+						<php>$businessend25=$ctArr['businessend']==25?"selected":"";</php>
+						<php>$businessend26=$ctArr['businessend']==26?"selected":"";</php>
+						<php>$businessend27=$ctArr['businessend']==27?"selected":"";</php>
+						<php>$businessend28=$ctArr['businessend']==28?"selected":"";</php>
+						<php>$businessend29=$ctArr['businessend']==29?"selected":"";</php>
+						<php>$businessend30=$ctArr['businessend']==30?"selected":"";</php>
+						<php>$businessend31=$ctArr['businessend']==31?"selected":"";</php>
+						<php>$businessend32=$ctArr['businessend']==32?"selected":"";</php>
+						<php>$businessend33=$ctArr['businessend']==33?"selected":"";</php>
+						<php>$businessend34=$ctArr['businessend']==34?"selected":"";</php>
+						<php>$businessend35=$ctArr['businessend']==35?"selected":"";</php>
+						<php>$businessend36=$ctArr['businessend']==36?"selected":"";</php>
+						<php>$businessend37=$ctArr['businessend']==37?"selected":"";</php>
+						<php>$businessend38=$ctArr['businessend']==38?"selected":"";</php>
+						<php>$businessend39=$ctArr['businessend']==39?"selected":"";</php>
+						<php>$businessend40=$ctArr['businessend']==40?"selected":"";</php>
+						<php>$businessend41=$ctArr['businessend']==41?"selected":"";</php>
+						<php>$businessend42=$ctArr['businessend']==42?"selected":"";</php>
+						<php>$businessend43=$ctArr['businessend']==43?"selected":"";</php>
+						<php>$businessend44=$ctArr['businessend']==44?"selected":"";</php>
+						<php>$businessend45=$ctArr['businessend']==45?"selected":"";</php>
+						<php>$businessend46=$ctArr['businessend']==46?"selected":"";</php>
+						<php>$businessend47=$ctArr['businessend']==47?"selected":"";</php>
+						<php>$businessend48=$ctArr['businessend']==48?"selected":"";</php>
+						<select name="businessend" style="width:130px;">
+							<option value="1" {$businessend1}>1点</option>
+							<option value="2" {$businessend2}>1点半</option>
+							<option value="3" {$businessend3}>2点</option>
+							<option value="4" {$businessend4}>2点半</option>
+							<option value="5" {$businessend5}>3点</option>
+							<option value="6" {$businessend6}>3点半</option>
+							<option value="7" {$businessend7}>4点</option>
+							<option value="8" {$businessend8}>4点半</option>
+							<option value="9" {$businessend9}>5点</option>
+							<option value="10" {$businessend10}>5点半</option>
+							<option value="11" {$businessend11}>6点</option>
+							<option value="12" {$businessend12}>6点半</option>
+							<option value="13" {$businessend13}>7点</option>
+							<option value="14" {$businessend14}>7点半</option>
+							<option value="15" {$businessend15}>8点</option>
+							<option value="16" {$businessend16}>8点半</option>
+							<option value="17" {$businessend17}>9点</option>
+							<option value="18" {$businessend18}>9点半</option>
+							<option value="19" {$businessend19}>10点</option>
+							<option value="20" {$businessend20}>10点半</option>
+							<option value="21" {$businessend21}>11点</option>
+							<option value="22" {$businessend22}>11点半</option>
+							<option value="23" {$businessend23}>12点</option>
+							<option value="24" {$businessend24}>12点半</option>
+							<option value="25" {$businessend25}>13点</option>
+							<option value="26" {$businessend26}>13点半</option>
+							<option value="27" {$businessend27}>14点</option>
+							<option value="28" {$businessend28}>14点半</option>
+							<option value="29" {$businessend29}>15点</option>
+							<option value="30" {$businessend30}>15点半</option>
+							<option value="31" {$businessend31}>16点</option>
+							<option value="32" {$businessend32}>16点半</option>
+							<option value="33" {$businessend33}>17点</option>
+							<option value="34" {$businessend34}>17点半</option>
+							<option value="35" {$businessend35}>18点</option>
+							<option value="36" {$businessend36}>18点半</option>
+							<option value="37" {$businessend37}>19点</option>
+							<option value="38" {$businessend38}>19点半</option>
+							<option value="39" {$businessend39}>20点</option>
+							<option value="40" {$businessend40}>20点半</option>
+							<option value="41" {$businessend41}>21点</option>
+							<option value="42" {$businessend42}>21点半</option>
+							<option value="43" {$businessend43}>22点</option>
+							<option value="44" {$businessend44}>22点半</option>
+							<option value="45" {$businessend45}>23点</option>
+							<option value="46" {$businessend46}>23点半</option>
+							<option value="47" {$businessend47}>0点</option>
+							<option value="48" {$businessend48}>0点半</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">人均消费</label>
+					<div class="controls">
+						<input type="text" name="perperson" value="{$ctArr.perperson}" style="width:130px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">预定方式</label>
+					<div class="controls">
+						<input type="radio" id="support1" name="support_pay" value="1" {$ctArr['support_pay'] == 1 ? "checked" : ""}><label style="display:initial;" for="support1">电话预定</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="support2" name="support_pay" value="2" {$ctArr['support_pay'] == 2 ? "checked" : ""}><label style="display:initial;" for="support2">在线预订</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="support3" name="support_pay" value="3" {$ctArr['support_pay'] == 3 ? "checked" : ""}><label style="display:initial;" for="support3">全部支持</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">是否在线订位</label>
+					<div class="controls">
+						<input type="radio" id="online1" name="support_online" value="1" {$ctArr['support_online'] == 1 ? "checked" : ""}><label style="display:initial;" for="online1">是</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="online2" name="support_online" value="-1" {$ctArr['support_online'] == -1 ? "checked" : ""}><label style="display:initial;" for="online2">否</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">是否能抽烟</label>
+					<div class="controls">
+						<input type="radio" id="issmoling1" name="issmoking" value="1" {$ctArr['issmoking'] == 1 ? "checked" : ""}><label style="display:initial;" for="issmoling1">有</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="issmoling2" name="issmoking" value="-1" {$ctArr['issmoking'] == -1 ? "checked" : ""}><label style="display:initial" for="issmoling2">没有</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">能否自助</label>
+					<div class="controls">
+						<input type="radio" id="help1" name="helptype" value="1" {$isdel == 1 ? "checked" : ""}><label style="display:initial;" for="help1">是</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="help2" name="helptype" value="-1" {$isdel == -1 ? "checked" : ""}><label style="display:initial;" for="help2">否</label>
+					</div><br>
+					<div class="controls">
+						全选<input id="controlAll" type="checkbox" value="" onclick="selectAll()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+						<foreach name="dicArr" item="vo">
+							<label style="display:initial;" for="isbuff[{$vo.val}]">{$vo.name}</label><input id="isbuff[{$vo.val}]" type="checkbox" {$tmp[$vo['val']] == $vo['val'] ? "checked" : ""} name="isbuffetres[]" value="{$vo.val}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">送餐服务</label>
+					<div class="controls">
+						<input type="radio" id="food1" name="foods" value="1" {$level == 1 ? "checked" : ""}><label style="display:initial;" for="food1">是</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="food2" name="foods" value="-1" {$level == -1 ? "checked" : ""}><label style="display:initial;" for="food2">否</label>
+					</div><br>
+					<div class="controls">
+						全选<input id="controlBll" type="checkbox" value="" onclick="selectBll()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+						<foreach name="dicArr" item="vo">
+							<label style="display:initial;" for="food[{$vo.val}]">{$vo.name}</label><input type="checkbox" id="food[{$vo.val}]" name="foodsend[]" {$foods[$vo['val']] == $vo['val'] ? "checked" : ""} value="{$vo.val}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</foreach>
+					</div><br>
+					<div class="controls">
+						提前<input type="text" name="levellst" value="{$foodlst['ctime']}" style="width:80px;">小时预定<br><br>
+						送餐时间前<input type="text" name="levellst" value="{$foodlst['ontime']}" style="width:80px;">小时不可取消订单
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">可容纳人数</label>
+					<div class="controls">
+						<input type="text" name="peoplenum" value="{$ctArr.peoplenum}" style="width:100px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">餐桌数量</label>
+					<div class="controls">
+						<input type="text" name="tablenum" value="{$ctArr.tablenum}" style="width:100px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">360度全景</label>
+					<div class="controls">
+						<input type="text" name="tshpanoramaurl" value="{$ctArr.tshpanoramaurl}" style="width:500px;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">餐厅介绍</label>
+					<div class="controls">
+						<script type="text/plain" id="content" name="des" style="width:650px;height:400px;">{$ctArr.des}</script>
+					</div>
+				</div>
+				<hr>
+				<div class="control-group">
+					<h4>会员等级折扣注册</h4>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="checkbox" id="saled" name="saledisontime" value="1" {$ctArr['saledisontime'] == 1 ? "checked" : ""}><label style="display:initial;" for="saled"><span class="form-required">是否支持优惠券与折扣策略同时使用</span></label>
+						<br><br>
+						<input type="checkbox" id="scored" name="scoredisontime" value="1" {$ctArr['scoredisontime'] == 1 ? "checked" : ""}><label style="display:initial;" for="scored"><span class="form-required">是否支持积分抵扣与折扣策略同时使用</span></label>
+						
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">默认折扣</label>
+					<div class="controls">
+						<input type="text" name="cleveldiscount" value="{$ctArr.cleveldiscount}" style="width:80px;">折
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">E享会员卡</label>
+					<div class="controls">
+						<input type="text" name="clevelprice" value="{$ctArr.clevelprice}" style="width:80px;">折
+					</div>
+				</div>
+				<hr>
+				<div class="control-group">
+					<h4>取消订单条款</h4>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="checkbox" id="isrefund" name="isrefund" value="1" {$ctArr['isrefund'] == 1 ? "checked" : ""}><label style="display:initial;" for="isrefund"><span class="form-required">在线支付是否支持取消订单</span></label>
+						<br>
+				</div>
+				</div>
+				<div class="control-group">
+				<div class="controls">
+					提前<input type="text" name="qhour" value="{$ctArr.qhour}" style="width:80px;">小时
+					&nbsp;退款比例<input type="text" name="refund" value="{$ctArr.refund}" style="width:80px;">%<br>
+					<span class="form-required">例如：提前12小时，100%退款，12小时内0%退款。</span>
+				</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">更新</button>
+				<a class="btn" href="{:U('Hotel/ctindex')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/chosen/chosen_jquery_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//初始化下拉框
+			$(".acttype").chosen();
+		});
+	</script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.DIMAUB;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//setInterval(function(){public_lock_renewal();}, 10000);
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					;
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+					//验证规则
+					rules : {
+						'post[post_title]' : {
+							required : 1
+						},
+						'post[post_content]' : {
+							editorcontent : true
+						}
+					},
+					//验证未通过提示消息
+					messages : {
+						'post[post_title]' : {
+							required : '请输入标题'
+						},
+						'post[post_content]' : {
+							editorcontent : '内容不能为空'
+						}
+					},
+					//给未通过验证的元素加效果,闪烁等
+					highlight : false,
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//验证通过，提交表单
+					submitHandler : function(forms) {
+						$(forms).ajaxSubmit({
+							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+							dataType : 'json',
+							beforeSubmit : function(arr, $form, options) {
+
+							},
+							success : function(data, statusText, xhr, $form) {
+								if (data.status) {
+									setCookie("refersh_time", 1);
+									//添加成功
+									Wind.use("artDialog", function() {
+										art.dialog({
+											id : "succeed",
+											icon : "succeed",
+											fixed : true,
+											lock : true,
+											background : "#CCCCCC",
+											opacity : 0,
+											content : data.info,
+											button : [ {
+												name : '继续编辑？',
+												callback : function() {
+													//reloadPage(window);
+													return true;
+												},
+												focus : true
+											}, {
+												name : '返回列表页',
+												callback : function() {
+													location = "{:U('Hotel/ctindex')}";
+													return true;
+												}
+											} ]
+										});
+									});
+								} else {
+									isalert(data.info);
+								}
+							}
+						});
+					}
+				});
+			});
+			////-------------------------
+		});
+	</script>
+	<script type="text/javascript">
+		function selectAll(){
+		 var checklist = document.getElementsByName ("isbuffetres[]");
+			if(document.getElementById("controlAll").checked)
+			{
+			    for(var i=0;i<checklist.length;i++)
+			{
+			    checklist[i].checked = 1;
+			} 
+			}else{
+			    for(var j=0;j<checklist.length;j++)
+			{
+			     checklist[j].checked = 0;
+			}
+		}
+	}
+	function selectBll(){
+		 var check = document.getElementsByName ("foodsend[]");
+			if(document.getElementById("controlBll").checked)
+			{
+			    for(var i=0;i<check.length;i++)
+			{
+			    check[i].checked = 1;
+			} 
+			}else{
+			    for(var j=0;j<check.length;j++)
+			{
+			     check[j].checked = 0;
+			}
+		}
+	}
+	</script>
+</body>
+</html>

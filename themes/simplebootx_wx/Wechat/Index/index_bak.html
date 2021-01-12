@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>80爱车</title>
+		<link href="__TMPL__Public/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/80car.css?v=20160224" />
+		<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/swiper.min.css?v=20160224" />
+		<link rel="stylesheet" href="__TMPL__Public/js/myDialog/dialog.css" />
+		<style type="text/css">
+			.loader_div{background-color: #000;opacity: 0.5;margin: 0px;width: 100%;height: 100%;display: block;font-size: 12pt;position: fixed;top: 0;left: 0;z-index: 100;}
+		</style>
+	</head>
+
+	<body baseurl="__ROOT__">
+		<dl id="loader_div" class="loader_div" style="">
+			<div class="loader" style="width: 40px;margin: 200px auto;">
+				<img src="__TMPL__Public/images/bars.svg" width="40"/>
+			</div>
+		</dl>
+		<div class="ggmk swiper-container" id="mySwipe">
+			<div class="swiper-wrapper">
+				<foreach name="slidelist" item="vo">
+					<img src="{$vo.img}" class="swiper-slide" data-url="{$vo.link_url}"/>
+				</foreach>
+			</div>
+		</div>
+		<div class="splb">
+			<foreach name="prolist" item="vo">
+				<dl data-href="{$vo.link_url}" data-id="{$vo.id}">
+					<dt><i style="content: url({$vo.icon_img});"></i></dt>
+					<dd>{$vo.pro_name}</dd>
+					<if condition="$cardlist[$vo['id']] gt 0">
+						<em>{$cardlist[$vo['id']]}</em>
+					</if>
+				</dl>
+			</foreach>
+			<empty name="prolist">
+				<div style="text-align: center;">
+					暂时不能提供服务
+				</div>
+			</empty>
+		</div>
+		<script src="__TMPL__Public/js/amd/require.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var VERSION=20150116;
+			requirejs.config({
+			    baseUrl: '__TMPL__Public/js',
+			    shim: {},
+			    paths: {
+			        zepto: 'amd/zepto.all',
+			        iDialog:'myDialog/dialog_min',
+			        utils:'utils',
+			        swipe:'amd/swiper.min',
+			        amap:'amap'
+			    },
+			    urlArgs: "_="+VERSION
+			});
+		</script>
+		<script src="__TMPL__Public/js/index/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

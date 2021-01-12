@@ -1,0 +1,15 @@
+#divAddressMenu { position: absolute; visibility: hidden; z-index: 10000; overflow: hidden; width: 172px; background-color: #FFFFFF; font-size: 12px;
+                   margin-left: 0px; margin-top: 2px; }
+#divAddressMenu h4 { border-bottom: dotted #CCCCCC 1px; color: #999999; font-size: 12px; font-weight: 100; padding: 2px 2px 0 2px; margin: 0; }
+#divAddressMenu div { border: solid #DADADA 1px; padding: 1px; }
+#divAddressMenu a { display: block; width: 162px !important; width: 100%; padding: 5px; cursor: default; text-decoration: none; color: #000; background-color: none; }
+#divAddressMenu a span { float: right; }
+#divAddressMenu a:hover { border: solid #F2C2BD 1px; background-color: #FBEDEC; }
+
+#divAddressMenu2 { position: absolute; visibility: hidden; z-index: 10000; overflow: hidden; width: 276px; background-color: #FFFFFF; font-size: 12px; 
+                   margin-left: 0px; margin-top: 2px; }
+#divAddressMenu2 h4 { border-bottom: dotted #CCCCCC 1px; color: #999999; font-size: 12px; font-weight: 100; padding: 2px 2px 0 2px; margin: 0; }
+#divAddressMenu2 div { border: solid #DADADA 1px; padding: 1px; }
+#divAddressMenu2 a { display: block; width: 276px !important; width: 100%; padding: 3px; cursor: default; text-decoration: none; color: #000; background-color: none; }
+#divAddressMenu2 a span { float: right; }
+#divAddressMenu2 a:hover { border: solid #F2C2BD 1px; background-color: #FBEDEC; }

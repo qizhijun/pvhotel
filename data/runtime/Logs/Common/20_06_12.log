@@ -1,0 +1,45 @@
+[ 2020-06-12T11:33:43+08:00 ] 212.3.151.210 /index.php?g='&m=Book'&a=book'&cid=5'&begtime=2020-03-25'&endtime=2020-03-26'"
+ERR: 无法加载模块:'
+
+[ 2020-06-12T11:33:45+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=2121121121212.1
+ERR: 无法加载模块:2121121121212.1
+
+[ 2020-06-12T11:33:45+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%20and%201%3D1
+ERR: 无法加载模块: and 1=1
+
+[ 2020-06-12T11:33:46+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%20and%201%3E1
+ERR: 无法加载模块: and 1>1
+
+[ 2020-06-12T11:33:46+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%20and%20%27x%27%3D%27x
+ERR: 无法加载模块:' and 'x'='x
+
+[ 2020-06-12T11:33:47+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%20and%20%27x%27%3D%27y
+ERR: 无法加载模块:' and 'x'='y
+
+[ 2020-06-12T11:33:48+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g="%20and%20"x"%3D"x
+ERR: 无法加载模块:" and "x"="x
+
+[ 2020-06-12T11:33:48+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%22%20and%20%22x%22%3D%22y
+ERR: 无法加载模块:" and "x"="y
+
+[ 2020-06-12T11:33:49+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%20AND%201=1
+ERR: 无法加载模块: AND 1=1
+
+[ 2020-06-12T11:34:26+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%20AnD%20sLeep%283%29%20ANd%20%271
+ERR: 无法加载模块:' AnD sLeep(3) ANd '1
+
+[ 2020-06-12T11:34:27+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%26%26sLEEp%283%29%26%26%271
+ERR: 无法加载模块:'&&sLEEp(3)&&'1
+
+[ 2020-06-12T11:34:28+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%00%27%7C%7CSLeeP%283%29%26%26%271
+ERR: 无法加载模块:'||SLeeP(3)&&'1
+
+[ 2020-06-12T11:34:29+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%20aND%20BeNChMaRK%282999999%2CMd5%28NoW%28%29%29%29%20AnD%20%271
+ERR: 无法加载模块:' aND BeNChMaRK(2999999,Md5(NoW())) AnD '1
+
+[ 2020-06-12T11:34:30+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%26%26BeNChMaRK%282999999%2CmD5%28NOW%28%29%29%29%26%26%271
+ERR: 无法加载模块:'&&BeNChMaRK(2999999,mD5(NOW()))&&'1
+
+[ 2020-06-12T11:34:31+08:00 ] 212.3.151.210 /index.php?m=Book&a=book&cid=5&begtime=2020-03-25&endtime=2020-03-26&g=%27%20AnD%20sLeep%283%29%20ANd%20%270%27%3D%270
+ERR: 无法加载模块:' AnD sLeep(3) ANd '0'='0
+

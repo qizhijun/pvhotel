@@ -1,0 +1,116 @@
+<admintpl file="header" />
+<style type="text/css">
+	.datainfo{
+		margin-bottom: 0px;
+		margin-top: 5px;
+	}
+</style>
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">批次详情</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal J_ajaxForm" action="{:U('import/importSave')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">文件名称:</label>
+						<div class="controls">
+							<label class="datainfo">{$fileinfo.filename}</label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">上传后路径:</label>
+						<div class="controls">
+							<label class="datainfo">{$fileinfo.fileurl}</label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">当前状态:</label>
+						<div class="controls">
+							<php>
+								$sta=$fileinfo["status"]==1?"已导入":"未导入";
+							</php>
+							<label class="datainfo">{$sta}</label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">上传时间:</label>
+						<div class="controls">
+							<php>
+								$time=date("Y-m-d H:i:s",$fileinfo["created"]);
+							</php>
+							<label class="datainfo">{$time}</label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">数据总行数:</label>
+						<div class="controls">
+							<label class="datainfo">{$fileinfo.datanum}行</label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">正确数据:</label>
+						<div class="controls">
+							<php>
+								$line=intval($fileinfo["datanum"])-intval($fileinfo["renum"])-intval($fileinfo["errornum"]);
+							</php>
+							<label class="datainfo">{$line}行</label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">重复行数:</label>
+						<div class="controls">
+							<label class="datainfo"><a href="#">{$fileinfo.renum}行</a></label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">错误行数:</label>
+						<div class="controls">
+							<label class="datainfo"><a href="#">{$fileinfo.errornum}行</a></label>
+							<span></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">发券时间:</label>
+						<div class="controls">
+							<label class="radio inline" for="active_shop">
+				            	<input type="radio" name="sendtime" value="0" checked="checked" id="active_shop">任务发送
+				            </label>
+				            <label class="checkbox inline" for="active_form">
+				            	<input type="radio" name="sendtime" value="1" id="active_form">立即发送
+				            </label>
+							<div style="color: #ccc;margin-top: 5px;">任务发送：每天凌晨发送上一天的卡券并通知。立即发送：马上发券并通知。</div>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<input type="hidden" name="id" id="id" value="{$fileinfo['id']}" />
+					<if condition="$fileinfo['status'] eq 0">
+						<button type="submit" class="btn btn-primary btn_submit J_ajax_submit_btn">确认导入</button>
+						<a class="btn" href="__URL__">暂不导入</a>
+					<else/>
+						<a class="btn btn-primary" href="#">查看数据</a>
+						<a class="btn" href='{:U("import/index")}'>返回</a>
+					</if>
+					
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__ROOT__/statics/js/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+</body>
+</html>
