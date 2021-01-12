@@ -1,0 +1,9 @@
+[ 2021-01-12T10:00:44+08:00 ] 52.204.27.85 /Wechat/Room/orderlist
+SQL: SELECT ejd_room.room_name,ejd_order.id FROM `ejd_order` left JOIN ejd_room on ejd_room.id=ejd_order.roomid  WHERE ejd_order.vipid = null ORDER BY ejd_order.created desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2021-01-12T10:00:44+08:00 ] 52.204.27.85 /Wechat/Room/restaurant_book?id
+SQL: SELECT `name` FROM `ejd_fans` WHERE `phone` = null LIMIT 1   [ RunTime:0.0065s ]
+SQL: SELECT * FROM `ejd_dict` WHERE ( type = '餐段' and (val = 'breakfirst' or val = 'lunch' or val = 'dinner') )  [ RunTime:0.0003s ]
+SQL: SELECT ejd_dict.name,ejd_restaurant_food.id,ejd_restaurant_food.resid,ejd_restaurant_food.maxnum,ejd_restaurant_food.foodname,ejd_restaurant_food.picurl,ejd_restaurant_food.price FROM `ejd_restaurant_food` left JOIN ejd_dict on ejd_dict.id = ejd_restaurant_food.menutype  WHERE ejd_restaurant_food.resid = ''  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`resname`,`foodsend`,`businessbeg`,`businessend`,`restel` FROM `ejd_restaurant` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+
